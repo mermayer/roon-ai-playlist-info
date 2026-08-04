@@ -198,6 +198,18 @@ Bei Künstlergruppen oder Duos sucht die App zuerst den vollständigen gemeinsam
 
 Die Spotify-Darstellung ist eine Ansicht für Wiedergabe, die über Roon eintrifft, und kein eigener Spotify-Client. Die App durchsucht kein Spotify-Konto und übernimmt nicht die Spotify-Wiedergabe. Liefert der Stream verwertbare Angaben zu Interpret, Titel, Album und Cover, trennt der Player Albumcover, Künstlerporträt und Hintergrund. Qualifizierte Hörsitzungen werden in Wrapped als Spotify gekennzeichnet und lassen sich dort unabhängig filtern.
 
+#### Spotify mit SpotBridge an Roon übergeben
+
+SpotBridge 1.0.0 ist eine eigenständige native macOS-Menüleisten-App. Sie stellt die Verbindung her, die bewusst nicht Bestandteil von Roon AI Playlist ist:
+
+`Spotify unter macOS → CoreAudio Process Tap → SpotBridge → Roon Audio Input → gewählte Roon-Zone → Anzeige und Wrapped in Roon AI Playlist`
+
+SpotBridge nimmt das Audiosignal des lokalen Spotify-Prozesses über einen CoreAudio Process Tap auf. Das erfasste Signal kann als AAC oder als verlustfrei codiertes Ogg-FLAC an Roon Audio Input geliefert werden. Ogg-FLAC vermeidet auf dem Weg zwischen Bridge und Roon einen zusätzlichen verlustbehafteten Codierungsschritt, kann aber keine Informationen wiederherstellen, die in der ursprünglichen Spotify-Quelle nicht vorhanden waren.
+
+Zusammen mit dem Audio übermittelt SpotBridge Interpret, Titel, Album und Cover. Die App kann außerdem Transportereignisse von Spotify und Roon automatisch koordinieren, sodass Änderungen auf beiden Seiten im gemeinsamen Ablauf berücksichtigt werden können. Die ausgewählte Roon-Zone stellt die Wiedergabe anschließend wie gewohnt über Roon bereit.
+
+Roon AI Playlist verarbeitet diese Wiedergabe erst, nachdem sie Roon erreicht hat. Die App übernimmt die passende Zonenansicht, Bildverarbeitung, die anhand der verfügbaren Roon-Daten möglichen Bedienelemente und die qualifizierte Wrapped-Aufnahme. Innerhalb von Roon AI Playlist sind weder eine Spotify-Anmeldung noch Einstellungen zur Spotify-Audioaufnahme erforderlich. SpotBridge und Roon AI Playlist bleiben zwei unabhängige Begleitanwendungen mit klar getrennten Aufgaben.
+
 ## 6. Playlisten erzeugen
 
 ![Mit Roon abgeglichene KI-Playlist](../assets/screenshots/playlist.png)

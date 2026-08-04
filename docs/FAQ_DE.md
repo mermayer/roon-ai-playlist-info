@@ -12,6 +12,12 @@ Nein. Die KI-Playlistfunktion kann deaktiviert werden. Player, Live Radio, Hörb
 
 Ja. TIDAL erweitert Suche, Live-Radio-Erkennung und Playlistenaktionen, ist aber nicht für alle App-Bereiche erforderlich. Je nach Funktion stehen weitere Quellen oder lokale Roon-Daten zur Verfügung.
 
+## Wie gelangt Spotify-Wiedergabe zu Roon AI Playlist?
+
+Über Roon. Die eigenständige native macOS-App SpotBridge kann den lokalen Spotify-Prozess mit einem CoreAudio Process Tap aufnehmen und als AAC oder verlustfrei codiertes Ogg-FLAC an Roon Audio Input senden. SpotBridge übermittelt außerdem Interpret, Titel, Album und Cover und kann Transportereignisse koordinieren. Nachdem der Stream in einer ausgewählten Roon-Zone erscheint, kann Roon AI Playlist ihn darstellen und eine qualifizierte Wrapped-Sitzung erfassen. Roon AI Playlist selbst nimmt kein Spotify-Audio auf und meldet sich nicht bei Spotify an.
+
+Ogg-FLAC erhält das aufgenommene Signal auf dem Weg zu Roon; aus der ursprünglichen Spotify-Quelle wird dadurch kein höherwertiges Audiosignal.
+
 ## Warum können Live-Radio-Daten von Roon abweichen?
 
 Radiosender liefern sehr unterschiedliche und teilweise unvollständige Metadaten. Die App versucht Interpret, Titel, Album und Cover über mehrere Quellen zu ergänzen und kann dadurch einen anderen geeigneten Albumtreffer als Roon anzeigen.

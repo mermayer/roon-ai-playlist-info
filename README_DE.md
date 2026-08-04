@@ -89,6 +89,16 @@ Spielt Roon einen Spotify- oder anderen externen Stream, wechselt die Zonenansic
 
 ![Spotify-Wiedergabe mit Cover und Interpretenbildern](assets/screenshots/spotify_pl.png)
 
+#### So gelangt Spotify zu Roon: SpotBridge
+
+SpotBridge 1.0.0 ist eine eigenständige native macOS-Menüleisten-App, die lokale Spotify-Wiedergabe mit Roon Audio Input verbindet. Sie nimmt das Audiosignal des lokalen Spotify-Prozesses über einen CoreAudio Process Tap auf und überträgt das erfasste Signal als AAC oder verlustfrei codiertes Ogg-FLAC an eine gewählte Roon-Zone.
+
+`Spotify unter macOS → CoreAudio Process Tap → SpotBridge → Roon Audio Input → gewählte Roon-Zone`
+
+SpotBridge übermittelt Interpret, Titel, Album und Cover und kann Transportereignisse von Spotify und Roon automatisch aufeinander abstimmen. Sobald der entstehende Stream in Roon verfügbar ist, kann Roon AI Playlist seine Metadaten und Bilder darstellen und eine qualifizierte Hörsitzung in Wrapped erfassen. SpotBridge bleibt dabei eine unabhängige Begleitanwendung: Roon AI Playlist selbst nimmt weder Spotify-Audio auf noch meldet es sich bei Spotify an.
+
+Ogg-FLAC erhält das aufgenommene Signal auf dem Übertragungsweg von SpotBridge zu Roon verlustfrei; die Qualität der ursprünglichen Spotify-Quelle wird dadurch nicht verbessert.
+
 ### Hörbücher innerhalb der Roon-Umgebung
 
 - Als Hörbuch erkannte Roon-Alben synchronisieren.

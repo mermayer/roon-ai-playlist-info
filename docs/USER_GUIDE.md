@@ -198,6 +198,18 @@ For groups and duos, the complete combined artist name is searched first. Indivi
 
 The Spotify layout is a presentation for playback that arrives through Roon, not a separate Spotify client. The application does not browse a Spotify account or take over Spotify playback. When the stream provides usable artist, title, album, and artwork information, the player separates the album cover from artist portrait and background. Qualified listening sessions are labelled as Spotify in Wrapped so they can be inspected and filtered independently.
 
+#### Supplying Spotify to Roon with SpotBridge
+
+SpotBridge 1.0.0 is a separate native macOS menu-bar application. It provides the connection that is deliberately outside Roon AI Playlist:
+
+`Spotify on macOS → CoreAudio Process Tap → SpotBridge → Roon Audio Input → selected Roon zone → Roon AI Playlist display and Wrapped`
+
+SpotBridge captures audio from the local Spotify process through a CoreAudio Process Tap. It can deliver the captured signal to Roon Audio Input as AAC or as losslessly encoded Ogg-FLAC. Ogg-FLAC avoids an additional lossy encoding step between the bridge and Roon, but it cannot restore information that was not present in the original Spotify stream.
+
+Alongside audio, SpotBridge forwards artist, title, album, and artwork. It can also coordinate Spotify and Roon transport events automatically, so changes on either side can be reflected in the combined workflow. The selected Roon zone then exposes the playback through Roon in the usual way.
+
+Roon AI Playlist consumes the playback only after it reaches Roon. It provides the dedicated zone presentation, image handling, controls made possible by the available Roon data, and qualified Wrapped recording. No Spotify login or Spotify audio-capture configuration is required inside Roon AI Playlist. SpotBridge and Roon AI Playlist remain two independent companion applications with clearly separated responsibilities.
+
 ## 6. Creating playlists
 
 ![AI-assisted playlist matched against Roon](../assets/screenshots/playlist.png)

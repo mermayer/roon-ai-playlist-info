@@ -170,6 +170,10 @@ This makes a RoPieee-connected Bluetooth remote useful across two changing desti
 
 Spotify and other external playback is shown only when it reaches the application through Roon. The companion does not become a Spotify client; it adapts the presentation to the supplied stream data and records qualified Spotify sessions as a distinct Wrapped source.
 
+The separate native macOS application SpotBridge can provide that path for local Spotify playback. It captures the Spotify process through a CoreAudio Process Tap, supplies the captured signal to Roon Audio Input as AAC or losslessly encoded Ogg-FLAC, forwards artist, title, album, and artwork, and can coordinate Spotify and Roon transport events. Roon AI Playlist starts its work only after Roon exposes the stream; SpotBridge is not embedded in this application.
+
+`Spotify on macOS → SpotBridge → Roon Audio Input → Roon zone → Roon AI Playlist`
+
 Roon Web Display shows Now Playing and lyrics in a browser, but is not a complete browser remote with these application tools. See [Roon Displays](https://help.roonlabs.com/portal/en/kb/articles/displays).
 
 ## 10. Maintenance and transparency

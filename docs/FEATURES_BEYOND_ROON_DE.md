@@ -170,6 +170,10 @@ Damit kann eine mit RoPieee verbundene Bluetooth-Fernbedienung zwischen zwei wec
 
 Spotify und andere externe Wiedergaben werden nur dargestellt, wenn sie die App über Roon erreichen. Die Begleitanwendung wird nicht selbst zum Spotify-Client; sie passt die Anzeige an die gelieferten Streamdaten an und erfasst qualifizierte Spotify-Sitzungen als eigene Wrapped-Quelle.
 
+Die eigenständige native macOS-App SpotBridge kann diesen Weg für lokale Spotify-Wiedergabe bereitstellen. Sie nimmt den Spotify-Prozess über einen CoreAudio Process Tap auf, übergibt das erfasste Signal als AAC oder verlustfrei codiertes Ogg-FLAC an Roon Audio Input, übermittelt Interpret, Titel, Album und Cover und kann Transportereignisse von Spotify und Roon koordinieren. Roon AI Playlist beginnt seine Arbeit erst, nachdem Roon den Stream bereitstellt; SpotBridge ist nicht in diese App eingebettet.
+
+`Spotify unter macOS → SpotBridge → Roon Audio Input → Roon-Zone → Roon AI Playlist`
+
 Roons Web Display zeigt Now Playing und Liedtexte im Browser, ist aber keine vollständige Browser-Fernbedienung mit diesen App-Werkzeugen. Siehe [Roon Displays](https://help.roonlabs.com/portal/en/kb/articles/displays).
 
 ## 10. Wartung und Transparenz

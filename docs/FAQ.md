@@ -12,6 +12,12 @@ No. AI playlist generation can be disabled. Player, live radio, audiobooks, Wrap
 
 Yes. TIDAL extends search, live-radio identification, and playlist actions, but is not required for every part of the application. Other sources or local Roon data remain available depending on the feature.
 
+## How does Spotify playback reach Roon AI Playlist?
+
+Through Roon. The separate native macOS application SpotBridge can capture the local Spotify process with a CoreAudio Process Tap and send it to Roon Audio Input as AAC or losslessly encoded Ogg-FLAC. SpotBridge also forwards artist, title, album, and artwork and can coordinate transport events. After the stream appears in a selected Roon zone, Roon AI Playlist can display it and record a qualified Wrapped session. Roon AI Playlist does not capture Spotify audio or log in to Spotify itself.
+
+Ogg-FLAC preserves the captured signal on its way to Roon; it does not turn the original Spotify source into higher-quality audio.
+
 ## Why can live-radio information differ from Roon?
 
 Radio stations supply widely varying and sometimes incomplete metadata. The application attempts to enrich artist, track, album, and artwork through multiple sources and may therefore select a different suitable album result than Roon.

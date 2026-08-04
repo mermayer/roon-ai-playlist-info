@@ -1,5 +1,11 @@
 # Release notes
 
+## Next documentation release — unreleased
+
+- explain how the separate native macOS application SpotBridge 1.0.0 carries local Spotify playback to Roon Audio Input
+- document AAC and losslessly encoded Ogg-FLAC bridge transport, forwarded metadata and artwork, and optional Spotify/Roon transport coordination
+- clarify the boundary between SpotBridge audio capture and the Roon AI Playlist presentation and Wrapped features
+
 ## Information and documentation release 1.0.0 — August 4, 2026
 
 This is the first public information release for Roon AI Playlist. It contains no installer and no source code.

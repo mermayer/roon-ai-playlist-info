@@ -24,6 +24,10 @@ Der Player zeigt eine konfigurierbare Auswahl von Roon-Zonen mit frei bestimmbar
 
 ![Übersicht des Mehrzonen-Players](../assets/screenshots/new_zone_view.png)
 
+### SpotBridge und Spotify
+
+SpotBridge 1.0.0 ist eine eigenständige native macOS-Menüleisten-App, die den lokalen Spotify-Prozess über einen CoreAudio Process Tap aufnimmt und das Signal als AAC oder verlustfrei codiertes Ogg-FLAC an Roon Audio Input liefert. Sie übermittelt Interpret, Titel, Album und Cover und kann den Transport von Spotify und Roon koordinieren. Roon AI Playlist stellt die Wiedergabe anschließend dar und zeichnet sie auf, nachdem sie in einer ausgewählten Roon-Zone verfügbar ist; die Spotify-Aufnahme selbst gehört nicht zu Roon AI Playlist.
+
 ### Hörbücher
 
 Hörbücher aus Roon werden mit Kapiteln, Gesamtdauer, Fortschritt und Lesezeichen verwaltet. Ein Buch lässt sich fortsetzen, neu beginnen oder an einer gespeicherten Position weiterhören. Ein eigener Audible-/DNB-Katalog unterstützt die Entdeckung; eine geprüfte TIDAL-Albensuche kann eine verfügbare Ausgabe in die Hörbuchliste der App übernehmen. Die optionale Aufnahme über eine exklusive lokale Roon-Zone erzeugt MP3-Kapiteldateien mit Metadaten.
