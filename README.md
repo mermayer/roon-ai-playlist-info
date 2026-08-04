@@ -8,6 +8,7 @@
 
 ## Current versions
 
+- Information and documentation release: **1.0.0**
 - Roon AI Playlist: **1.0.458**
 - RoonAIViewer: **1.0.3**
 

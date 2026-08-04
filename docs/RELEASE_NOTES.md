@@ -1,5 +1,18 @@
 # Release notes
 
+## Information and documentation release 1.0.0 — August 4, 2026
+
+This is the first public information release for Roon AI Playlist. It contains no installer and no source code.
+
+- English default landing page and complete German-language counterpart
+- extensive overview of the ways Roon AI Playlist complements standard Roon
+- complete English and German user guides
+- field-by-field reference for all current configuration areas
+- dedicated RoonAIViewer instructions
+- getting-started, privacy, security, FAQ, and application-overview documents
+- screenshots and explanations for multi-zone playback, AI and Last.fm playlists, Live Radio, Spotify, TIDAL mixes and playlists, audiobook discovery, Wrapped, network triggers, remote slots, and the RoPieee proxy
+- explicit product boundary: the application complements Roon outside its GUI within the possibilities of the Roon Extension APIs and does not replace Roon
+
 ## Roon AI Playlist 1.0.458
 
 The documented feature set includes:

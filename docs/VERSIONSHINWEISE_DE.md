@@ -1,5 +1,18 @@
 # Versionshinweise
 
+## Informations- und Dokumentationsausgabe 1.0.0 — 4. August 2026
+
+Dies ist die erste öffentliche Informationsausgabe zu Roon AI Playlist. Sie enthält weder einen Installer noch Quellcode.
+
+- englische Standard-Startseite und vollständige deutschsprachige Entsprechung
+- umfangreiche Übersicht darüber, wie Roon AI Playlist das originale Roon ergänzt
+- vollständige Benutzerhandbücher in Deutsch und Englisch
+- feldgenaue Referenz aller aktuellen Konfigurationsbereiche
+- eigenes RoonAIViewer-Handbuch
+- Dokumente zu ersten Schritten, Datenschutz, Sicherheit, häufigen Fragen und App-Überblick
+- Screenshots und Erklärungen zu Mehrzonenplayer, KI- und Last.fm-Playlisten, Live Radio, Spotify, TIDAL-Mixen und -Playlisten, Hörbuchsuche, Wrapped, Netzwerk-Triggern, Remote-Slots und RoPieee-Proxy
+- klare Produktabgrenzung: Die App ergänzt Roon außerhalb seiner Oberfläche innerhalb der Möglichkeiten der Roon-Extension-APIs und ersetzt Roon nicht
+
 ## Roon AI Playlist 1.0.458
 
 Der dokumentierte Funktionsstand umfasst unter anderem:
