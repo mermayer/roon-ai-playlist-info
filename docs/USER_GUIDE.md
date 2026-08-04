@@ -31,7 +31,7 @@ Documentation status: Roon AI Playlist **1.0.458**, RoonAIViewer **1.0.3**.
 
 ## 1. Purpose of the application
 
-Roon AI Playlist extends an existing Roon system. Roon remains responsible for the music library, streaming, RAAT, DSP, zones, queues, and audio playback. The application adds further control and management features:
+Roon AI Playlist extends an existing Roon system. It is not a replacement for the Roon GUI or Roon's own functions. Roon remains responsible for the music library, streaming, RAAT, DSP, zones, queues, and audio playback. The application exists to make additional workflows available outside Roon where Roon does not provide them, within the possibilities and limits of the Roon Extension APIs:
 
 - intelligent and external playlist generation,
 - visual multi-zone control,
@@ -192,6 +192,10 @@ For groups and duos, the complete combined artist name is searched first. Indivi
 - **Spotify or external streams:** supplied metadata and artwork are preferred; unsuitable duration or seek elements are hidden.
 - **Audiobooks:** chapters, position, bookmarks, and resume controls take priority.
 
+![Spotify playback presented in a dedicated zone view](../assets/screenshots/spotify_pl.png)
+
+The Spotify layout is a presentation for playback that arrives through Roon, not a separate Spotify client. The application does not browse a Spotify account or take over Spotify playback. When the stream provides usable artist, title, album, and artwork information, the player separates the album cover from artist portrait and background. Qualified listening sessions are labelled as Spotify in Wrapped so they can be inspected and filtered independently.
+
 ## 6. Creating playlists
 
 ![AI-assisted playlist matched against Roon](../assets/screenshots/playlist.png)
@@ -297,6 +301,32 @@ After a successful TIDAL connection, the application can:
 - assign a TIDAL target playlist to each Roon zone,
 - add current or identified radio tracks through `T+`.
 
+### Personal mixes and radio
+
+![Personal TIDAL mixes, discoveries, track radio, and artist radio](../assets/screenshots/personal_radio.png)
+
+The **Mixes** view reads the recommendations available to the connected TIDAL account and presents them in one place. Depending on the account, this can include My Daily Discovery, numbered My Mixes, My New Arrivals, custom mixes, track radio, and artist radio. Every entry shows its type and a short description or seed artists.
+
+The toolbar provides:
+
+- a Roon target zone,
+- a text filter for the visible mixes,
+- tile and list presentation,
+- selection of all currently visible entries,
+- optional exclusion of videos, artist radio, or track radio,
+- manual refresh and synchronisation,
+- an optional daily synchronisation time and history of the last run.
+
+**Start mix** replaces playback in the chosen Roon zone. **Append mix** adds the result to the existing queue. Selecting entries and choosing **Save selection** turns those dynamic recommendations into regular TIDAL playlists; a later synchronisation updates the saved copies instead of creating uncontrolled duplicates.
+
+### TIDAL playlists
+
+![Search, preview, start, or append TIDAL playlists](../assets/screenshots/tidal_pl.png)
+
+The **Playlists** view searches editorial TIDAL playlists and playlists belonging to the connected account. Search terms can be combined with decade, genre, mood, and topic chips. The source filter supports all results, TIDAL-only, or user-only lists. Cards identify the source and track count. Before playback, a preview can expose the first tracks, which is useful for broad names such as “Party” or “Classics”.
+
+Choose the Roon zone before using **Start PL** or **Append PL**. Starting replaces the current queue; appending preserves it. This workflow controls Roon playback—the TIDAL item is still resolved into something Roon can play, and a TIDAL object is not treated as a Roon library object without that handover.
+
 ### Configuring a target playlist
 
 1. Enable and connect TIDAL under **Configuration > Services**.
@@ -316,6 +346,22 @@ The `T+` button appears only where a meaningful TIDAL action is available.
 ## 9. Audiobooks
 
 ![Audiobook player with chapters and bookmarks](../assets/screenshots/audiobooks.png)
+
+### Catalogue search with Audible and DNB
+
+![Filterable Audible and DNB audiobook catalogue](../assets/screenshots/audible.png)
+
+The **Audiobook search** tab is for discovery before a title is part of the local audiobook library. Its catalogue source can be switched between current Audible.de releases and the German National Library catalogue. Title, author, keyword, genre, publication years, and sort order narrow the result. Depending on the source, cards show author, narrator, series, duration, year, genres, rating, and an audio sample.
+
+**Details** opens the available catalogue information. **Audible.de** opens the source page. **TIDAL** transfers the selected title and author to the separate album search described next; it does not assume that every catalogue result is available on TIDAL.
+
+### Finding the audiobook on TIDAL
+
+![Verified TIDAL album candidates for an audiobook](../assets/screenshots/tidal_search.png)
+
+The TIDAL dialog searches album candidates and then resolves their artist relationship separately. Only albums whose TIDAL artist fits the searched author are retained. Every candidate shows artwork, artist, year, duration, and track count so editions and volumes can be distinguished before **Add to my albums** is used. No result is a valid availability outcome and is presented differently from authentication, timeout, or provider errors.
+
+Adding a result creates the application's audiobook record; it does not purchase content and does not import audio files. Playback availability remains governed by TIDAL and Roon.
 
 ### Synchronising the library
 
@@ -404,6 +450,14 @@ Short false starts are excluded from listening time and top lists but may remain
 - **Story:** sequential chapter cards with navigation and autoplay.
 - **Status:** tracking period, data quality, cover coverage, and missing data.
 - **Listening history:** filterable list of historical playback.
+
+### Track-level listening history
+
+![Wrapped Tracks with date and source filters](../assets/screenshots/tracks.png)
+
+The **Tracks** view exposes the individual plays behind the summary values. Each row includes cover, title, artist, album, timestamp, source, station when applicable, and counted listening time. The period selector can show a day or a broader Wrapped range; the source selector can isolate normal Roon playback, Live Radio, or Spotify.
+
+Selecting a row opens a zone chooser. The application searches the historical title in Roon and sends the resolved result to the selected zone. This view also helps locate entries whose artist, album, or cover needs repair, because the original source and listening time remain visible.
 
 ### Date ranges
 
@@ -502,6 +556,8 @@ Roon playlists can be sorted alphabetically, by track count, or in the order vis
 
 ## 13. Remote slots
 
+![Configuration of ten IR and WLAN remote slots](../assets/screenshots/remote_v2.png)
+
 Up to ten quick actions can be created under **Configuration > Remote**. A slot has:
 
 - a number,
@@ -517,9 +573,15 @@ Possible actions include:
 
 Each slot can be tested from Configuration. Active slots appear in the intended interface locations and can also be triggered by compatible local remote-control solutions.
 
+The **Toggle** setting is useful when one hardware button should alternate an action such as play and pause. **Load targets** retrieves the stations or playlists appropriate for the selected action from Roon. The visible label is independent of the Roon target name, so a short hardware-friendly name can be used without renaming the zone or playlist in Roon. Disabled slots keep their configuration but do not react.
+
+Compatible ESP32, IR/WLAN, or home-automation controllers can call a protected local endpoint for a numbered slot. The API token and local-network security remain the responsibility of the installation; these endpoints should not be exposed directly to the internet.
+
 ## 14. Network triggers
 
 Network triggers connect Roon playback state to external devices.
+
+![Two independent network triggers with live state and countdown](../assets/screenshots/remote_trigger_2.png)
 
 ### Typical uses
 
@@ -563,7 +625,11 @@ Zones with an active trigger and OFF command receive a manual OFF control in eve
 
 For a shared trigger, the interface warns when another assigned zone remains active. The manual action must not block the next genuine playback start.
 
+The status panel is intended for more than setup: it reports the aggregated zone state, current trigger output, remaining timer, latest command result, and response latency. This makes a real automatic transition distinguishable from a successful isolated test. Multiple triggers are processed independently, so one failing HTTP endpoint does not redefine another trigger's state.
+
 ## 15. Remote-control proxy
+
+![RoPieee dummy-zone proxy configuration and live status](../assets/screenshots/ropieee_remote.png)
 
 The optional dummy-zone proxy can forward play, pause, next, and previous from a Bluetooth or similar remote to the most recently active music or audiobook zone.
 
@@ -577,6 +643,17 @@ It requires:
 The application distinguishes intentional marker movement from natural track completion and feedback. Target zone, marker, last command, and acknowledgement time are shown in Configuration. Volume and mute are not forwarded.
 
 Validate the configuration and synchronise the dummy zone before use.
+
+### RoPieee workflow
+
+RoPieee is configured to control only the dedicated dummy zone. No custom component is installed on RoPieee. The dummy output should be silent and its queue contains the supplied long tracks **Remote Marker A**, **Remote Marker B**, and **Remote Marker C** in that order. The application enables repeat and disables shuffle and Roon Radio for this queue.
+
+- A play or pause change on the dummy zone is forwarded as play or pause.
+- A deliberate marker movement is interpreted as next or previous.
+- Natural marker completion and changes generated by the application itself are suppressed so they do not create control loops.
+- The most recently active configured music or audiobook zone becomes the destination; a default applies before any activity, and the last destination can optionally survive a restart.
+
+The live panel shows readiness, active destination, dummy-zone state, last forwarded command, marker validation, and confirmation time. **Synchronise dummy** restores the expected queue and state after configuration changes. Volume and mute are intentionally outside the implemented proxy.
 
 ## 16. Browser and RoonAIViewer
 

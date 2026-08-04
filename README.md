@@ -15,7 +15,7 @@
 
 Roon AI Playlist is designed for people who already use Roon and want more control over discovery, presentation, listening history, live radio, audiobooks, and connected devices.
 
-Roon remains responsible for the music library, streaming, RAAT, DSP, zones, queues, and audio playback. Roon AI Playlist connects to that existing system and adds workflows that standard Roon does not provide on its own.
+**Roon AI Playlist is not intended to replace the Roon user interface or any of Roon's core functions.** Roon remains responsible for the music library, streaming, RAAT, DSP, zones, queues, and audio playback. This companion was created to make useful workflows available outside Roon where Roon itself does not offer them, as far as the Roon Extension APIs allow. It works with the existing Roon system and sends playback operations back to Roon.
 
 The application runs locally and can be operated in three ways:
 
@@ -70,6 +70,12 @@ Every station has its own persistent metadata policy:
 
 ![Zone detail with queue and artist artwork](assets/screenshots/player.png)
 
+#### Spotify and external playback in Roon
+
+When Roon is playing a Spotify or another external stream, the zone view changes to a presentation suited to the metadata that source actually supplies. Album cover, artist portrait, wide artist artwork, title, artist, and album remain separate visual elements; duration and seek controls are hidden when they would be misleading. Qualified Spotify listening can also be identified as its own source in Wrapped. The application does not log in to Spotify or replace a Spotify client—it presents and records playback that reaches it through Roon.
+
+![Spotify playback with cover and artist imagery](assets/screenshots/spotify_pl.png)
+
 ### Audiobooks inside the Roon environment
 
 - Synchronise Roon albums identified as audiobooks.
@@ -83,6 +89,16 @@ Every station has its own persistent metadata policy:
 
 ![Audiobook player with chapters and bookmarks](assets/screenshots/audiobooks.png)
 
+#### Discovering audiobooks before they are in the Roon library
+
+The audiobook search is a separate catalogue view for finding current German-language releases. It can browse Audible.de or the German National Library catalogue, filter by title, author, keyword, genre, year, and sort order, and show narrator, duration, genres, rating, and an audio-sample action where available. A result can be opened at its original source or passed to the TIDAL search.
+
+![Audiobook discovery through the Audible catalogue](assets/screenshots/audible.png)
+
+The TIDAL audiobook search then looks for matching albums and verifies the album's artist relationship independently. Results show cover, author or artist, year, duration, and track count before an album is added to the personal audiobook list. This also makes a genuine “not available on TIDAL” result distinguishable from a failed provider connection.
+
+![TIDAL album search for a selected audiobook](assets/screenshots/tidal_search.png)
+
 ### Personal Roon Wrapped
 
 - Record qualified listening sessions from normal Roon playback, live radio, and Spotify streams locally.
@@ -95,6 +111,12 @@ Every station has its own persistent metadata policy:
 - Inspect data quality and repair missing albums or covers.
 
 ![Personal Roon Wrapped show](assets/screenshots/wrapped.png)
+
+#### Listening history down to the individual track
+
+The **Tracks** view is the inspectable foundation behind the visual summaries. It lists every counted play with cover, title, artist, album, timestamp, source, station where applicable, and effective listening time. The list can be limited by period and by source—Roon, live radio, or Spotify—and a historical title can be sent back to a selected Roon zone. This is also where incorrect or incomplete historical metadata becomes visible instead of disappearing inside an aggregate chart.
+
+![Filterable Wrapped track history](assets/screenshots/tracks.png)
 
 ### Artwork and artist-image management
 
@@ -110,10 +132,25 @@ Every station has its own persistent metadata policy:
 ### Direct TIDAL tools
 
 - Search TIDAL directly for artists, tracks, and albums.
-- Import suitable TIDAL mixes with custom exclusion rules.
+- Discover My Daily Discovery, numbered My Mixes, New Arrivals, track radio, artist radio, and other personal-radio entries exposed by the connected TIDAL account.
+- Start a mix in the selected Roon zone or append it to the current queue.
+- Save selected mixes and personal radios as TIDAL playlists, manually or on a scheduled daily synchronisation.
+- Exclude video, artist-radio, or track-radio entries when they are not wanted.
 - Configure a dedicated TIDAL target playlist for each Roon zone.
 - Add the currently playing track or an identified live-radio track through `T+`.
 - Keep mix search text and filters in the local application profile.
+
+#### Personal mixes and radio
+
+The mix browser brings the personal TIDAL recommendations that are otherwise spread across several TIDAL surfaces into one filterable overview. Every card identifies its type and seed artists. The target Roon zone is selected once; **Start mix** replaces playback while **Append mix** keeps the current queue and adds the result. Selected entries can be persisted as ordinary TIDAL playlists, and the synchronisation status shows the last run and the number of successful updates.
+
+![TIDAL personal mixes and radio browser](assets/screenshots/personal_radio.png)
+
+#### TIDAL playlist browser
+
+The playlist browser searches both TIDAL editorial playlists and the connected user's playlists. Decade, genre, mood, and topic chips can be combined with free text; the source filter can restrict the result to TIDAL or user playlists. Cards show ownership and track count, a preview exposes the first titles before playback, and each result can either start in Roon or be appended to the selected zone.
+
+![Direct TIDAL playlist search and playback in Roon](assets/screenshots/tidal_pl.png)
 
 ### Remote actions and external devices
 
@@ -124,6 +161,24 @@ Every station has its own persistent metadata policy:
 - Schedule switch-off after pause or stop and cancel it automatically when playback resumes.
 - Use a manual OFF control to stop the zone, cancel its scheduler, and switch assigned devices off immediately.
 - Optionally use a dedicated Roon dummy zone as a Bluetooth remote-control proxy for play, pause, next, and previous.
+
+#### Ten configurable remote slots
+
+Each slot has an enable switch, label, action, Roon zone, and—when required—a station or playlist target. Toggle behaviour can be enabled for actions such as play/pause. Targets are loaded from the connected Roon system, and every slot can be tested before it is used from the interface or through the protected local HTTP endpoint of an ESP32, IR bridge, or similar controller.
+
+![Ten configurable IR and WLAN remote slots](assets/screenshots/remote_v2.png)
+
+#### Independent network triggers
+
+A network trigger watches one or several zones and owns its own optional ON command, optional OFF command, and switch-off delay. The live status shows the zone group, output state, countdown, last command, response time, and validation result. Several triggers can watch the same zone—for example one for an amplifier and one for a display—without coupling their commands. Tests are explicit, and the safety logic withholds OFF when an assigned zone is active, missing, or uncertain.
+
+![Independent network triggers with status and scheduler](assets/screenshots/remote_trigger_2.png)
+
+#### RoPieee remote-control bridge
+
+RoPieee normally directs remote-control events to one fixed Roon zone. The optional proxy lets it control a dedicated silent dummy zone instead. Three supplied marker tracks encode previous and next, while the dummy zone's transport state represents play and pause. Roon AI Playlist forwards those actions to the most recently active configured music or audiobook zone, remembers the target across restarts if desired, suppresses feedback loops, and displays marker validation and measured acknowledgement latency. Nothing is installed on RoPieee, and volume or mute are deliberately not forwarded.
+
+![RoPieee dummy-zone remote proxy configuration and status](assets/screenshots/ropieee_remote.png)
 
 ### Maintenance and reliability
 

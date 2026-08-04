@@ -15,7 +15,7 @@
 
 Roon AI Playlist richtet sich an Menschen, die Roon bereits verwenden und mehr Kontrolle über Musikentdeckung, Darstellung, Hörhistorie, Live Radio, Hörbücher und angeschlossene Geräte wünschen.
 
-Roon bleibt für Musikbibliothek, Streaming, RAAT, DSP, Zonen, Warteschlangen und Audiowiedergabe zuständig. Roon AI Playlist verbindet sich mit diesem vorhandenen System und ergänzt Arbeitsabläufe, die Roon selbst nicht bereitstellt.
+**Roon AI Playlist soll weder die Roon-Oberfläche noch irgendeine Kernfunktion von Roon ersetzen.** Roon bleibt für Musikbibliothek, Streaming, RAAT, DSP, Zonen, Warteschlangen und Audiowiedergabe zuständig. Diese Begleitanwendung wurde ausschließlich dafür geschaffen, außerhalb von Roon nützliche, dort fehlende Arbeitsabläufe zu ermöglichen – so weit es die Roon-Extension-APIs zulassen. Sie arbeitet mit dem vorhandenen Roon-System und gibt Wiedergabeaktionen an Roon zurück.
 
 Die Anwendung läuft lokal und lässt sich auf drei Arten bedienen:
 
@@ -70,6 +70,12 @@ Jeder Sender besitzt einen dauerhaft gespeicherten Metadatenmodus:
 
 ![Zonendetail mit Warteschlange und Interpretenbild](assets/screenshots/player.png)
 
+#### Spotify und externe Wiedergabe in Roon
+
+Spielt Roon einen Spotify- oder anderen externen Stream, wechselt die Zonenansicht zu einer Darstellung, die zu den tatsächlich gelieferten Metadaten passt. Albumcover, Künstlerporträt, breites Künstlerbild, Titel, Interpret und Album bleiben getrennte Bildelemente; Dauer- und Suchlaufsteuerung werden ausgeblendet, wenn sie irreführend wären. Qualifizierte Spotify-Wiedergaben lassen sich in Wrapped als eigene Quelle erkennen. Die App meldet sich nicht bei Spotify an und ersetzt keinen Spotify-Client – sie stellt die Wiedergabe dar und erfasst sie, wenn sie über Roon bei ihr ankommt.
+
+![Spotify-Wiedergabe mit Cover und Interpretenbildern](assets/screenshots/spotify_pl.png)
+
 ### Hörbücher innerhalb der Roon-Umgebung
 
 - Als Hörbuch erkannte Roon-Alben synchronisieren.
@@ -83,6 +89,16 @@ Jeder Sender besitzt einen dauerhaft gespeicherten Metadatenmodus:
 
 ![Hörbuchplayer mit Kapiteln und Lesezeichen](assets/screenshots/audiobooks.png)
 
+#### Hörbücher entdecken, bevor sie in der Roon-Bibliothek liegen
+
+Die Hörbuchsuche ist eine eigenständige Katalogansicht für aktuelle deutschsprachige Veröffentlichungen. Sie kann Audible.de oder den Katalog der Deutschen Nationalbibliothek durchsuchen, nach Titel, Autor, Suchwort, Genre und Jahr filtern und nach verschiedenen Kriterien sortieren. Angezeigt werden je nach Quelle unter anderem Sprecher, Laufzeit, Genres, Bewertung und eine Hörprobenaktion. Ein Ergebnis lässt sich bei seiner Originalquelle öffnen oder an die TIDAL-Suche übergeben.
+
+![Hörbuchentdeckung über den Audible-Katalog](assets/screenshots/audible.png)
+
+Die anschließende TIDAL-Hörbuchsuche sucht passende Alben und prüft die Interpretenbeziehung des Albums unabhängig. Vor der Übernahme in die persönliche Hörbuchliste zeigt sie Cover, Autor beziehungsweise Interpret, Jahr, Laufzeit und Titelanzahl. Dadurch lässt sich auch ein echtes „bei TIDAL nicht verfügbar“ von einer gestörten Providerverbindung unterscheiden.
+
+![TIDAL-Albensuche zu einem ausgewählten Hörbuch](assets/screenshots/tidal_search.png)
+
 ### Persönliches Roon Wrapped
 
 - Qualifizierte Hörsitzungen aus normaler Roon-Wiedergabe, Live Radio und Spotify-Streams lokal erfassen.
@@ -95,6 +111,12 @@ Jeder Sender besitzt einen dauerhaft gespeicherten Metadatenmodus:
 - Datenqualität prüfen und fehlende Alben oder Cover nacharbeiten.
 
 ![Persönliche Roon-Wrapped-Show](assets/screenshots/wrapped.png)
+
+#### Hörhistorie bis zum einzelnen Titel
+
+Die Ansicht **Tracks** ist die nachvollziehbare Datengrundlage hinter den visuellen Zusammenfassungen. Sie zeigt jede gezählte Wiedergabe mit Cover, Titel, Interpret, Album, Zeitpunkt, Quelle, gegebenenfalls Sender und tatsächlich gewerteter Hörzeit. Die Liste kann nach Zeitraum und Quelle – Roon, Live Radio oder Spotify – gefiltert werden; ein historischer Titel lässt sich erneut an eine ausgewählte Roon-Zone senden. Unvollständige oder falsche historische Metadaten bleiben hier sichtbar, statt in einer aggregierten Grafik zu verschwinden.
+
+![Filterbare Wrapped-Titelhistorie](assets/screenshots/tracks.png)
 
 ### Cover- und Interpretenbildverwaltung
 
@@ -110,10 +132,25 @@ Jeder Sender besitzt einen dauerhaft gespeicherten Metadatenmodus:
 ### Direkte TIDAL-Werkzeuge
 
 - TIDAL direkt nach Interpreten, Titeln und Alben durchsuchen.
-- Geeignete TIDAL-Mixe mit eigenen Ausschlussregeln übernehmen.
+- My Daily Discovery, nummerierte My Mixes, New Arrivals, Titelradio, Interpretenradio und weitere persönliche Radioeinträge des verbundenen TIDAL-Kontos ermitteln.
+- Einen Mix in der ausgewählten Roon-Zone starten oder an die laufende Queue anhängen.
+- Ausgewählte Mixe und persönliche Radios manuell oder per täglicher Synchronisierung als TIDAL-Playlisten speichern.
+- Video-, Interpretenradio- oder Titelradio-Einträge bei Bedarf ausschließen.
 - Pro Roon-Zone eine feste TIDAL-Zielplaylist konfigurieren.
 - Den laufenden Titel oder einen erkannten Live-Radio-Titel über `T+` hinzufügen.
 - Mix-Suchtext und Filter im lokalen App-Profil speichern.
+
+#### Persönliche Mixe und Radios
+
+Der Mix-Browser fasst die persönlichen TIDAL-Empfehlungen, die sonst auf mehrere TIDAL-Oberflächen verteilt sind, in einer filterbaren Übersicht zusammen. Jede Karte nennt Typ und prägende Interpreten. Die Zielzone wird einmal ausgewählt; **Mix starten** ersetzt die Wiedergabe, während **Mix anhängen** die laufende Queue beibehält und ergänzt. Ausgewählte Einträge können als normale TIDAL-Playlisten dauerhaft gespeichert werden. Der Synchronisationsstatus zeigt den letzten Lauf und die Zahl erfolgreicher Aktualisierungen.
+
+![TIDAL-Browser für persönliche Mixe und Radios](assets/screenshots/personal_radio.png)
+
+#### TIDAL-Playlist-Browser
+
+Der Playlist-Browser durchsucht sowohl redaktionelle TIDAL-Playlisten als auch die Playlisten des verbundenen Benutzers. Jahrzehnt-, Genre-, Stimmungs- und Themenfilter lassen sich mit freiem Suchtext verbinden; der Quellenfilter kann die Treffer auf TIDAL- oder Benutzerplaylisten begrenzen. Die Karten zeigen Herkunft und Titelanzahl, eine Vorschau nennt vor dem Start die ersten Titel und jeder Treffer kann die Wiedergabe in Roon beginnen oder an die ausgewählte Zone angehängt werden.
+
+![Direkte TIDAL-Playlist-Suche und Wiedergabe in Roon](assets/screenshots/tidal_pl.png)
 
 ### Fernbedienung und externe Geräte
 
@@ -124,6 +161,24 @@ Jeder Sender besitzt einen dauerhaft gespeicherten Metadatenmodus:
 - Ausschalten nach Pause oder Stopp planen und bei erneuter Wiedergabe automatisch abbrechen.
 - Mit einem manuellen AUS-Schalter die Zone stoppen, den Scheduler beenden und zugeordnete Geräte sofort ausschalten.
 - Optional eine eigene Roon-Dummy-Zone als Bluetooth-Fernbedienungsproxy für Play, Pause, Next und Previous verwenden.
+
+#### Zehn konfigurierbare Remote-Slots
+
+Jeder Slot besitzt Aktivierung, Beschriftung, Aktion, Roon-Zone und – falls erforderlich – einen Sender oder eine Playlist als Ziel. Für Aktionen wie Play/Pause kann ein Toggle-Verhalten aktiviert werden. Ziele werden aus dem verbundenen Roon-System geladen; jeder Slot lässt sich testen, bevor er in der Oberfläche oder über den geschützten lokalen HTTP-Endpunkt eines ESP32, einer IR-Bridge oder eines ähnlichen Controllers verwendet wird.
+
+![Zehn konfigurierbare IR- und WLAN-Remote-Slots](assets/screenshots/remote_v2.png)
+
+#### Unabhängige Netzwerk-Trigger
+
+Ein Netzwerk-Trigger überwacht eine oder mehrere Zonen und besitzt einen eigenen optionalen EIN-Befehl, optionalen AUS-Befehl und eine Ausschaltverzögerung. Der Live-Status zeigt Zonengruppe, Ausgangszustand, Countdown, letzten Befehl, Antwortzeit und Prüfergebnis. Mehrere Trigger können dieselbe Zone überwachen – etwa getrennt für Verstärker und Display –, ohne ihre Befehle aneinander zu koppeln. Tests werden ausdrücklich ausgelöst; die Sicherheitslogik hält AUS zurück, solange eine zugeordnete Zone aktiv, nicht vorhanden oder ihr Zustand unsicher ist.
+
+![Unabhängige Netzwerk-Trigger mit Status und Scheduler](assets/screenshots/remote_trigger_2.png)
+
+#### RoPieee-Fernbedienungsbrücke
+
+RoPieee leitet Fernbedienungsereignisse normalerweise an eine fest gewählte Roon-Zone. Der optionale Proxy lässt RoPieee stattdessen eine eigene stumme Dummy-Zone steuern. Drei mitgelieferte Markertitel codieren Previous und Next, während der Transportzustand der Dummy-Zone Play und Pause abbildet. Roon AI Playlist leitet diese Aktionen an die zuletzt aktive konfigurierte Musik- oder Hörbuchzone weiter, kann das Ziel über App-Neustarts hinweg merken, unterdrückt Rückkopplungen und zeigt Markerprüfung sowie gemessene Bestätigungszeit. Auf RoPieee wird nichts installiert; Lautstärke und Mute werden bewusst nicht weitergeleitet.
+
+![Konfiguration und Status des RoPieee-Dummy-Zonen-Proxys](assets/screenshots/ropieee_remote.png)
 
 ### Wartung und Stabilität
 

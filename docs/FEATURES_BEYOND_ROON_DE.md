@@ -4,7 +4,7 @@
 
 Stand: Roon AI Playlist `1.0.458`, 3. August 2026.
 
-Diese Übersicht nennt Funktionen, die **Roon AI Playlist** zusätzlich zu den Bordmitteln des originalen Roon bereitstellt. Verglichen wird mit Roon ohne weitere Extensions, Skripte oder Hausautomationssysteme. Roons Kernfunktionen wie RAAT-Wiedergabe, DSP, normale Zonensteuerung, Zonengruppierung, Bibliotheksverwaltung, Roon Radio, klassische Playlisten, TIDAL-Wiedergabe, History, Albumcover, Sleep Timer, Roon Display und Roon-Datenbankbackups werden nicht als App-Vorteil gezählt.
+Diese Übersicht nennt Funktionen, die **Roon AI Playlist** zusätzlich zu den Bordmitteln des originalen Roon bereitstellt. Sie beschreibt keinen Ersatz für die Roon-Oberfläche oder irgendeine Roon-Funktion. Die Begleitanwendung soll ausschließlich außerhalb von Roon nützliche, dort fehlende Arbeitsabläufe ermöglichen – so weit es die Roon-Extension-APIs zulassen. Verglichen wird mit Roon ohne weitere Extensions, Skripte oder Hausautomationssysteme. Roons Kernfunktionen wie RAAT-Wiedergabe, DSP, normale Zonensteuerung, Zonengruppierung, Bibliotheksverwaltung, Roon Radio, klassische Playlisten, TIDAL-Wiedergabe, History, Albumcover, Sleep Timer, Roon Display und Roon-Datenbankbackups werden nicht als App-Vorteil gezählt.
 
 ## 1. KI- und externe Playlist-Erzeugung
 
@@ -23,6 +23,8 @@ Roon besitzt mit Valence und Roon Radio eine eigene Empfehlungslogik und verwalt
 
 ## 2. Direkte TIDAL-Werkzeuge
 
+![Browser für persönliche TIDAL-Mixe und Radios](../assets/screenshots/personal_radio.png)
+
 - TIDAL direkt über API V2 durchsuchen.
 - Künstler-, Titel- und Albumbeziehungen getrennt auflösen.
 - TIDAL-Mixe mit eigenen Ausschlussfiltern übernehmen.
@@ -30,6 +32,12 @@ Roon besitzt mit Valence und Roon Radio eine eigene Empfehlungslogik und verwalt
 - Den laufenden Titel mit `T+` direkt dieser Zielplaylist hinzufügen.
 - Identifizierte Live-Radio-Titel in TIDAL speichern.
 - Mix-Suchtext und Ausschlussfilter dauerhaft im App-Profil speichern.
+
+Persönliche Entdeckung beschränkt sich nicht auf eine Textsuche. My Daily Discovery, nummerierte My Mixes, New Arrivals, Titelradio und Interpretenradio lassen sich gemeinsam prüfen, in einer ausgewählten Roon-Zone starten oder anhängen und gezielt in beständige TIDAL-Playlisten synchronisieren. Videos und Radiokategorien können von dieser Synchronisierung ausgeschlossen werden.
+
+![Browser für redaktionelle und eigene TIDAL-Playlisten](../assets/screenshots/tidal_pl.png)
+
+Die Playlist-Ansicht kombiniert Freitext mit Jahrzehnt-, Genre-, Stimmungs-, Themen- und Herkunftsfiltern. Eine Vorschau zeigt die ersten Titel, bevor eine Playlist die Roon-Queue ersetzt oder erweitert.
 
 Roons TIDAL-Ansicht ist laut Roon kein direkter Durchgriff auf den jeweils aktuellen TIDAL-Client, sondern verwendet eine regelmäßig erzeugte Roon-Datenbank. Siehe [TIDAL in Roon](https://help.roonlabs.com/portal/en/kb/articles/tidal).
 
@@ -65,6 +73,8 @@ Roon kann Bibliotheksalben identifizieren und eigene Albumcover übernehmen, bes
 
 ## 5. Hörbuchverwaltung und Aufnahme
 
+![Hörbuchkatalog von Audible und DNB](../assets/screenshots/audible.png)
+
 - Roon-Alben als Hörbücher synchronisieren und auch bei mehreren hundert Kapiteln vollständig analysieren.
 - Kapitelanzahl, Gesamtdauer und lokalen Hörfortschritt verwalten.
 - Hörbücher fortsetzen, neu starten oder kapitelweise abspielen.
@@ -80,7 +90,15 @@ Roon kann Bibliotheksalben identifizieren und eigene Albumcover übernehmen, bes
 - Aufnahme- und Verarbeitungfortschritt, Restzeit, Prozesszustand und Fehler anzeigen.
 - Mastersegmente bei einem Fehler als sichtbare Rettungsdateien erhalten.
 
+Der Entdeckungskatalog lässt sich nach Autor, Titel, Suchwort, Genre, Jahr und Quelle filtern und kann Sprecher, Laufzeit, Bewertung, Hörprobe sowie Quellverweise zeigen. Ein Katalogtreffer kann anschließend eine eigene TIDAL-Suche öffnen, statt seine Verfügbarkeit dort vorauszusetzen.
+
+![Für ein gewähltes Hörbuch geprüfte TIDAL-Kandidaten](../assets/screenshots/tidal_search.png)
+
+TIDAL-Albumkandidaten werden über ihre Interpretenbeziehung gegengeprüft und mit Ausgabedetails dargestellt, bevor sie in die Hörbuchliste der App gelangen. Leere Verfügbarkeit und Providerfehler bleiben getrennte Ergebnisse.
+
 ## 6. Roon Wrapped
+
+![Filterbare titelgenaue Wrapped-Historie](../assets/screenshots/tracks.png)
 
 - Qualifizierte Hörsitzungen aus Roon, Live Radio und Spotify-Streams lokal aufzeichnen.
 - Fehlstarts, Skips und Replays unterscheiden.
@@ -93,9 +111,13 @@ Roon kann Bibliotheksalben identifizieren und eigene Albumcover übernehmen, bes
 - Historische Metadaten, Alben und Cover automatisch vervollständigen.
 - Wrapped-Sessions primär in SQLite und zusätzlich als portablen JSON-Snapshot sichern.
 
+Die Tracks-Ansicht hält die Auswertung überprüfbar: Zu jeder gezählten Wiedergabe bleiben Titel, Interpret, Album, Zeitpunkt, Quelle, Sender, Cover und effektive Hörzeit sichtbar. Datums- und Quellenfilter können Roon, Live Radio oder Spotify isolieren; ein historischer Eintrag lässt sich auflösen und erneut in einer gewählten Roon-Zone starten.
+
 Roon speichert Wiedergabeverlauf und Play Counts, bietet aber nicht diese eigenständige Story-, Export- und Reparaturumgebung. Siehe [In Roon-Backups gespeicherte Daten](https://help.roonlabs.com/portal/en/kb/articles/what-is-a-backup-in-roon).
 
 ## 7. Externe Geräte- und Hausautomationssteuerung
+
+![Unabhängige Netzwerk-Trigger mit Live-Status und Ausschalt-Timern](../assets/screenshots/remote_trigger_2.png)
 
 - Mehrere unabhängige Netzwerk-Trigger mit jeweils einer oder mehreren Roon-Zonen konfigurieren.
 - Frei definierbare HTTP- oder HTTPS-Befehle für `EIN` und `AUS` senden.
@@ -110,12 +132,20 @@ Roons Sleep Timer beendet beziehungsweise blendet lediglich die Wiedergabe der Z
 
 ## 8. Externe Fernbedienungen und Remote-Slots
 
+![Zehn konfigurierbare IR- und WLAN-Aktionsslots](../assets/screenshots/remote_v2.png)
+
 - Bis zu zehn Schnellzugriffsslots für Live Radio, Roon-Playlisten und Zonenaktionen konfigurieren.
 - Slots in der App oder über eine geschützte HTTP-API durch ESP32-, IR- oder andere lokale Controller auslösen.
 - Eine Dummy-Roon-Zone als Bluetooth-Fernbedienungsproxy verwenden.
 - Play, Pause, Next und Previous an die zuletzt aktive Musik- oder Hörbuchzone weiterleiten.
 - Markerbewegungen, natürliches Titelende und Rückkopplungen unterscheiden.
 - Zielzone, Marker, letzten Befehl und Bestätigungsverzögerung anzeigen.
+
+Die zehn nummerierten Slots und der Dummy-Zonen-Proxy lösen unterschiedliche Aufgaben. Slots stellen eindeutige Aktionen in der Oberfläche oder an einem geschützten lokalen HTTP-Endpunkt bereit. Der Proxy übersetzt die Transportereignisse einer ferngesteuerten stummen Roon-Zone in Aktionen für die zuletzt aktive konfigurierte Musik- oder Hörbuchzone.
+
+![Konfiguration und Status des RoPieee-Dummy-Zonen-Proxys](../assets/screenshots/ropieee_remote.png)
+
+Damit kann eine mit RoPieee verbundene Bluetooth-Fernbedienung zwischen zwei wechselnden Zielen verwendet werden, ohne eigene Software auf RoPieee zu installieren. Drei Markertitel codieren die Navigation; Prüfung, Rückkopplungsunterdrückung, Zielspeicherung und gemessene Bestätigung übernimmt die Begleitanwendung. Lautstärke und Mute gehören nicht zu diesem Proxy.
 
 ## 9. Player, Browser und Viewer
 
@@ -127,6 +157,10 @@ Roons Sleep Timer beendet beziehungsweise blendet lediglich die Wiedergabe der Z
 - Cover, Künstlerprofilbild und Künstlerhintergrund getrennt präsentieren.
 - Eine vollständige Bedienoberfläche in einem normalen LAN-Browser bereitstellen.
 - Den schlanken Windows-Viewer mit WebView2, Tray, Autostart, Zoom und per DPAPI geschütztem Token einsetzen.
+
+![Spotify-Wiedergabe in der eigenen Zonendarstellung](../assets/screenshots/spotify_pl.png)
+
+Spotify und andere externe Wiedergaben werden nur dargestellt, wenn sie die App über Roon erreichen. Die Begleitanwendung wird nicht selbst zum Spotify-Client; sie passt die Anzeige an die gelieferten Streamdaten an und erfasst qualifizierte Spotify-Sitzungen als eigene Wrapped-Quelle.
 
 Roons Web Display zeigt Now Playing und Liedtexte im Browser, ist aber keine vollständige Browser-Fernbedienung mit diesen App-Werkzeugen. Siehe [Roon Displays](https://help.roonlabs.com/portal/en/kb/articles/displays).
 

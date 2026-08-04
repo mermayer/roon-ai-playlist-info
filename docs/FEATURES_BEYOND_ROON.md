@@ -4,7 +4,7 @@
 
 Status: Roon AI Playlist `1.0.458`, August 3, 2026.
 
-This overview lists capabilities that **Roon AI Playlist** adds beyond standard Roon. The comparison assumes Roon without third-party extensions, scripts, or home-automation systems. Roon's own core capabilities—including RAAT playback, DSP, regular zone control and grouping, library management, Roon Radio, normal playlists, TIDAL playback, History, album artwork, Sleep Timer, Roon Display, and Roon database backups—are deliberately not counted as application advantages.
+This overview lists capabilities that **Roon AI Playlist** adds beyond standard Roon. It is not a proposed replacement for the Roon GUI or any Roon function. The companion exists only to provide useful workflows outside Roon where they are missing, as far as the Roon Extension APIs permit. The comparison assumes Roon without third-party extensions, scripts, or home-automation systems. Roon's own core capabilities—including RAAT playback, DSP, regular zone control and grouping, library management, Roon Radio, normal playlists, TIDAL playback, History, album artwork, Sleep Timer, Roon Display, and Roon database backups—are deliberately not counted as application advantages.
 
 ## 1. AI and external playlist generation
 
@@ -23,6 +23,8 @@ Roon provides its own recommendation engine through Valence and Roon Radio and m
 
 ## 2. Direct TIDAL tools
 
+![Personal TIDAL mix and radio browser](../assets/screenshots/personal_radio.png)
+
 - Search TIDAL directly through API V2.
 - Resolve artist, track, and album relationships separately.
 - Transfer TIDAL mixes with custom exclusion filters.
@@ -30,6 +32,12 @@ Roon provides its own recommendation engine through Valence and Roon Radio and m
 - Add the current track to that target with `T+`.
 - Save identified live-radio tracks to TIDAL.
 - Persist mix search text and exclusions in the local app profile.
+
+Personal discovery is not limited to a text search. My Daily Discovery, numbered My Mixes, New Arrivals, track radio, and artist radio can be reviewed together, started or appended in a selected Roon zone, and selectively synchronised into stable TIDAL playlists. Video and radio categories can be excluded from that synchronisation.
+
+![TIDAL editorial and user-playlist browser](../assets/screenshots/tidal_pl.png)
+
+The playlist view combines free text with decade, genre, mood, topic, and ownership filters. A preview reveals the first titles before a playlist replaces or extends the Roon queue.
 
 Roon explains that its TIDAL view is not a live pass-through of the current TIDAL client and instead uses a periodically generated Roon database. See [TIDAL in Roon](https://help.roonlabs.com/portal/en/kb/articles/tidal).
 
@@ -65,6 +73,8 @@ Roon can identify library albums and accept custom album artwork, but it does no
 
 ## 5. Audiobook management and capture
 
+![Audible and DNB audiobook catalogue](../assets/screenshots/audible.png)
+
 - Synchronize Roon albums as audiobooks and fully analyze books with hundreds of chapters.
 - Maintain chapter count, total duration, and local listening progress.
 - Resume, restart, or play a selected chapter.
@@ -80,7 +90,15 @@ Roon can identify library albums and accept custom album artwork, but it does no
 - Display recording and processing progress, remaining time, process state, and failures.
 - Preserve master segments as visible rescue files after a real failure.
 
+The discovery catalogue can be filtered by author, title, keyword, genre, year, and source and can expose narrator, duration, rating, sample, and source links. A catalogue result can then open a dedicated TIDAL search rather than assuming that the audiobook is available there.
+
+![TIDAL candidates verified for a selected audiobook](../assets/screenshots/tidal_search.png)
+
+TIDAL album candidates are cross-checked through their artist relationship and presented with edition details before they enter the application's audiobook list. Empty availability and provider failure are separate outcomes.
+
 ## 6. Roon Wrapped
+
+![Filterable Wrapped track-level history](../assets/screenshots/tracks.png)
 
 - Record qualified listening sessions from Roon, Live Radio, and Spotify streams locally.
 - Distinguish short false starts, skips, and replays.
@@ -93,9 +111,13 @@ Roon can identify library albums and accept custom album artwork, but it does no
 - Repair historical metadata, albums, and artwork automatically.
 - Store sessions primarily in SQLite with a portable JSON snapshot.
 
+The Tracks view keeps the analysis auditable: each counted play retains title, artist, album, timestamp, source, station, cover, and effective listening time. Date and source filters can isolate Roon, Live Radio, or Spotify, and a historical item can be resolved and replayed in a chosen Roon zone.
+
 Roon stores listening history and play counts, but does not provide this standalone Story, export, and repair environment. See [Data stored in Roon backups](https://help.roonlabs.com/portal/en/kb/articles/what-is-a-backup-in-roon).
 
 ## 7. External-device and home-automation control
+
+![Independent network triggers with live status and switch-off timers](../assets/screenshots/remote_trigger_2.png)
 
 - Configure multiple independent network triggers, each monitoring one or more Roon zones.
 - Send arbitrary HTTP or HTTPS `ON` and `OFF` commands.
@@ -110,12 +132,20 @@ Roon's Sleep Timer stops or fades playback for a zone; it does not send arbitrar
 
 ## 8. External remotes and action slots
 
+![Ten configurable IR and WLAN action slots](../assets/screenshots/remote_v2.png)
+
 - Configure up to ten shortcuts for Live Radio, Roon playlists, and zone actions.
 - Trigger slots in the app or through a protected HTTP API from ESP32, IR, or similar local controllers.
 - Use a dummy Roon zone as a Bluetooth remote-control proxy.
 - Forward play, pause, next, and previous to the most recently active music or audiobook zone.
 - Distinguish marker movement, natural track completion, and feedback loops.
 - Display target zone, marker, last command, and acknowledgement latency.
+
+The ten numbered slots and the dummy-zone proxy solve different problems. Slots expose explicit actions to the interface or a protected local HTTP endpoint. The proxy translates the transport events of a remote-controlled silent Roon zone into actions for whichever configured music or audiobook zone was active most recently.
+
+![RoPieee dummy-zone proxy configuration and status](../assets/screenshots/ropieee_remote.png)
+
+This makes a RoPieee-connected Bluetooth remote useful across two changing destinations without installing custom software on RoPieee. Three marker tracks encode navigation; validation, feedback suppression, target persistence, and measured acknowledgement are handled by the companion. Volume and mute are not part of this proxy.
 
 ## 9. Player, browser, and viewer
 
@@ -127,6 +157,10 @@ Roon's Sleep Timer stops or fades playback for a zone; it does not send arbitrar
 - Present cover, artist profile image, and artist background separately.
 - Provide a complete control interface in a normal LAN browser.
 - Use the lightweight Windows WebView2 viewer with tray behavior, startup, zoom, and a DPAPI-protected token.
+
+![Spotify playback in the dedicated zone presentation](../assets/screenshots/spotify_pl.png)
+
+Spotify and other external playback is shown only when it reaches the application through Roon. The companion does not become a Spotify client; it adapts the presentation to the supplied stream data and records qualified Spotify sessions as a distinct Wrapped source.
 
 Roon Web Display shows Now Playing and lyrics in a browser, but is not a complete browser remote with these application tools. See [Roon Displays](https://help.roonlabs.com/portal/en/kb/articles/displays).
 

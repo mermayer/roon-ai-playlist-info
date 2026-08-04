@@ -1,6 +1,6 @@
 # App-Überblick
 
-Roon AI Playlist ist eine lokale Begleitanwendung für Roon. Sie ergänzt die Wiedergabe in Roon, ersetzt aber weder den Roon Core noch die normalen Roon-Clients.
+Roon AI Playlist ist eine lokale Begleitanwendung für Roon. Sie soll weder die Roon-Oberfläche, den Roon Core noch irgendeine normale Roon-Funktion ersetzen. Sie wurde geschaffen, um außerhalb von Roon zusätzliche, dort fehlende Arbeitsabläufe bereitzustellen – innerhalb der Möglichkeiten und Grenzen der Roon-Extension-APIs.
 
 ## Bedienmöglichkeiten
 
@@ -26,15 +26,23 @@ Der Player zeigt Roon-Zonen, Wiedergabestatus, Cover, Metadaten, Interpretenbild
 
 ### Hörbücher
 
-Hörbücher aus Roon werden mit Kapiteln, Gesamtdauer, Fortschritt und Lesezeichen verwaltet. Ein Buch lässt sich fortsetzen, neu beginnen oder an einer gespeicherten Position weiterhören.
+Hörbücher aus Roon werden mit Kapiteln, Gesamtdauer, Fortschritt und Lesezeichen verwaltet. Ein Buch lässt sich fortsetzen, neu beginnen oder an einer gespeicherten Position weiterhören. Ein eigener Audible-/DNB-Katalog unterstützt die Entdeckung; eine geprüfte TIDAL-Albensuche kann eine verfügbare Ausgabe in die Hörbuchliste der App übernehmen. Die optionale Aufnahme über eine exklusive lokale Roon-Zone erzeugt MP3-Kapiteldateien mit Metadaten.
 
 ### Wrapped
 
-Wrapped zeichnet qualifizierte Hörsitzungen lokal auf und stellt Hörzeit, Titel, Interpreten, Alben, Quellen, Tageszeiten, Skips und Wiederholungen dar. Dashboard, Show und Story lassen sich für verschiedene Zeiträume öffnen.
+Wrapped zeichnet qualifizierte Hörsitzungen lokal auf und stellt Hörzeit, Titel, Interpreten, Alben, Quellen, Tageszeiten, Skips und Wiederholungen dar. Dashboard, Show, Story, Status und eine filterbare titelgenaue Historie lassen sich für verschiedene Zeiträume öffnen. Historische Titel können über Roon erneut abgespielt werden; Exporte und Reparaturwerkzeuge bearbeiten fehlende Alben und Cover.
+
+### Direkte TIDAL-Werkzeuge
+
+Persönliche Mixe, Daily Discovery, Titelradio, Interpretenradio, redaktionelle Playlisten und Benutzerplaylisten lassen sich filtern, prüfen, in einer gewählten Roon-Zone starten oder anhängen. Ausgewählte dynamische Mixe können in feste TIDAL-Playlisten synchronisiert werden; `T+` speichert den laufenden oder erkannten Live-Radio-Titel in einer pro Zone festgelegten Zielplaylist.
 
 ### Roon Tools
 
 Roon Tools bündelt Live-Radio-Sender, Roon-Playlisten, Warteschlangen und frei belegbare Fernbedienungsaktionen. Pro Radiosender kann festgelegt werden, wie externe Metadaten behandelt werden.
+
+### Fernbedienungen und externe Geräte
+
+Zehn konfigurierbare Aktionsslots können Sender, Playlisten oder Zonenaktionen aus der Oberfläche oder über kompatible lokale Hardware starten. Unabhängige Netzwerk-Trigger verbinden den Zonenstatus mit HTTP-gesteuerten Verstärkern, Steckdosen, IR-Bridges oder Automationssystemen. Ein optionaler RoPieee-Dummy-Zonen-Proxy leitet Play, Pause, Next und Previous an die zuletzt aktive Musik- oder Hörbuchzone weiter.
 
 ### Konfiguration und Wartung
 

@@ -1,8 +1,8 @@
 # Frequently asked questions
 
-## Does Roon AI Playlist replace the Roon Core?
+## Does Roon AI Playlist replace the Roon GUI or Roon Core?
 
-No. The application extends an existing Roon system and requires a reachable Roon Core.
+No. The application deliberately complements Roon instead of reproducing its GUI, library management, playback engine, RAAT, DSP, queues, or standard controls. It requires a reachable Roon Core and adds workflows outside Roon only where the Roon Extension APIs make that possible.
 
 ## Must I use an AI provider?
 

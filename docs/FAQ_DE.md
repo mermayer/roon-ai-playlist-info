@@ -1,8 +1,8 @@
 # Häufige Fragen
 
-## Ersetzt Roon AI Playlist den Roon Core?
+## Ersetzt Roon AI Playlist die Roon-Oberfläche oder den Roon Core?
 
-Nein. Die App ergänzt ein vorhandenes Roon-System und benötigt einen erreichbaren Roon Core.
+Nein. Die App ergänzt Roon bewusst, statt dessen Oberfläche, Bibliotheksverwaltung, Wiedergabe-Engine, RAAT, DSP, Queues oder normale Steuerung nachzubauen. Sie benötigt einen erreichbaren Roon Core und stellt außerhalb von Roon nur die zusätzlichen Arbeitsabläufe bereit, die sich über die Roon-Extension-APIs ermöglichen lassen.
 
 ## Muss ich einen KI-Anbieter verwenden?
 
