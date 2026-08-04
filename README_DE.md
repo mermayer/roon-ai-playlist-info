@@ -8,7 +8,7 @@
 
 ## Aktuelle Versionen
 
-- Informations- und Dokumentationsausgabe: **1.0.0**
+- Informations- und Dokumentationsausgabe: **1.0.1**
 - Roon AI Playlist: **1.0.458**
 - RoonAIViewer: **1.0.3**
 
@@ -253,9 +253,13 @@ Browser- und RoonAIViewer-Zugriff sollten mit einem API-Token geschützt werden.
 - [RoonAIViewer-Benutzerhandbuch](docs/ROONAI_VIEWER_DE.md)
 - [Datenschutz und Sicherheit](docs/DATENSCHUTZ_UND_SICHERHEIT_DE.md)
 - [Häufige Fragen](docs/FAQ_DE.md)
+- [Änderungsprotokoll](CHANGELOG_DE.md)
 - [Versionshinweise](docs/VERSIONSHINWEISE_DE.md)
+- [Rechte und Inhalte Dritter](RIGHTS.md#deutsch)
 - [English documentation](README.md)
 
 ## Verfügbarkeit
 
 Dieses Informations-Repository enthält keine Installationsdateien und keinen Quellcode. Roon AI Playlist und RoonAIViewer werden getrennt bereitgestellt.
+
+© 2026 mermayer. Alle Rechte vorbehalten. Einzelheiten zu dieser Dokumentation und zu den in Screenshots gezeigten Inhalten stehen unter [Rechte und Inhalte Dritter](RIGHTS.md#deutsch).

@@ -1,10 +1,12 @@
 # Versionshinweise
 
-## Nächste Dokumentationsausgabe — noch nicht veröffentlicht
+## Informations- und Dokumentationsausgabe 1.0.1 — 4. August 2026
 
 - erklären, wie die eigenständige native macOS-App SpotBridge 1.0.0 lokale Spotify-Wiedergabe an Roon Audio Input übergibt
 - AAC und verlustfrei codiertes Ogg-FLAC für den Bridge-Transport, übermittelte Metadaten und Cover sowie die optionale Transportkoordination zwischen Spotify und Roon dokumentieren
 - die Aufgaben von SpotBridge bei der Audioaufnahme klar von Darstellung und Wrapped-Funktionen in Roon AI Playlist abgrenzen
+- einen klaren Rechtehinweis für die eigene Dokumentation ergänzen und Marken, Cover, Bilder sowie andere eingebettete Fremdinhalte davon ausnehmen
+- deutsche und englische Änderungsprotokolle für öffentliche Informationsausgaben einführen
 
 ## Informations- und Dokumentationsausgabe 1.0.0 — 4. August 2026
 
