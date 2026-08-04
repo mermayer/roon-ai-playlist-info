@@ -701,62 +701,242 @@ Complete setup, operation, troubleshooting, and uninstallation are covered in th
 
 ## 17. Configuration
 
-### Basic
+Configuration is divided into **Basic**, **UI**, **AI**, **Services**, **Wrapped**, **Remote**, **Maintenance**, and **Save & Logs**. Status cards above the tabs report whether the application package, Roon, selected AI provider, optional services, and data stores are ready. Grey commonly means intentionally disabled or not selected; it does not automatically indicate a fault.
 
-- server and desktop behaviour,
-- Windows startup and minimised startup,
-- image and cover storage,
-- audiobook capture and target zone,
-- fundamental Roon settings.
+Most server settings are applied only with **Save changes**. Client connection, TIDAL authorisation, individual Wrapped maintenance actions, and several remote tests have their own controls and run independently. **Reload** discards unsaved form changes. **Load defaults** only fills the form with default values; they become permanent after saving.
 
-### UI
+Credentials are stored locally. Because application backups can include API keys, tokens, and personal data, treat them like passwords.
 
-- language,
-- visible views,
-- presentation options,
-- browser zoom for overview and detail views.
+### Basic: client connection
 
-### AI
+- **Mode – Local server:** the interface uses the application service that delivered it. This is the normal setting for a complete Windows installation.
+- **Mode – Remote server:** the interface sends API calls to an installation running on another computer.
+- **Server address:** base address including `http://` or `https://` and the port, without `/api`. It is used only in Remote mode.
+- **API token for this client:** must match the target server's `server.apiToken`. It is neither a TIDAL nor an AI key and is stored only in this client's local profile.
+- **Save client settings:** stores these values separately from the server configuration.
+- **Test connection:** checks reachability and token without changing the remaining application settings.
 
-- enable or completely disable AI features,
-- select provider and model,
-- configure local or external connection,
-- test the connection.
+RoonAIViewer manages its server and token through its native connection dialog; see the [RoonAIViewer guide](ROONAI_VIEWER.md).
 
-### Services
+### Basic: desktop startup
 
-- TIDAL,
-- Last.fm,
-- Deezer,
-- fanart.tv,
-- further metadata and image sources,
-- playlist tag lists.
+- **Start with Windows:** starts the Electron application and its local service after Windows sign-in.
+- **Start minimised in the tray:** initially opens no visible main window. The interface remains available through the notification-area icon.
 
-### Wrapped
+Both options apply only to the complete Windows application. Browsers and RoonAIViewer use their own startup mechanisms.
 
-- enable tracking,
-- time and quality rules,
-- export options,
-- complete data,
-- manage missing covers and artist images,
-- configure provider order.
+### Basic: image and cover storage
+
+- **Storage folder:** shared location for the Roon/TIDAL/audiobook cover cache, local artist images, and Wrapped artwork. An empty value uses the application data directory.
+- **Used storage / Objects / Breakdown:** report the size and distribution of the current image collection.
+- **Move contents:** copies and verifies the existing collection before switching to the new directory. Other application data is not moved.
+- **Recalculate size:** refreshes space and object counts without changing files.
+
+The new folder must remain reachable and writable. The verified move and failure behaviour are described in [section 19](#19-storage-and-maintenance).
+
+### Basic: audiobook capture
+
+- **Audio output folder:** absolute writable path on the Windows computer running the application service. In a browser, enter a path on the server—not on the browser device.
+- **Capture zone:** exclusive local Roon zone on that Windows computer. Only its audio signal is recorded.
+- **Output format:** fixed MP3 format at 192 kbit/s CBR.
+
+The system check in [section 9](#9-audiobooks) must pass before the first capture.
+
+### Basic: server, Roon, and logs
+
+- **`server.host`:** network address to which the web server binds. `127.0.0.1` allows local access only; LAN binding should be combined with an API token on a trusted network.
+- **`server.port`:** HTTP port of the application service. Browser and viewer addresses must be adjusted after a change; the application may restart.
+- **`server.apiToken`:** optional protection for control and write access. A configured token must be entered identically in browsers and viewers.
+- **`music.service`:** prefers TIDAL or Qobuz results during Roon search and queueing. It does not enable a direct Qobuz application integration.
+- **`roon.matching.mode`:** `strict` accepts only very close matches; `relaxed` tolerates larger differences and can return more but less accurate matches.
+- **`roon.matching.strategy`:** `smart` uses multi-stage title, alias, and `feat.` fallbacks; `strict` deliberately avoids aggressive fallbacks. `smart` is usually the more robust everyday setting.
+- **`playlists.directory`:** location for saved M3U playlists. Empty uses the automatically determined Music folder.
+- **`roon.configFile`:** path to the Roon pairing/state file. Change this expert option only for deliberate recovery or after diagnosis.
+- **`logs.generationLogRetentionDays`:** automatic generation-log retention in days; `0` disables time-based retention.
+- **Roon now-playing raw log:** writes detailed unprocessed now-playing data to a diagnostic file. Enable it only while investigating a problem because the file and its listening information can grow.
+
+### UI: language, default zone, and playlist presentation
+
+- **`ui.language`:** changes the interface between German and English.
+- **`ui.defaultPlayZoneId`:** zone preselected after startup in Playlist, TIDAL, and tool views. Empty selects the first available zone.
+- **Translate free text internally to English:** turns a non-English free-form playlist request into an English AI working instruction. The visible interface and structured filters remain unchanged.
+- **Show matched Roon/TIDAL title:** displays the spelling of the resolved result rather than only the original suggestion.
+- **Show match confidence:** exposes the Roon-match assessment. The **High** and **Medium** thresholds define which scores appear secure, medium, or uncertain; High must be above Medium.
+- **Replace uncertain results only:** enables a targeted retry for uncertain candidates without touching secure entries.
+
+### UI: repeat filter and model comparison
+
+- **Playlist-history repeat prevention:** checks new suggestions against recently generated playlists.
+- **Lookback playlists:** number of earlier playlists included in that check.
+- **Maximum repeats:** frequency from which a track is considered overused. Stricter values improve variety but can lower the match rate in a small library.
+- **Enable model comparison:** exposes the Ollama model bake-off on the Playlist page.
+- **Models (CSV):** comma-separated Ollama model names to run with the same request.
+- **Metric:** `foundRate` favours the highest Roon hit rate, `duration` the shortest runtime, and `balanced` weighs both.
+
+### UI: Player and Browser presentation
+
+- **Queue preview:** selects three to eight upcoming tracks per zone card.
+- **Browser zone zoom / detail zoom:** scales the complete reduced zone overview or a detail opened from it from 70 to 160 percent.
+- **Browser zone text / detail text:** scales only the text in those Browser views, allowing image and type size to be tuned independently.
+- **Cover backdrop scope:** confines the blurred cover background to the artwork area or extends it across the detail panes and track list.
+- **Track-list brightness:** controls the brightness of that backdrop behind the right-hand track list.
+- **Player zone view:** visibility, order, and per-zone TIDAL target playlist can be assigned for every discovered Roon zone. Layout can be one column, two columns, or automatic. **Load TIDAL playlists** refreshes the targets available to `T+`.
+- **Browser zone view:** maintains its own visibility, order, and column selection. These settings affect only the reduced Browser presentation and do not alter a Roon zone.
+
+### AI: general control
+
+- **Enable AI playlist generation:** switches only the AI source on or off. Player, Last.fm/Deezer/Wrapped playlists, TIDAL, audiobooks, and Roon Tools remain available.
+- **`ai.mode`:** selects Ollama, OpenRouter, OpenAI, Gemini, or Claude. Only the chosen provider's settings are used for new AI playlists.
+- **Request timeout:** maximum wait per AI HTTP request. A larger value accommodates slower models but delays failure detection.
+- **Cloud ultra-saver mode:** attempts cloud generation with one request and no refill. It lowers cost and request volume but may return fewer tracks than requested.
+- **German reference catalogue:** uses a local JSON list as a title basis for German vocals or Schlager. Path selects the file; **Max Hints** limits entries added to each prompt; **Diversity Lookback** avoids recently used reference tracks.
+- **Minimum found rate:** Roon match ratio from which a list is considered sufficient.
+- **Automatically replace missing tracks / maximum passes:** control whether and how often missing candidates are repaired automatically.
+
+### AI: shared provider options
+
+Depending on the provider, fields for **URL**, **API key**, **model preset**, **custom model**, and additional runtime options are offered; not every provider has or supports every setting below. A custom name overrides the preset. API keys are stored locally and included in application backups.
+
+- **Temperature:** lower values produce more stable, less varied answers; higher values increase variation. `auto` lets the application or provider choose. Not every reasoning model accepts temperature.
+- **Reasoning/Think:** controls reasoning effort for compatible models. Unsupported models may ignore or reject it.
+- **Quality mode:** uses a more conservative process and potentially additional checks, requiring more time.
+- **Fast mode:** reduces retries and delays; faster, with less resilience to temporary provider problems.
+- **Saver mode:** attempts a single request and does not refill missing tracks.
+
+### AI: Ollama
+
+- **URL:** Ollama endpoint from the application server's perspective. If Ollama runs on another computer, use its LAN address instead of `localhost`.
+- **Test connection:** checks the endpoint independently of playlist generation.
+- **Preset / custom model:** selects an installed model. The custom field overrides the preset.
+- **Think, Temperature, Quality, Saver, and Fast mode:** control reasoning, variation, and the speed/quality balance of the local model.
+
+### AI: OpenRouter
+
+- **URL / API key / model:** connect the OpenRouter endpoint and select a model ID in `provider/model` form.
+- **Custom model list:** **Add custom model** deliberately adds the free field to the dropdown. Individual custom entries or the complete custom list can be deleted; built-in presets remain. The change becomes permanent with **Save changes**.
+- **Reasoning, Temperature, Quality, and Fast mode:** apply only when supported by the selected model.
+- **Max retries, Retry delay, Max retry delay, Inter-batch delay:** limit retry count and waiting during rate limits or temporary failures. Very small values fail faster; very large values can extend a run substantially.
+
+### AI: OpenAI and Gemini
+
+Both sections provide **URL**, **API key**, model preset, custom model, reasoning effort, temperature, and Fast mode. The custom field overrides the preset. Use reasoning and temperature only in combinations supported by the chosen model; if uncertain, leave reasoning empty and temperature on `auto`.
+
+### AI: Claude
+
+- **URL / API key / model:** select the Anthropic endpoint and Claude model.
+- **Max tokens:** upper bound for the generated response. Too small a value can truncate a track list.
+- **Temperature:** response variation where the model supports it.
+- **Anthropic version:** API version header. Change it only when required by the Anthropic endpoint in use.
+- **Enable Thinking / Budget tokens:** reserves a separate reasoning budget for supported models; it increases runtime and usage.
+- **Fast mode:** uses a shorter retry/delay strategy.
+
+### Services: TIDAL
+
+- **Enable direct TIDAL integration:** exposes the application's TIDAL areas and permits search, mix/playlist synchronisation, audiobook search, and `T+`. A TIDAL account configured inside Roon is unaffected.
+- **Client ID / Client secret:** application OAuth credentials. They are stored locally and in application backups.
+- **Connect / Authorise TIDAL:** starts device authorisation, displays the code, and opens the TIDAL confirmation page.
+- **Disconnect:** removes the stored application login and local mix selection; it does not disconnect TIDAL from Roon.
+
+### Services: Last.fm
+
+- **Enable mood hints:** enriches matched tracks through Last.fm tags and can support the Last.fm playlist source or mood assignment.
+- **API key:** without a key, Last.fm calls and the corresponding selector remain disabled.
+- **Reload / edit tag list:** reloads the saved list or opens the editor for Last.fm tags offered on the Playlist page. Validate edits before saving.
+
+### Services: Deezer
+
+- **Enable Deezer:** uses its keyless API as an additional source for covers, artist images, and release data.
+- **Prefer during cover backfill:** places Deezer before Last.fm in that cover workflow. General artist-image order remains independently controlled under Wrapped.
+- **Timeout:** maximum wait per request. Higher values tolerate slow responses; lower values abort earlier.
+- **Reload / edit tag list:** manages the chips used by the Deezer playlist source.
+
+### Services: fanart.tv and AI tags
+
+- **Enable fanart.tv:** activates high-quality artist portraits and backgrounds.
+- **Project API key:** required credential. **Personal API key** is optional and does not replace the Project key.
+- **Timeout:** shared maximum wait for fanart.tv and the required MusicBrainz lookup.
+- **AI tag list:** controls the genre chips of the AI playlist source. The second value on each editor line is inserted into the AI prompt.
+
+Other automatic sources such as MusicBrainz/Cover Art Archive and TheAudioDB have no general service fields in this version; their use follows the relevant metadata or artwork workflow.
+
+### Wrapped: counting rules
+
+- **Polling interval:** interval for local state observation. Shorter reacts faster but adds load; the allowed range is one to 30 seconds.
+- **Pause timeout:** uninterrupted pause duration after which a listening session is closed.
+- **Minimum heard seconds:** fallback for tracks without known duration, especially Live Radio.
+- **Minimum heard ratio:** percentage of a known track duration required for a regular counted play.
+- **Short Track Seconds / Short Track Min Ratio:** retained legacy fields from an earlier short-track rule. They currently do not affect counting and should normally remain unchanged.
+- **Replay window:** period during which a repeated play is evaluated as a replay.
+- **Max stored sessions:** local-history limit. The oldest sessions may be removed when it is exceeded.
+
+Changes affect new or still-open sessions. Historical statistics are not automatically recalculated.
+
+### Wrapped: artist images
+
+- **Image-provider order:** enabled sources are checked from top to bottom and the first usable result wins. Providers can be disabled or moved with the arrow controls. Manually pinned images always take priority.
+- **Search stored images:** initially searches only local assignments for an artist.
+- **Query Roon once during Refresh:** permits an additional Roon request for that targeted refresh.
+- **Image actions:** results can be pinned, rejected for that artist, allowed again, or replaced by JPEG, PNG, or WebP between 10 KB and 3 MB.
+
+The complete workflow is described in [section 11](#11-artwork-and-artist-images).
+
+### Wrapped: data management
+
+- **Complete Wrapped data:** fully runs missing albums, missing covers, and local image copies in that order.
+- **Complete automatically:** starts the same sequence immediately and then checks every five minutes for new gaps.
+- **Stop run:** stops the active stage after its current provider request.
+- **Resolve unknown albums / Backfill covers / Localise external covers:** run the three stages separately for diagnosis or targeted maintenance.
+- **fanart.tv artist images:** cautiously re-evaluates existing Wrapped artist images against fanart.tv.
+- **Fill Roon image cache:** copies known Roon image keys into the local cache in throttled batches. Limit controls images per run; Auto pause controls the interval between automatic batches. **Start automatic Roon image cache** continues those batches with the configured pauses and can be stopped again.
+- **External covers per step:** limits a batch to 25, 50, or 100 images.
+- **Reset cover search:** resets only stored backfill progress and permits another pass.
+- **Clean skips:** removes historical skip flags from test or legacy data.
+- **Delete Wrapped data:** irreversibly deletes the complete Wrapped history. Create a backup first.
+- **Manage missing covers:** groups unresolved tracks and permits metadata correction, targeted retry, or confirmed deletion of the affected plays.
+
+Progress bars and counters distinguish checked tracks, hits, and open candidates. Detailed safe procedures are in [section 10](#10-roon-wrapped).
 
 ### Remote
 
-- up to ten remote slots,
-- network triggers,
-- dummy-zone proxy.
+This tab contains three independent systems:
 
-### Maintenance and logs
+- **Roon dummy-zone proxy:** enable switch, music, audiobook, and dummy zones, default target, and persistence of the last target. **Validate configuration**, **Refresh status**, and **Synchronise dummy** inspect marker queue, active target, last command, and latency. See [section 15](#15-remote-control-proxy).
+- **Network triggers:** each trigger has an enable switch, name, one or more zones, optional ON and/or OFF HTTP GET command, and a switch-off delay when applicable. Configuration, both directions, and live state are checked per trigger; obsolete triggers can be deleted individually. See [section 14](#14-network-triggers).
+- **IR/WLAN slots:** up to ten slots with enable switch, optional toggle, visible label, action, zone, and—depending on the action—a station or playlist target. **Load targets** refreshes Roon objects and **Test** checks the slot. See [section 13](#13-remote-slots).
 
-- health check,
-- service status,
-- backup and restore,
-- data validation,
-- error log and export,
-- storage and cache information.
+### Maintenance: automatic backups
 
-Most changes take effect after **Save changes**. Fundamental server-address or port changes can restart the application service automatically.
+- **Enable automatic backups:** activates the scheduled compact backup.
+- **Backup folder:** destination; empty uses the backups subdirectory in application data.
+- **Check interval in hours:** how often the application determines whether a backup is due.
+- **Maximum age in hours:** latest point at which a new automatic backup is created.
+- **Retained versions:** number of automatic backups kept.
+
+An automatic backup is deliberately smaller than a full backup. Contents, protection, and restore are described in [section 18](#18-backup-and-restore).
+
+### Maintenance: checks, export, and import
+
+- **Check data:** validates the package, central data stores, SQLite/JSON consistency, and selected storage state.
+- **Health check:** examines Roon connection, services, media process, storage, and configuration and presents every check with status and details.
+- **Export backup:** creates a normal downloadable backup.
+- **Export full backup:** additionally includes database, metadata, and image/cover cache and can be much larger.
+- **Create full backup in backup folder:** writes the same comprehensive archive directly to the configured server directory.
+- **Import backup:** validates a ZIP or compatible older JSON backup before applying it. Stop media maintenance and audiobook capture first.
+- **Test API token:** checks the current access protection.
+- **Delete stored token:** removes only the locally stored client token; the server token remains configured.
+
+While a backup runs, other backup actions are disabled. Visible progress reports stage, data source, counters, and elapsed time.
+
+### Save & Logs
+
+- **Save changes:** validates and stores server configuration. Host or port changes can restart the service.
+- **Reload:** loads the stored state again and discards unsaved form edits.
+- **Load defaults:** fills the form with defaults; only saving makes them permanent. Create a backup before a broad reset.
+- **Open / purge log:** opens or clears the AI generation log. Automatic retention is configured under Basic.
+- **Provider and status filters:** restrict visible generation statistics; **Export CSV** saves that report.
+- **Error log:** groups UI, API, network, provider, and server errors with timestamp, area, details, and occurrence count. Refresh reads the latest state; Clear deletes the current error collection.
+
+The error log is a diagnostic aid. A single network or provider failure may be temporary; repeated errors together with their time and the function used immediately beforehand provide stronger evidence.
 
 ## 18. Backup and restore
 

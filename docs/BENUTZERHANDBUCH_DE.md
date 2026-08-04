@@ -701,62 +701,242 @@ Die komplette Einrichtung, Bedienung, Fehlerbehebung und Deinstallation steht im
 
 ## 17. Konfiguration
 
-### Basis
+Die Konfiguration besteht aus den Registerkarten **Basis**, **UI**, **AI**, **Dienste**, **Wrapped**, **Remote**, **Wartung** und **Speichern & Logs**. Die Statuskarten oberhalb der Registerkarten zeigen, ob App-Paket, Roon, gewählter KI-Anbieter, optionale Dienste und Datenspeicher bereit sind. Grau bedeutet dabei häufig bewusst deaktiviert oder nicht ausgewählt und nicht automatisch einen Fehler.
 
-- Server- und Desktop-Grundverhalten,
-- Start mit Windows und minimierter Start,
-- Bild- und Cover-Speicher,
-- Hörbuchaufnahme und Zielzone,
-- grundlegende Roon-Einstellungen.
+Die meisten Servereinstellungen werden erst mit **Änderungen speichern** übernommen. Client-Verbindung, TIDAL-Autorisierung, einzelne Wrapped-Wartungsaktionen und einige Remote-Tests besitzen eigene Schaltflächen und werden unabhängig ausgeführt. **Neu laden** verwirft noch nicht gespeicherte Formänderungen. **Defaults laden** lädt Standardwerte nur in das Formular; dauerhaft werden sie erst nach dem Speichern.
 
-### UI
+Zugangsdaten werden lokal gespeichert. Da App-Backups API-Schlüssel, Tokens und persönliche Daten enthalten können, müssen sie wie Passwörter behandelt werden.
 
-- Sprache,
-- sichtbare Ansichten,
-- Darstellungsoptionen,
-- Browser-Zoom für Übersicht und Detailansicht.
+### Basis: Client-Verbindung
 
-### AI
+- **Modus – Lokaler Server:** Die Oberfläche verwendet den App-Dienst, der sie ausgeliefert hat. Das ist die normale Einstellung einer vollständigen Windows-Installation.
+- **Modus – Entfernter Server:** Die Oberfläche sendet ihre API-Aufrufe an die eingetragene Installation auf einem anderen Rechner.
+- **Server-Adresse:** Basisadresse einschließlich `http://` oder `https://` und Port, aber ohne `/api`. Sie wird nur im entfernten Modus verwendet.
+- **API-Token für diesen Client:** Muss dem `server.apiToken` des Zielservers entsprechen. Es ist weder ein TIDAL- noch ein KI-Schlüssel und wird nur im lokalen Profil dieses Clients gespeichert.
+- **Client-Einstellungen speichern:** Speichert diese drei Werte getrennt von der Serverkonfiguration.
+- **Verbindung testen:** Prüft Erreichbarkeit und Token, ohne die übrige App-Konfiguration zu verändern.
 
-- KI-Funktion vollständig aktivieren oder deaktivieren,
-- Anbieter und Modell auswählen,
-- lokale oder externe Verbindung konfigurieren,
-- Verbindung testen.
+Für RoonAIViewer werden Server und Token im nativen Viewer-Verbindungsdialog verwaltet; Einzelheiten stehen im [RoonAIViewer-Handbuch](ROONAI_VIEWER_DE.md).
 
-### Dienste
+### Basis: Desktop-Start
 
-- TIDAL,
-- Last.fm,
-- Deezer,
-- fanart.tv,
-- weitere Metadaten- und Bildquellen,
-- Playlist-Taglisten.
+- **Mit Windows starten:** Startet nach der Windows-Anmeldung die Electron-App und damit den lokalen App-Dienst.
+- **Beim Start minimiert im Tray starten:** Öffnet zunächst kein sichtbares Hauptfenster. Die Oberfläche kann über das Tray-Symbol aufgerufen werden.
 
-### Wrapped
+Beide Optionen gelten nur für die vollständige Windows-App. Ein Browser und RoonAIViewer besitzen eigene Startmechanismen.
 
-- Tracking aktivieren,
-- Zeit- und Qualitätsregeln,
-- Exportoptionen,
-- Daten vervollständigen,
-- offene Cover und Interpretenbilder verwalten,
-- Anbieterreihenfolge festlegen.
+### Basis: Bild- und Cover-Speicher
+
+- **Speicherordner:** Gemeinsamer Ort für Roon-/TIDAL-/Hörbuch-Covercache, lokale Interpretenbilder und Wrapped-Cover. Leer verwendet den App-Datenordner.
+- **Belegter Speicher / Objekte / Aufschlüsselung:** Zeigen Umfang und Verteilung des aktuellen Bildbestands.
+- **Inhalte verschieben:** Kopiert und prüft den vorhandenen Bestand, bevor auf den neuen Ordner umgeschaltet wird. Die übrigen App-Daten werden nicht verschoben.
+- **Größe neu berechnen:** Liest Belegung und Objektzahl neu ein, ohne Dateien zu verändern.
+
+Der neue Ordner muss dauerhaft erreichbar und beschreibbar sein. Der geprüfte Ablauf und Fehlerfälle sind in [Kapitel 19](#19-speicher-und-wartung) beschrieben.
+
+### Basis: Hörbuchaufnahme
+
+- **Audio-Ausgabeordner:** Absoluter, beschreibbarer Pfad auf dem Windows-Rechner des App-Servers. Im Browser wird der Serverpfad eingetragen, nicht ein Ordner des Browsergeräts.
+- **Aufnahmezone:** Exklusive lokale Roon-Zone auf demselben Windows-Rechner. Nur deren Audiosignal wird aufgenommen.
+- **Ausgabeformat:** Fest vorgegebenes MP3-Format mit 192 kbit/s CBR.
+
+Vor der ersten Aufnahme muss der Systemcheck aus [Kapitel 9](#9-hörbücher) erfolgreich sein.
+
+### Basis: Server, Roon und Protokolle
+
+- **`server.host`:** Netzwerkadresse, an die der Webserver gebunden wird. `127.0.0.1` erlaubt nur lokalen Zugriff; eine LAN-Bindung sollte nur mit API-Token in einem vertrauenswürdigen Netz verwendet werden.
+- **`server.port`:** HTTP-Port des App-Dienstes. Nach einer Änderung müssen Browser- und Viewer-Adressen angepasst werden; die App kann neu starten.
+- **`server.apiToken`:** Optionaler Schutz für Steuer- und Schreibzugriffe. Ein gesetzter Token muss in Browsern und Viewern identisch hinterlegt werden.
+- **`music.service`:** Bevorzugt beim Roon-Suchen und Queueing Treffer aus TIDAL oder Qobuz. Dies aktiviert keine direkte Qobuz-App-Integration.
+- **`roon.matching.mode`:** `strict` akzeptiert nur sehr genaue Treffer; `relaxed` toleriert stärkere Abweichungen und kann dadurch mehr, aber auch ungenauere Treffer liefern.
+- **`roon.matching.strategy`:** `smart` verwendet mehrstufige Titel-, Alias- und `feat.`-Fallbacks; `strict` verzichtet bewusst auf aggressive Fallbacks. Für den Alltag ist `smart` gewöhnlich die robustere Strategie.
+- **`playlists.directory`:** Ablageordner für gespeicherte M3U-Playlisten. Leer verwendet den automatisch ermittelten Musikordner.
+- **`roon.configFile`:** Pfad zur Pairing-/Zustandsdatei der Roon-Integration. Diese Expertenoption sollte nur bei einer gezielten Wiederherstellung oder nach entsprechender Diagnose verändert werden.
+- **`logs.generationLogRetentionDays`:** Automatische Aufbewahrung des Generierungslogs in Tagen; `0` deaktiviert die zeitbasierte Aufbewahrung.
+- **Roon-NowPlaying-Rohlog:** Schreibt detaillierte unverarbeitete Now-Playing-Daten in ein Diagnoseprotokoll. Nur zur Fehlersuche aktivieren, da Datei und enthaltene Hörinformationen wachsen können.
+
+### UI: Sprache, Standardzone und Playlistdarstellung
+
+- **`ui.language`:** Schaltet die App-Oberfläche zwischen Deutsch und Englisch um.
+- **`ui.defaultPlayZoneId`:** Zone, die nach dem App-Start in Playlisten-, TIDAL- und Werkzeugansichten vorausgewählt wird. Leer nimmt die erste verfügbare Zone.
+- **Freitext intern auf Englisch für KI:** Formuliert einen deutsch eingegebenen freien Playlistwunsch intern als englische Arbeitsanweisung. Die sichtbare Oberfläche und strukturierte Filter bleiben unverändert.
+- **Gefundenen Roon/TIDAL-Titel anzeigen:** Zeigt in der Ergebnisliste die Schreibweise des tatsächlich aufgelösten Treffers statt ausschließlich des ursprünglichen Vorschlags.
+- **Trefferqualität anzeigen:** Blendet die Bewertung des Roon-Abgleichs ein. Die Grenzen **High** und **Medium** bestimmen, ab welchem Score ein Treffer sicher, mittel oder unsicher dargestellt wird; High muss oberhalb von Medium liegen.
+- **Unsichere Treffer gezielt ersetzen:** Aktiviert die Aktion, nur als unsicher bewertete Kandidaten erneut zu suchen, ohne sichere Einträge anzutasten.
+
+### UI: Wiederholungsfilter und Modellvergleich
+
+- **Playlist-Historie zur Wiederholungsvermeidung:** Prüft neue Vorschläge gegen kürzlich erzeugte Playlisten.
+- **Lookback-Playlisten:** Anzahl zurückliegender Playlisten, die in diese Prüfung eingehen.
+- **Maximale Wiederholungen:** Ab welcher Häufigkeit ein Titel als zu oft verwendet gilt. Strengere Werte erhöhen die Abwechslung, können aber bei kleinen Bibliotheken die Trefferquote senken.
+- **Modellvergleich aktivieren:** Blendet auf der Playlist-Seite den Bake-off für mehrere Ollama-Modelle ein.
+- **Modelle (CSV):** Kommagetrennte Ollama-Modellnamen, die mit demselben Wunsch verglichen werden.
+- **Metrik:** `foundRate` bevorzugt die höchste Roon-Trefferquote, `duration` die kürzeste Laufzeit und `balanced` gewichtet beides.
+
+### UI: Player- und Browserdarstellung
+
+- **Queue-Vorschau:** Legt fest, ob drei bis acht kommende Titel pro Zonenkarte gezeigt werden.
+- **Browser-Zonen-Zoom / Detail-Zoom:** Skalieren die gesamte reduzierte Browserübersicht beziehungsweise eine daraus geöffnete Detailansicht von 70 bis 160 Prozent.
+- **Browser-Zonentext / Detailtext:** Skalieren nur die Schrift der beiden Browseransichten. Damit lassen sich Bilder und Texte unabhängig an ein Display anpassen.
+- **Cover-Hintergrundbereich:** Begrenzt den unscharfen Coverhintergrund auf den Coverbereich oder erweitert ihn über Detailseiten und Trackliste.
+- **Tracklisten-Helligkeit:** Regelt die Helligkeit dieses Hintergrunds hinter der rechten Trackliste.
+- **Player-Zonenansicht:** Für jede gefundene Roon-Zone lassen sich Sichtbarkeit, Reihenfolge und zonenbezogene TIDAL-Zielplaylist festlegen. Das Layout kann ein-, zweispaltig oder automatisch sein. **TIDAL-Playlisten laden** aktualisiert die wählbaren Ziele für `T+`.
+- **Browser-Zonenansicht:** Besitzt eine eigene Sichtbarkeit, Reihenfolge und Spaltenwahl. Änderungen betreffen nur die reduzierte Browseransicht und verändern keine Roon-Zone.
+
+### AI: Allgemeine Steuerung
+
+- **KI-Playlist-Erzeugung aktivieren:** Schaltet ausschließlich die KI-Quelle ein oder aus. Player, Last.fm-/Deezer-/Wrapped-Playlisten, TIDAL, Hörbücher und Roon Tools bleiben verfügbar.
+- **`ai.mode`:** Wählt Ollama, OpenRouter, OpenAI, Gemini oder Claude. Nur die Einstellungen des gewählten Anbieters werden für neue KI-Playlisten verwendet.
+- **Request-Timeout:** Maximale Wartezeit je KI-HTTP-Anfrage. Ein größerer Wert hilft langsamen Modellen, verlängert aber die Wartezeit bei echten Ausfällen.
+- **Cloud-Ultra-Sparmodus:** Versucht Cloud-Generierung mit einem einzigen Request und ohne Nachfüllen. Das reduziert Kosten und Anfragen, kann aber weniger Titel als gewünscht liefern.
+- **Deutsche Referenzliste:** Nutzt bei deutschen Vocals oder Schlager eine lokale JSON-Liste als Titelbasis. Pfad bestimmt die Datei; **Max Hints** begrenzt die je Prompt übergebenen Einträge; **Diversity Lookback** meidet zuletzt verwendete Referenztitel.
+- **Mindest-Trefferquote:** Ab welcher in Roon gefundenen Quote eine Liste als ausreichend gilt.
+- **Fehlende Titel automatisch ersetzen / maximale Durchläufe:** Steuern, ob und wie oft fehlende Kandidaten automatisch nachgebessert werden.
+
+### AI: Gemeinsame Provideroptionen
+
+Je nach Anbieter werden die Felder **URL**, **API-Key**, **Modell-Preset**, **freies Modell** und weitere Laufzeitoptionen angeboten; nicht jeder Provider besitzt oder unterstützt jede der folgenden Einstellungen. Ein freier Modellname überschreibt das Preset. API-Schlüssel werden lokal gespeichert und in App-Backups aufgenommen.
+
+- **Temperature:** Niedrigere Werte liefern stabilere, weniger variable Antworten; höhere Werte erhöhen die Variation. `auto` lässt die App beziehungsweise den Anbieter einen geeigneten Wert wählen. Nicht jedes Reasoning-Modell akzeptiert eine Temperature.
+- **Reasoning/Think:** Steuert bei kompatiblen Modellen den Denkaufwand. Nicht unterstützte Modelle ignorieren den Wert oder können ihn ablehnen.
+- **Quality Mode:** Arbeitet konservativer und gegebenenfalls mit zusätzlichen Prüfungen, benötigt aber mehr Zeit.
+- **Fast Mode:** Reduziert Retries und Wartezeiten; schneller, aber mit weniger Reserve bei kurzzeitigen Providerproblemen.
+- **Sparmodus:** Verwendet möglichst nur einen Request und füllt fehlende Titel nicht nach.
+
+### AI: Ollama
+
+- **URL:** Ollama-Endpunkt aus Sicht des App-Servers. Läuft Ollama auf einem anderen Rechner, muss dessen LAN-Adresse statt `localhost` eingetragen sein.
+- **Verbindung testen:** Prüft den Endpunkt unabhängig von einer Playlistgenerierung.
+- **Preset / freies Modell:** Wählt ein installiertes Modell. Der freie Name überschreibt das Preset.
+- **Think, Temperature, Quality, Spar- und Fast Mode:** Steuern Denkaufwand, Variation und Geschwindigkeits-/Qualitätskompromiss des lokalen Modells.
+
+### AI: OpenRouter
+
+- **URL / API-Key / Modell:** Verbinden den OpenRouter-Endpunkt und wählen eine Modell-ID im Format `Anbieter/Modell`.
+- **Eigene Modellliste:** **Eigenes Modell übernehmen** fügt den freien Eintrag gezielt zum Dropdown hinzu. Einzelne eigene Einträge oder die gesamte eigene Liste lassen sich löschen; eingebaute Presets bleiben erhalten. Dauerhaft wird die Änderung erst mit **Änderungen speichern**.
+- **Reasoning, Temperature, Quality und Fast Mode:** Gelten nur, wenn das gewählte Modell die jeweilige Option unterstützt.
+- **Max Retries, Retry Delay, Max Retry Delay, Inter-Batch Delay:** Begrenzen Wiederholungen und Wartezeiten bei Rate-Limits oder vorübergehenden Fehlern. Sehr kleine Werte reagieren schneller, erhöhen aber die Gefahr unnötiger Abbrüche; sehr große Werte verlängern einen Lauf deutlich.
+
+### AI: OpenAI und Gemini
+
+Beide Bereiche besitzen **URL**, **API-Key**, Modell-Preset, freies Modell, Reasoning-Stufe, Temperature und Fast Mode. Das freie Modell überschreibt das Preset. Reasoning und Temperature dürfen nur in einer Kombination verwendet werden, die das gewählte Modell unterstützt; bei Unsicherheit `auto` beziehungsweise eine leere Reasoning-Stufe verwenden.
+
+### AI: Claude
+
+- **URL / API-Key / Modell:** Wählen Anthropic-Endpunkt und Claude-Modell.
+- **Max Tokens:** Obergrenze der generierten Antwort. Ein zu kleiner Wert kann eine Titelliste abschneiden.
+- **Temperature:** Variabilität der Antwort, soweit vom Modell unterstützt.
+- **Anthropic-Version:** API-Versionsheader. Nur ändern, wenn die verwendete Anthropic-Schnittstelle dies verlangt.
+- **Thinking aktivieren / Budget Tokens:** Reserviert bei unterstützten Modellen ein eigenes Denkbudget; das Budget erhöht Laufzeit und Verbrauch.
+- **Fast Mode:** Verwendet eine kürzere Retry-/Delay-Strategie.
+
+### Dienste: TIDAL
+
+- **Direkte TIDAL-Integration aktivieren:** Blendet die eigenen TIDAL-Bereiche ein und erlaubt Suche, Mix-/Playlist-Synchronisierung, Hörbuchsuche und `T+`. Ein TIDAL-Konto innerhalb von Roon bleibt von diesem Schalter unberührt.
+- **Client-ID / Client-Secret:** OAuth-Clientdaten der App. Sie werden lokal und im App-Backup gespeichert.
+- **Verbinden / TIDAL autorisieren:** Startet die Gerätefreigabe, zeigt den Code und öffnet die TIDAL-Bestätigungsseite.
+- **Trennen:** Entfernt die gespeicherte App-Anmeldung und leert die lokale Mixauswahl; das TIDAL-Konto in Roon wird nicht getrennt.
+
+### Dienste: Last.fm
+
+- **Mood-Hinweise aktivieren:** Ergänzt gefundene Titel über Last.fm-Tags und kann die Last.fm-Playlistquelle beziehungsweise Stimmungszuordnung bereitstellen.
+- **API-Key:** Ohne Schlüssel bleiben Last.fm-Abfragen und der zugehörige Umschalter deaktiviert.
+- **Tag-Liste neu einlesen / editieren:** Lädt die gespeicherte Liste erneut oder öffnet den Editor für die auf der Playlist-Seite angebotenen Last.fm-Tags. Änderungen sollten validiert werden.
+
+### Dienste: Deezer
+
+- **Deezer aktivieren:** Nutzt die schlüssellose API als zusätzliche Quelle für Cover, Interpretenbilder und Releasedaten.
+- **Bei Cover-Nachfüllung bevorzugen:** Setzt Deezer vor Last.fm in den entsprechenden Coverablauf. Die allgemeine Interpretenbildreihenfolge wird weiterhin separat unter Wrapped verwaltet.
+- **Timeout:** Maximale Wartezeit je Anfrage. Höhere Werte tolerieren langsame Antworten, niedrigere brechen früher ab.
+- **Tag-Liste neu einlesen / editieren:** Verwaltet die Chips der Deezer-Playlistquelle.
+
+### Dienste: fanart.tv und AI-Tagliste
+
+- **fanart.tv aktivieren:** Schaltet hochwertige Künstlerporträts und Hintergründe frei.
+- **Project API Key:** Erforderlicher Schlüssel. **Personal API Key** ist optional und ersetzt den Project Key nicht.
+- **Timeout:** Gemeinsame maximale Wartezeit für fanart.tv- und notwendige MusicBrainz-Abfragen.
+- **AI-Tag-Liste:** Steuert die Genre-Chips der KI-Playlistquelle. Der zweite Wert jeder Editorzeile wird in den KI-Prompt übernommen.
+
+Weitere automatische Quellen wie MusicBrainz/Cover Art Archive und TheAudioDB besitzen in dieser Version keine eigenen allgemeinen Dienstefelder; ihre Nutzung ergibt sich aus dem jeweiligen Metadaten- oder Bildablauf.
+
+### Wrapped: Zählregeln
+
+- **Polling-Intervall:** Abstand der lokalen Statusprüfung. Kürzer reagiert schneller, erzeugt aber mehr Last; der zulässige Bereich liegt zwischen einer und 30 Sekunden.
+- **Pause-Timeout:** Nach dieser ununterbrochenen Pausenzeit wird eine Hörsitzung geschlossen.
+- **Mindesthörzeit:** Fallback für Titel ohne bekannte Dauer, besonders Live Radio.
+- **Mindesthöranteil:** Prozentualer Anteil bei bekannter Titellänge, ab dem ein Play regulär gezählt wird.
+- **Short Track Seconds / Short Track Min Ratio:** Vorhandene Legacy-Felder früherer Kurztrackregeln. Sie haben in der aktuellen Zähllogik keine Wirkung und sollten normalerweise unverändert bleiben.
+- **Replay Window:** Zeitfenster, innerhalb dessen eine erneute Wiedergabe als Replay ausgewertet wird.
+- **Max Stored Sessions:** Obergrenze des lokalen Verlaufs. Wird sie überschritten, können die ältesten Sitzungen entfernt werden.
+
+Änderungen dieser Regeln wirken auf neue beziehungsweise noch offene Sitzungen. Historische Ergebnisse werden dadurch nicht automatisch neu berechnet.
+
+### Wrapped: Interpretenbilder
+
+- **Suchreihenfolge der Bildanbieter:** Aktivierte Anbieter werden von oben nach unten geprüft; der erste brauchbare Treffer gewinnt. Einzelne Anbieter können deaktiviert und mit Pfeilen verschoben werden. Manuell festgelegte Bilder haben Vorrang.
+- **Gespeicherte Bilder suchen:** Durchsucht zunächst nur lokale Zuordnungen eines Interpreten.
+- **Bei „Neu suchen“ auch Roon einmalig abfragen:** Erlaubt für die gezielte Neusuche zusätzlich eine Roon-Abfrage.
+- **Bildaktionen:** Gefundene Bilder lassen sich festlegen, interpretenbezogen ablehnen, wieder zulassen oder durch JPEG, PNG beziehungsweise WebP zwischen 10 KB und 3 MB ersetzen.
+
+Die komplette Bedienlogik steht in [Kapitel 11](#11-cover-und-interpretenbilder).
+
+### Wrapped: Datenverwaltung
+
+- **Wrapped-Daten vervollständigen:** Führt fehlende Alben, fehlende Cover und lokale Bildkopien in dieser Reihenfolge vollständig aus.
+- **Automatisch vervollständigen:** Startet denselben Ablauf sofort und prüft danach alle fünf Minuten auf neue Lücken.
+- **Lauf stoppen:** Beendet den aktiven Schritt nach der gerade laufenden Provideranfrage.
+- **Unbekannte Alben ermitteln / Cover nachfüllen / Externe Cover lokalisieren:** Starten die drei Phasen einzeln für Diagnose oder gezielte Wartung.
+- **Artistbilder fanart.tv:** Bewertet vorhandene Wrapped-Künstlerbilder vorsichtig gegen fanart.tv neu.
+- **Roon-Bildcache füllen:** Übernimmt bekannte Roon-Bildschlüssel gedrosselt in den lokalen Cache. Limit bestimmt die Bilder pro Durchlauf, Auto-Pause den Abstand automatischer Batches. **Auto-Roon-Bildcache starten** setzt diese Batches mit den festgelegten Pausen fort und lässt sich wieder stoppen.
+- **Externe Cover pro Schritt:** Begrenzt die Batchgröße auf 25, 50 oder 100 Bilder.
+- **Cover-Suche zurücksetzen:** Setzt nur den gespeicherten Fortschritt der Nachfüllung zurück und ermöglicht eine erneute Prüfung.
+- **Skips bereinigen:** Entfernt historische Skip-Markierungen aus Test- beziehungsweise Altbeständen.
+- **Wrapped-Daten löschen:** Löscht den vollständigen Wrapped-Bestand unwiderruflich. Vorher ein Backup erstellen.
+- **Offene Cover verwalten:** Gruppiert ungelöste Titel und erlaubt Metadatenkorrektur, gezielte Neusuche oder bestätigte Löschung der betroffenen Wiedergaben.
+
+Fortschrittsbalken und Zähler unterscheiden geprüfte Titel, Treffer und noch offene Kandidaten. Ausführliche sichere Abläufe stehen in [Kapitel 10](#10-roon-wrapped).
 
 ### Remote
 
-- bis zu zehn Remote-Slots,
-- Netzwerk-Trigger,
-- Dummy-Zonen-Proxy.
+Der Bereich enthält drei voneinander unabhängige Systeme:
 
-### Wartung und Logs
+- **Roon-Dummy-Zonen-Proxy:** Aktivierung, Musik-, Hörbuch- und Dummy-Zone, Standardziel und Speicherung des letzten Ziels. **Konfiguration prüfen**, **Status aktualisieren** und **Dummy synchronisieren** kontrollieren Markerqueue, aktives Ziel, letzten Befehl und Latenz. Siehe [Kapitel 15](#15-fernbedienungs-proxy).
+- **Netzwerk-Trigger:** Jeder Trigger besitzt Aktivierung, Namen, eine oder mehrere Zonen, optionalen EIN- und/oder AUS-HTTP-GET-Befehl und gegebenenfalls eine Ausschaltverzögerung. Konfiguration, beide Richtungen und Live-Status werden pro Trigger geprüft; nicht mehr benötigte Trigger lassen sich einzeln löschen. Siehe [Kapitel 14](#14-netzwerk-trigger).
+- **IR/WLAN-Slots:** Bis zu zehn Slots mit Aktivierung, optionalem Toggle, sichtbarem Label, Aktion, Zone und abhängig von der Aktion einem Sender- oder Playlistziel. **Ziele laden** aktualisiert Roon-Ziele; **Test** prüft den Slot. Siehe [Kapitel 13](#13-remote-slots).
 
-- Healthcheck,
-- Dienstestatus,
-- Sicherungen und Wiederherstellung,
-- Datenprüfung,
-- Fehlerprotokoll und Export,
-- Speicher- und Cacheinformationen.
+### Wartung: automatische Backups
 
-Die meisten Änderungen werden nach **Änderungen speichern** sofort wirksam. Änderungen an grundlegender Serveradresse oder Port können einen automatischen Neustart des App-Dienstes auslösen.
+- **Automatische Backups aktivieren:** Schaltet die zeitgesteuerte schlanke Sicherung ein.
+- **Backupordner:** Zielordner; leer verwendet den Backup-Unterordner der App-Daten.
+- **Prüfintervall in Stunden:** Wie häufig kontrolliert wird, ob eine Sicherung nötig ist.
+- **Maximales Alter in Stunden:** Spätestens nach diesem Zeitraum wird ein neues Auto-Backup erzeugt.
+- **Aufbewahrungsversionen:** Zahl der Auto-Backups, die erhalten bleiben.
+
+Ein Auto-Backup bleibt bewusst kleiner als ein Vollbackup. Inhalt, Schutz und Wiederherstellung sind in [Kapitel 18](#18-sicherung-und-wiederherstellung) beschrieben.
+
+### Wartung: Prüfungen, Export und Import
+
+- **Daten prüfen:** Prüft Paket, zentrale Datenbestände, SQLite-/JSON-Konsistenz und ausgewählte Speicherzustände.
+- **Healthcheck:** Prüft unter anderem Roon-Verbindung, Dienste, Medienprozess, Speicher und Konfiguration und zeigt jeden Check mit Status und Details.
+- **Backup exportieren:** Erstellt eine normale Sicherung zum Herunterladen.
+- **Vollbackup exportieren:** Nimmt zusätzlich Datenbank, Metadaten sowie Bild-/Covercache auf und kann deutlich größer werden.
+- **Vollbackup im Backupordner erstellen:** Schreibt dieselbe umfassende Sicherung direkt in den konfigurierten Serverordner.
+- **Backup importieren:** Prüft ein ZIP- oder kompatibles älteres JSON-Backup vor der Übernahme. Laufende Medienwartung und Hörbuchaufnahme vorher beenden.
+- **API-Token testen:** Prüft den aktuell verwendeten Zugriffsschutz.
+- **Gespeicherten Token löschen:** Entfernt nur den lokal gespeicherten Client-Token; der Servertoken selbst bleibt bestehen.
+
+Während eine Sicherung läuft, sind weitere Backupaktionen gesperrt. Der sichtbare Fortschritt nennt Arbeitsschritt, Datenquelle, Zähler und Laufzeit.
+
+### Speichern & Logs
+
+- **Änderungen speichern:** Validiert und speichert die Serverkonfiguration. Host- oder Portänderungen können den App-Dienst neu starten.
+- **Neu laden:** Lädt den gespeicherten Zustand erneut und verwirft ungespeicherte Formularänderungen.
+- **Defaults laden:** Füllt das Formular mit Standardwerten; erst Speichern übernimmt sie dauerhaft. Vor größeren Rücksetzungen ein Backup anlegen.
+- **Log öffnen / sofort löschen:** Öffnet beziehungsweise leert das KI-Generierungslog. Die automatische Aufbewahrung wird unter Basis eingestellt.
+- **Provider- und Statusfilter:** Begrenzen die sichtbare Generierungsstatistik; **CSV exportieren** speichert diese Auswertung.
+- **Fehlerprotokoll:** Bündelt UI-, API-, Netzwerk-, Provider- und Serverfehler mit Zeit, Bereich, Details und Häufigkeit. Aktualisieren liest neu ein; Löschen entfernt den vorhandenen Fehlerbestand.
+
+Das Fehlerprotokoll ist eine Diagnosehilfe. Einzelne Netzwerk- oder Providerfehler können vorübergehend sein; wiederholte Fehler zusammen mit Zeitpunkt und zuvor verwendeter Funktion sind für die Ursachenanalyse aussagekräftiger.
 
 ## 18. Sicherung und Wiederherstellung
 
