@@ -44,7 +44,7 @@ The application connects to a Roon Core on the local network. It can be used as 
 
 ### Enriched live-radio metadata
 
-![Roon AI Playlist live radio](assets/screenshots/live-radio.png)
+![Roon AI Playlist live radio](assets/screenshots/radio_new.png)
 
 ## Documentation
 

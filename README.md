@@ -44,7 +44,7 @@ Die Anwendung verbindet sich mit einem Roon Core im lokalen Netzwerk. Sie kann a
 
 ### Aufbereitete Live-Radio-Metadaten
 
-![Roon AI Playlist – Live Radio](assets/screenshots/live-radio.png)
+![Roon AI Playlist – Live Radio](assets/screenshots/radio_new.png)
 
 ## Dokumentation
 
