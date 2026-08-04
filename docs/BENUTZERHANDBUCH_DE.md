@@ -130,7 +130,7 @@ RoonAIViewer ist ein separater Windows-Client für einen entfernten App-Dienst. 
 
 ## 5. Player und Zonen
 
-![Zonen-Detailansicht mit Warteschlange und Interpretenbild](../assets/screenshots/player.png)
+![Übersicht des Mehrzonen-Players](../assets/screenshots/new_zone_view.png)
 
 ### Zonenübersicht
 
@@ -148,6 +148,8 @@ Jede Zonenkarte kann folgende Informationen enthalten:
 Die App verwendet die vorhandene Roon-Zonenüberwachung. Mehrere Browser oder Viewer erzeugen keine eigene zusätzliche Roon-Verbindung.
 
 ### Zonen-Detailansicht
+
+![Zonen-Detailansicht mit Warteschlange und Interpretenbild](../assets/screenshots/player.png)
 
 Durch Öffnen einer Zone erscheint eine größere Darstellung. Je nach Wiedergabetyp zeigt sie:
 

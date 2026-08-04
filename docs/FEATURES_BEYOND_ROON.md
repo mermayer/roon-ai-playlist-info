@@ -119,6 +119,8 @@ Roon's Sleep Timer stops or fades playback for a zone; it does not send arbitrar
 
 ## 9. Player, browser, and viewer
 
+![Multi-zone Player overview](../assets/screenshots/new_zone_view.png)
+
 - Display all relevant Roon zones simultaneously in a dashboard with artwork, state, progress, transport, and queue.
 - Show up to six upcoming tracks plus remaining count and time directly per zone.
 - Use dedicated presentations for normal music, Roon Radio, Live Radio, Spotify, and audiobooks.

@@ -130,7 +130,7 @@ RoonAIViewer is a separate Windows client for a remote application service. It i
 
 ## 5. Player and zones
 
-![Zone detail with queue and artist artwork](../assets/screenshots/player.png)
+![Multi-zone Player overview](../assets/screenshots/new_zone_view.png)
 
 ### Zone overview
 
@@ -148,6 +148,8 @@ Each zone card can display:
 The application reuses its existing Roon zone monitoring. Additional browsers and viewers do not create independent Roon connections.
 
 ### Zone detail view
+
+![Zone detail with queue and artist artwork](../assets/screenshots/player.png)
 
 Opening a zone shows a larger presentation. Depending on the content, it displays:
 

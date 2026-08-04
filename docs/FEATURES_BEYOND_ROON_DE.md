@@ -119,6 +119,8 @@ Roons Sleep Timer beendet beziehungsweise blendet lediglich die Wiedergabe der Z
 
 ## 9. Player, Browser und Viewer
 
+![Übersicht des Mehrzonen-Players](../assets/screenshots/new_zone_view.png)
+
 - Alle relevanten Roon-Zonen gleichzeitig als Dashboard mit Cover, Zustand, Fortschritt, Transport und Queue darstellen.
 - Bis zu sechs kommende Titel sowie Restanzahl und Restzeit direkt pro Zone anzeigen.
 - Eigene Darstellungen für normale Musik, Roon Radio, Live Radio, Spotify und Hörbücher verwenden.

@@ -22,6 +22,8 @@ Playlisten können aus freien Musikwünschen, Tags, Last.fm-Empfehlungen oder Wr
 
 Der Player zeigt Roon-Zonen, Wiedergabestatus, Cover, Metadaten, Interpretenbilder, Fortschritt und Warteschlangen. Für Live Radio, Spotify-Streams und Hörbücher gelten jeweils passende Darstellungen und Bedienelemente.
 
+![Übersicht des Mehrzonen-Players](../assets/screenshots/new_zone_view.png)
+
 ### Hörbücher
 
 Hörbücher aus Roon werden mit Kapiteln, Gesamtdauer, Fortschritt und Lesezeichen verwaltet. Ein Buch lässt sich fortsetzen, neu beginnen oder an einer gespeicherten Position weiterhören.

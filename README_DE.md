@@ -58,6 +58,8 @@ Jeder Sender besitzt einen dauerhaft gespeicherten Metadatenmodus:
 
 ### Visueller Mehrzonen-Player
 
+![Übersicht des Mehrzonen-Players](assets/screenshots/new_zone_view.png)
+
 - Alle relevanten Roon-Zonen gemeinsam in einem Dashboard darstellen.
 - Cover, Wiedergabestatus, Fortschritt, Transportsteuerung und Warteschlange anzeigen.
 - Kommende Titel, verbleibende Titelanzahl und gesamte Restzeit anzeigen.

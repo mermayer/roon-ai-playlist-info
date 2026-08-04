@@ -58,6 +58,8 @@ Every station has its own persistent metadata policy:
 
 ### A more visual multi-zone player
 
+![Multi-zone Player overview](assets/screenshots/new_zone_view.png)
+
 - Show all relevant Roon zones in one dashboard.
 - Display artwork, playback state, progress, transport controls, and queue information.
 - Show upcoming tracks, remaining track count, and total remaining time.
