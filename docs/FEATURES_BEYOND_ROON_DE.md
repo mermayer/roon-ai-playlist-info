@@ -8,6 +8,8 @@ Diese Übersicht nennt Funktionen, die **Roon AI Playlist** zusätzlich zu den B
 
 ## 1. KI- und externe Playlist-Erzeugung
 
+![KI-Playlist-Filter und gegen Roon geprüftes Ergebnis](../assets/screenshots/playlist.png)
+
 - Playlisten aus freien natürlichsprachlichen Wünschen erzeugen.
 - Ollama, OpenRouter, OpenAI, Gemini oder Claude als KI-Anbieter wählen.
 - Prompts mit Genre, Jahrzehnt, Stimmung und Sprache kombinieren.
@@ -18,6 +20,12 @@ Diese Übersicht nennt Funktionen, die **Roon AI Playlist** zusätzlich zu den B
 - Ersatztracks für fehlende oder unsichere Kandidaten ermitteln.
 - Wrapped Top 20 als Playlistquelle verwenden.
 - Ergebnisse als M3U speichern, laden und prüfen.
+
+Die KI-Erzeugung bleibt eine Vorschlagsstufe: Gewähltes Modell, strukturierte Filter und optionaler Freitext liefern Kandidaten, während die App jeden Roon-Treffer vor der Wiedergabe sichtbar macht. Einzelne Einträge lassen sich probeweise starten, ersetzen, entfernen oder anhängen; das vollständige geprüfte Ergebnis kann eine Zonen-Queue starten oder erweitern.
+
+![Last.fm-Tagauswahl und abgeglichene Top-Titel](../assets/screenshots/lastfm.png)
+
+Last.fm-Playlisten verwenden gepflegte Jahrzehnt-, Sprach-, Genre-, Stil- und Atmosphäre-Tags und benötigen keinen KI-Prompt. Mehrere Tags lassen sich kombinieren; die populären Kandidaten durchlaufen anschließend exakt denselben sichtbaren Roon-Abgleich und Bearbeitungsablauf.
 
 Roon besitzt mit Valence und Roon Radio eine eigene Empfehlungslogik und verwaltet normale Playlisten, bietet aber keine frei formulierbare Multi-KI-Playlistgenerierung mit wählbarem KI-Anbieter. Siehe [Roon Valence](https://help.roonlabs.com/portal/en/kb/articles/valence) und [Roon Playlists](https://help.roonlabs.com/portal/en/kb/articles/playlists).
 

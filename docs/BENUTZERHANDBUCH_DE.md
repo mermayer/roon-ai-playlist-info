@@ -216,6 +216,21 @@ Die Spotify-Darstellung ist eine Ansicht für Wiedergabe, die über Roon eintrif
 5. Zielzone und gewünschte Titelanzahl wählen.
 6. Playlist erzeugen.
 
+Die freie Beschreibung darf leer bleiben, wenn die strukturierten Filter den Wunsch bereits vollständig ausdrücken. Stimmung und Energie, Jahrzehnt, Genre und Interpreten-Sprache werden mit dem aktuellen Anbieter und Modell kombiniert. Die Fußzeile nennt das erzeugende Modell und die verwendete Roon-Abgleichsstrategie.
+
+Das Ergebnis ist eine bearbeitbare Arbeitsliste und keine undurchsichtige Ein-Klick-Aktion. Einzelne Kandidaten lassen sich probeweise starten, anhängen, ersetzen oder entfernen, bevor das Gesamtergebnis an Roon übergeben wird. Providerkennzeichnung, Jahr und Energielabel helfen dabei, eine unpassende Ausgabe oder einen Ausreißer zu erkennen.
+
+### Last.fm-Tag-Playlist erstellen
+
+![Last.fm-Tags und die daraus entstandene Roon-geprüfte Playlist](../assets/screenshots/lastfm.png)
+
+1. **Last.fm-Playlist** als Quelle wählen.
+2. Einen oder mehrere Jahrzehnt-/Jahr-, Sprach-, Genre-, Stil- oder Atmosphäre-Tags markieren.
+3. Roon-Zone und Titelanzahl auswählen.
+4. **Last.fm Top-Titel laden** verwenden.
+
+Last.fm liefert populäre Kandidaten zur gewählten Tagkombination; anschließend führt die App den normalen Roon-Abgleich aus. Die Ergebnisüberschrift bewahrt die gewählten Tags, während die Fußzeile gefundene und fehlende Kandidaten trennt. **Alle zurücksetzen** löscht die Auswahl; eine zuvor gespeicherte Playlist kann geladen werden, ohne die Last.fm-Anfrage zu wiederholen.
+
 ### Roon-Abgleich verstehen
 
 Die Vorschläge werden nicht ungeprüft abgespielt. Die App sucht jeden Kandidaten in der tatsächlichen Roon-Bibliothek und zeigt:
@@ -239,7 +254,7 @@ Je nach Ansicht stehen zur Verfügung:
 
 ### Taglisten verwalten
 
-Die auswählbaren Kategorien für Last.fm-, KI- und Deezer-basierte Quellen können unter **Konfiguration > Dienste** bearbeitet und geprüft werden. Änderungen sollten vor dem Speichern validiert werden.
+Die auswählbaren Kategorien für Last.fm-, KI- und Deezer-basierte Quellen können unter **Konfiguration > Dienste** bearbeitet und geprüft werden. Änderungen sollten vor dem Speichern validiert werden. Diese gepflegten Tags bestimmen die auswählbaren Schaltflächen der Playlist-Ansicht, sodass eine Installation ihr Vokabular ohne Änderung der App anpassen kann.
 
 ## 7. Live Radio
 

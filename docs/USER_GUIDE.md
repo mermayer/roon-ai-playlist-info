@@ -216,6 +216,21 @@ The Spotify layout is a presentation for playback that arrives through Roon, not
 5. Select the target zone and desired track count.
 6. Generate the playlist.
 
+The description may be left empty when the structured filters already express the request. Mood and energy, decade, genre, and artist language are combined with the current provider and model. The footer identifies which model generated the result and which Roon-matching strategy was applied.
+
+The result is an editable working list rather than an opaque one-click action. Individual candidates can be auditioned, queued, replaced, or removed before the complete result is sent to Roon. Provider badges, year, and energy labels make it easier to spot an unsuitable edition or an outlier.
+
+### Creating a Last.fm tag playlist
+
+![Last.fm tags and the resulting Roon-matched playlist](../assets/screenshots/lastfm.png)
+
+1. Select **Last.fm playlist** as the source.
+2. Choose one or more decade/year, language, genre, style, or atmosphere tags.
+3. Select the Roon zone and number of tracks.
+4. Choose **Load Last.fm top tracks**.
+
+Last.fm supplies popular candidates for the combined tags; the application then performs the normal Roon match. The result heading preserves the selected tags, while the footer separates found and missing candidates. **Reset all** clears the selection, and a previously saved playlist can be loaded without repeating the Last.fm request.
+
 ### Understanding Roon matching
 
 Suggestions are not played blindly. The application searches every candidate in the actual Roon library and displays:
@@ -239,7 +254,7 @@ Depending on the view, actions include:
 
 ### Managing tag lists
 
-Categories used by Last.fm, AI, and Deezer-based sources can be edited and checked under **Configuration > Services**. Validate changes before saving them.
+Categories used by Last.fm, AI, and Deezer-based sources can be edited and checked under **Configuration > Services**. Validate changes before saving them. These maintained tags determine the selectable chips in the Playlist view, so installations can adapt the vocabulary without changing the application.
 
 ## 7. Live radio
 

@@ -8,6 +8,8 @@ This overview lists capabilities that **Roon AI Playlist** adds beyond standard 
 
 ## 1. AI and external playlist generation
 
+![AI playlist filters and Roon-matched result](../assets/screenshots/playlist.png)
+
 - Generate playlists from free-form natural-language requests.
 - Select Ollama, OpenRouter, OpenAI, Gemini, or Claude as the AI provider.
 - Combine prompts with genre, decade, mood, and language filters.
@@ -18,6 +20,12 @@ This overview lists capabilities that **Roon AI Playlist** adds beyond standard 
 - Find replacement tracks for missing or uncertain candidates.
 - Use Wrapped Top 20 as a playlist source.
 - Save, load, and validate M3U results.
+
+AI generation remains a proposal stage: the chosen model, structured filters, and optional free text produce candidates, while the application exposes every Roon match before playback. Individual entries can be auditioned, replaced, removed, or queued, and the complete verified result can start or extend a zone queue.
+
+![Last.fm tag selection and matched top tracks](../assets/screenshots/lastfm.png)
+
+Last.fm playlists use maintained decade, language, genre, style, and atmosphere tags instead of requiring an AI prompt. Several tags can be combined and the popular candidates pass through exactly the same visible Roon matching and editing workflow.
 
 Roon provides its own recommendation engine through Valence and Roon Radio and manages conventional playlists, but it does not provide free-form multi-provider AI playlist generation. See [Roon Valence](https://help.roonlabs.com/portal/en/kb/articles/valence) and [Roon Playlists](https://help.roonlabs.com/portal/en/kb/articles/playlists).
 

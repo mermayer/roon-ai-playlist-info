@@ -35,6 +35,18 @@ The application runs locally and can be operated in three ways:
 - See successful matches, uncertain results, missing tracks, and possible replacements.
 - Play the result in a chosen Roon zone or save it as an M3U playlist.
 
+#### AI playlists with visible Roon matching
+
+The AI source combines an optional free-form description with mood and energy, decade, genre, artist language, target zone, and track count. The selected local or cloud model proposes the music, but the proposal is not sent blindly to playback. Every entry is resolved against Roon first. The result view shows title, artist, energy, year, provider availability, successful and missing counts, and individual replace/remove controls. A verified list can replace the selected zone's queue, be appended, shuffled, or saved for later.
+
+![AI playlist generation with filters and Roon-matched results](assets/screenshots/playlist.png)
+
+#### Last.fm playlists without an AI prompt
+
+The Last.fm source provides a deterministic alternative based on maintained decade, language, genre, style, and atmosphere tags. Several tags can be combined, the number of tracks and target zone are chosen directly, and the generated candidates go through the same Roon matching and review stage as AI suggestions. The finished list can be played, queued, shuffled, edited, or saved; the chosen tags remain visible in the result heading so its origin is understandable.
+
+![Last.fm tag playlist matched and ready for Roon](assets/screenshots/lastfm.png)
+
 ### Better live radio metadata
 
 Live-radio streams often provide incomplete, swapped, or incorrectly encoded text. Roon AI Playlist can:
@@ -187,10 +199,6 @@ RoPieee normally directs remote-control events to one fixed Roon zone. The optio
 - Move the artwork cache to another local drive with verification.
 - Inspect service status, storage, caches, provider errors, and Roon connectivity.
 - Run extensive metadata requests, image downloads, validation, hashing, and cache work separately so the player, web interface, Roon connection, and network triggers remain responsive.
-
-## Playlist example
-
-![AI-assisted playlist matched against Roon](assets/screenshots/playlist.png)
 
 ## RoonAIViewer
 

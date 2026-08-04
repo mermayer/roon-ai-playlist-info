@@ -35,6 +35,18 @@ Die Anwendung läuft lokal und lässt sich auf drei Arten bedienen:
 - Treffer, unsichere Ergebnisse, fehlende Titel und mögliche Alternativen anzeigen.
 - Ergebnis in einer gewählten Roon-Zone starten oder als M3U speichern.
 
+#### KI-Playlisten mit sichtbarem Roon-Abgleich
+
+Die KI-Quelle verbindet eine optionale freie Beschreibung mit Stimmung und Energie, Jahrzehnt, Genre, Interpreten-Sprache, Zielzone und Titelanzahl. Das gewählte lokale oder Cloud-Modell schlägt die Musik vor, doch diese Vorschläge werden nicht ungeprüft abgespielt. Jeder Eintrag wird zuerst gegen Roon aufgelöst. Die Ergebnisansicht zeigt Titel, Interpret, Energie, Jahr, Providerverfügbarkeit, gefundene und fehlende Anzahl sowie einzelne Ersetzen-/Entfernen-Aktionen. Eine geprüfte Liste kann die Queue der gewählten Zone ersetzen, angehängt, gemischt oder für später gespeichert werden.
+
+![KI-Playlist-Erzeugung mit Filtern und gegen Roon geprüften Treffern](assets/screenshots/playlist.png)
+
+#### Last.fm-Playlisten ohne KI-Prompt
+
+Die Last.fm-Quelle bietet eine nachvollziehbare Alternative auf Basis gepflegter Jahrzehnt-, Sprach-, Genre-, Stil- und Atmosphäre-Tags. Mehrere Tags lassen sich kombinieren, Titelanzahl und Zielzone werden direkt gewählt und die erzeugten Kandidaten durchlaufen denselben Roon-Abgleich und dieselbe Ergebnisprüfung wie KI-Vorschläge. Die fertige Liste kann abgespielt, angehängt, gemischt, bearbeitet oder gespeichert werden; die gewählten Tags bleiben in der Ergebnisüberschrift sichtbar, sodass ihre Herkunft erkennbar ist.
+
+![Mit Tags erzeugte und für Roon geprüfte Last.fm-Playlist](assets/screenshots/lastfm.png)
+
 ### Bessere Live-Radio-Metadaten
 
 Live-Radio-Streams liefern häufig unvollständige, vertauschte oder falsch codierte Texte. Roon AI Playlist kann:
@@ -187,10 +199,6 @@ RoPieee leitet Fernbedienungsereignisse normalerweise an eine fest gewählte Roo
 - Den Bildspeicher geprüft auf ein anderes lokales Laufwerk verschieben.
 - Dienstestatus, Speicher, Caches, Providerfehler und Roon-Verbindung kontrollieren.
 - Umfangreiche Metadatenabfragen, Bilddownloads, Prüfung, Hashing und Cache-Arbeiten getrennt ausführen, damit Player, Weboberfläche, Roon-Verbindung und Netzwerk-Trigger ansprechbar bleiben.
-
-## Playlist-Beispiel
-
-![Mit Roon abgeglichene KI-Playlist](assets/screenshots/playlist.png)
 
 ## RoonAIViewer
 
