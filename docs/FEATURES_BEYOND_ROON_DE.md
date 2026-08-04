@@ -159,7 +159,7 @@ Damit kann eine mit RoPieee verbundene Bluetooth-Fernbedienung zwischen zwei wec
 
 ![Übersicht des Mehrzonen-Players](../assets/screenshots/new_zone_view.png)
 
-- Alle relevanten Roon-Zonen gleichzeitig als Dashboard mit Cover, Zustand, Fortschritt, Transport und Queue darstellen.
+- Konfigurieren, welche Roon-Zonen sichtbar sind, ihre Reihenfolge und Spaltendarstellung bestimmen und die ausgewählten Zonen gleichzeitig mit Cover, Zustand, Fortschritt, Transport und Queue anzeigen.
 - Bis zu sechs kommende Titel sowie Restanzahl und Restzeit direkt pro Zone anzeigen.
 - Eigene Darstellungen für normale Musik, Roon Radio, Live Radio, Spotify und Hörbücher verwenden.
 - Cover, Künstlerprofilbild und Künstlerhintergrund getrennt präsentieren.

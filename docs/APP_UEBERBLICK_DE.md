@@ -20,7 +20,7 @@ Playlisten können aus freien Musikwünschen, Tags, Last.fm-Empfehlungen oder Wr
 
 ### Player
 
-Der Player zeigt Roon-Zonen, Wiedergabestatus, Cover, Metadaten, Interpretenbilder, Fortschritt und Warteschlangen. Für Live Radio, Spotify-Streams und Hörbücher gelten jeweils passende Darstellungen und Bedienelemente.
+Der Player zeigt eine konfigurierbare Auswahl von Roon-Zonen mit frei bestimmbarer Reihenfolge und Darstellung, Wiedergabestatus, Cover, Metadaten, Interpretenbilder, Fortschritt und Warteschlangen. Normale Playeransicht und große Browseransicht können getrennte Sichtbarkeitsauswahlen besitzen. Für Live Radio, Spotify-Streams und Hörbücher gelten jeweils passende Darstellungen und Bedienelemente.
 
 ![Übersicht des Mehrzonen-Players](../assets/screenshots/new_zone_view.png)
 

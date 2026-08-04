@@ -20,7 +20,7 @@ Playlists can be created from free-form music requests, tags, Last.fm recommenda
 
 ### Player
 
-The player displays Roon zones, playback state, artwork, metadata, artist images, progress, and queues. Live radio, Spotify streams, and audiobooks receive purpose-built layouts and controls.
+The player displays a configurable selection of Roon zones with user-defined order and layout, playback state, artwork, metadata, artist images, progress, and queues. The normal Player and large Browser views can have separate visible-zone selections. Live radio, Spotify streams, and audiobooks receive purpose-built layouts and controls.
 
 ![Multi-zone Player overview](../assets/screenshots/new_zone_view.png)
 

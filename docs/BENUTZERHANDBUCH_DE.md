@@ -134,6 +134,8 @@ RoonAIViewer ist ein separater Windows-Client für einen entfernten App-Dienst. 
 
 ### Zonenübersicht
 
+Die Zonenübersicht ist unter **Konfiguration > UI** einstellbar. Normale Playeransicht und große Browseransicht besitzen getrennte Auswahlen: Es lässt sich festlegen, welche gefundenen Roon-Zonen sichtbar sind, in welcher Reihenfolge sie erscheinen und ob die Darstellung automatisch, ein- oder zweispaltig erfolgt. Das Ausblenden einer Zone entfernt sie nur aus dieser Ansicht; die Zone wird dadurch in Roon weder deaktiviert noch umbenannt.
+
 Jede Zonenkarte kann folgende Informationen enthalten:
 
 - Zonenname,

@@ -159,7 +159,7 @@ This makes a RoPieee-connected Bluetooth remote useful across two changing desti
 
 ![Multi-zone Player overview](../assets/screenshots/new_zone_view.png)
 
-- Display all relevant Roon zones simultaneously in a dashboard with artwork, state, progress, transport, and queue.
+- Configure which Roon zones are visible, arrange their order and column layout, and display the selected zones simultaneously with artwork, state, progress, transport, and queue.
 - Show up to six upcoming tracks plus remaining count and time directly per zone.
 - Use dedicated presentations for normal music, Roon Radio, Live Radio, Spotify, and audiobooks.
 - Present cover, artist profile image, and artist background separately.

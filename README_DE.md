@@ -72,7 +72,7 @@ Jeder Sender besitzt einen dauerhaft gespeicherten Metadatenmodus:
 
 ![Übersicht des Mehrzonen-Players](assets/screenshots/new_zone_view.png)
 
-- Alle relevanten Roon-Zonen gemeinsam in einem Dashboard darstellen.
+- Festlegen, welche Roon-Zonen sichtbar sind, ihre Reihenfolge bestimmen und die ausgewählten Zonen gemeinsam in einem Dashboard darstellen.
 - Cover, Wiedergabestatus, Fortschritt, Transportsteuerung und Warteschlange anzeigen.
 - Kommende Titel, verbleibende Titelanzahl und gesamte Restzeit anzeigen.
 - Eigene Ansichten für normale Musik, Roon Radio, Live Radio, Spotify-Streams und Hörbücher verwenden.

@@ -134,6 +134,8 @@ RoonAIViewer is a separate Windows client for a remote application service. It i
 
 ### Zone overview
 
+The zone overview is configurable under **Configuration > UI**. The normal Player view and the large Browser view have separate selections: choose which discovered Roon zones are visible, arrange their order, and select an automatic, one-column, or two-column layout. Hiding a zone only removes it from that view; it does not disable or rename the zone in Roon.
+
 Each zone card can display:
 
 - zone name,
