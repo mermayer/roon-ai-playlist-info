@@ -1,0 +1,866 @@
+# Roon AI Playlist – Benutzerhandbuch
+
+[English version](USER_GUIDE.md) · [Zurück zur Übersicht](../README_DE.md)
+
+Dokumentationsstand: Roon AI Playlist **1.0.458**, RoonAIViewer **1.0.3**.
+
+## Inhaltsübersicht
+
+1. [Aufgabe der App](#1-aufgabe-der-app)
+2. [Voraussetzungen](#2-voraussetzungen)
+3. [Installation und erster Start](#3-installation-und-erster-start)
+4. [Navigation und Bedienoberflächen](#4-navigation-und-bedienoberflächen)
+5. [Player und Zonen](#5-player-und-zonen)
+6. [Playlisten erzeugen](#6-playlisten-erzeugen)
+7. [Live Radio](#7-live-radio)
+8. [TIDAL-Werkzeuge](#8-tidal-werkzeuge)
+9. [Hörbücher](#9-hörbücher)
+10. [Roon Wrapped](#10-roon-wrapped)
+11. [Cover und Interpretenbilder](#11-cover-und-interpretenbilder)
+12. [Roon Tools](#12-roon-tools)
+13. [Remote-Slots](#13-remote-slots)
+14. [Netzwerk-Trigger](#14-netzwerk-trigger)
+15. [Fernbedienungs-Proxy](#15-fernbedienungs-proxy)
+16. [Browser und RoonAIViewer](#16-browser-und-roonaiviewer)
+17. [Konfiguration](#17-konfiguration)
+18. [Sicherung und Wiederherstellung](#18-sicherung-und-wiederherstellung)
+19. [Speicher und Wartung](#19-speicher-und-wartung)
+20. [Sicherheit und Datenschutz](#20-sicherheit-und-datenschutz)
+21. [Fehlerbehebung](#21-fehlerbehebung)
+22. [Empfohlener Einrichtungsablauf](#22-empfohlener-einrichtungsablauf)
+
+## 1. Aufgabe der App
+
+Roon AI Playlist ergänzt ein vorhandenes Roon-System. Roon bleibt für Musikbibliothek, Streaming, RAAT, DSP, Zonen, Warteschlangen und Audiowiedergabe verantwortlich. Die App fügt zusätzliche Bedien- und Verwaltungsfunktionen hinzu:
+
+- intelligente und externe Playlist-Erzeugung,
+- visuelle Mehrzonensteuerung,
+- bessere Live-Radio-Metadaten und Bilder,
+- Hörbuchfortschritt und Lesezeichen,
+- persönliche Wrapped-Auswertungen,
+- Cover- und Interpretenbildpflege,
+- TIDAL-Schnellaktionen,
+- Remote-Slots und Netzwerk-Trigger,
+- Browser- und Viewer-Bedienung.
+
+Die App ersetzt keine Roon-Bibliothek und greift nicht in die Audioverarbeitung ein. Wiedergabeaktionen werden an Roon übergeben.
+
+## 2. Voraussetzungen
+
+Für den normalen Betrieb werden benötigt:
+
+- Windows 10 oder Windows 11, 64 Bit,
+- ein laufender und im lokalen Netzwerk erreichbarer Roon Core,
+- die Möglichkeit, die App unter **Roon > Einstellungen > Erweiterungen** zu autorisieren,
+- eine Roon-Zone für die Wiedergabe.
+
+Optional können folgende Dienste ergänzt werden:
+
+- Ollama, OpenRouter, OpenAI, Gemini oder Claude für KI-Playlisten,
+- TIDAL für direkte Suche und Playlistenaktionen,
+- Last.fm und Deezer für Musiksuche und Metadaten,
+- fanart.tv und TheAudioDB für Interpretenbilder,
+- MusicBrainz und Cover Art Archive für Albumdaten und Cover,
+- Audible für Hörbuchinformationen.
+
+Nicht benötigte Dienste können deaktiviert bleiben. Der Player, Roon Tools, Hörbücher und große Teile von Wrapped funktionieren auch ohne KI-Anbieter.
+
+## 3. Installation und erster Start
+
+### Installation
+
+1. Den separat bereitgestellten Windows-Installer öffnen.
+2. Installation abschließen und Roon AI Playlist starten.
+3. Beim ersten Start den Einrichtungsassistenten durchlaufen.
+
+### Roon autorisieren
+
+1. Warten, bis die App den Roon Core im Netzwerk gefunden hat.
+2. In Roon **Einstellungen > Erweiterungen** öffnen.
+3. **AI Playlist Generator** autorisieren.
+4. Nur bei Verwendung der Hörbuchaufnahme zusätzlich **Roon AI Hoerbuchaufnahme** autorisieren.
+
+Die normale Roon-Anbindung benötigt keinen manuell erstellten Roon-API-Schlüssel.
+
+### Einrichtungsassistent
+
+Der Assistent führt durch folgende Entscheidungen:
+
+1. vorhandene App-Sicherung wiederherstellen oder frisch beginnen,
+2. Roon-Verbindung herstellen,
+3. lokalen oder LAN-Zugriff festlegen,
+4. Sprache und grundlegende Oberfläche wählen,
+5. KI- und Zusatzdienste aktivieren oder überspringen,
+6. Zugangsdaten prüfen,
+7. Konfiguration speichern.
+
+Der Assistent kann später über **Konfiguration > Einrichtungsassistent** erneut geöffnet werden.
+
+### Nach dem ersten Start prüfen
+
+- Wird der Roon Core als verbunden angezeigt?
+- Erscheinen die gewünschten Zonen im Player?
+- Reagiert eine Zone auf Play/Pause?
+- Werden Cover und Warteschlange angezeigt?
+- Ist bei LAN-Zugriff ein API-Token gesetzt?
+- Wurde eine erste Sicherung erstellt?
+
+## 4. Navigation und Bedienoberflächen
+
+Die Hauptnavigation besteht aus:
+
+- **Player:** Zonenübersicht, Wiedergabe und Detailansichten.
+- **Playlist:** KI-, Last.fm-, Tag- und Wrapped-Playlisten.
+- **Hörbücher:** Bibliothek, Analyse, Fortschritt, Kapitel und Lesezeichen.
+- **Wrapped:** persönliche Hörstatistik, Show, Story und Datenqualität.
+- **Roon Tools:** Live-Radio-Sender, Roon-Playlisten, Queue und Schnellaktionen.
+- **Konfiguration:** Dienste, Oberfläche, Wrapped, Remote, Wartung und Sicherungen.
+
+### Vollständige Windows-App
+
+Die vollständige App enthält die Bedienoberfläche und den zentralen App-Dienst. Wird das Fenster geschlossen, kann die App im Windows-Infobereich weiterlaufen. Das Tray-Menü öffnet App oder Browser, startet oder stoppt den Dienst, lädt neu oder beendet die Anwendung vollständig.
+
+### Browseransicht
+
+Die Browseransicht eignet sich für Tablets, Wanddisplays oder andere Rechner im privaten Netzwerk. Sie verwendet dieselben Zustände wie der normale Player, verzichtet aber in der Zonenansicht auf unnötige Fensterbestandteile.
+
+### RoonAIViewer
+
+RoonAIViewer ist ein separater Windows-Client für einen entfernten App-Dienst. Er wird in [Abschnitt 16](#16-browser-und-roonaiviewer) zusammengefasst und besitzt ein eigenes [ausführliches Handbuch](ROONAI_VIEWER_DE.md).
+
+## 5. Player und Zonen
+
+![Zonen-Detailansicht mit Warteschlange und Interpretenbild](../assets/screenshots/player.png)
+
+### Zonenübersicht
+
+Jede Zonenkarte kann folgende Informationen enthalten:
+
+- Zonenname,
+- Zustand wie Playing, Paused, Stopped oder Loading,
+- Titel, Interpret und Album,
+- Albumcover oder passendes Ersatzbild,
+- Fortschritt und Titeldauer,
+- kommende Titel,
+- verbleibende Titelanzahl und Restzeit,
+- Transportsteuerung.
+
+Die App verwendet die vorhandene Roon-Zonenüberwachung. Mehrere Browser oder Viewer erzeugen keine eigene zusätzliche Roon-Verbindung.
+
+### Zonen-Detailansicht
+
+Durch Öffnen einer Zone erscheint eine größere Darstellung. Je nach Wiedergabetyp zeigt sie:
+
+- großes Album- oder Titelcover,
+- Künstlerporträt und Künstlerhintergrund,
+- aktuelle Metadaten,
+- Fortschrittsbalken,
+- Warteschlange,
+- Wiedergabesteuerung,
+- optionale TIDAL- und Netzwerkaktionen.
+
+Bei einer normalen Queue stehen der aktuelle und kommende Titel im Mittelpunkt. Im Roon-Radio-Modus erhält die Künstlerdarstellung mehr Platz, solange Roon keine echte Folge-Queue meldet.
+
+### Bedienelemente
+
+Abhängig vom Inhalt können erscheinen:
+
+- Zurück oder vorheriger Titel,
+- Play/Pause,
+- nächster Titel,
+- zehn Sekunden zurück oder vor bei geeigneten Inhalten,
+- `T+` zum Speichern in der zonenbezogenen TIDAL-Zielplaylist,
+- **AUS** für Zonen mit einem konfigurierten Netzwerk-Trigger.
+
+Bei reinen Musikansichten werden Sprungtasten ausgeblendet, wenn sie keinen sinnvollen Nutzen haben. Live Radio besitzt ebenfalls eine angepasste Steuerung.
+
+### Queue und Restzeit
+
+Die App zeigt eine Vorschau der kommenden Titel, ihre Dauer sowie die Gesamtzahl und Restzeit der noch ausstehenden Titel. Kurz verzögerte Queue-Daten werden kontrolliert nachgeladen, ohne ständig neue Abfragen zu starten.
+
+### Bilder und Quellenzeichen
+
+Kleine Buchstaben am Bild können die Quelle kennzeichnen, beispielsweise Roon oder fanart.tv. Cover, Künstlerporträt und breiter Hintergrund werden getrennt behandelt, damit nicht dasselbe Bild für jede Fläche verwendet werden muss.
+
+Bei Künstlergruppen oder Duos sucht die App zuerst den vollständigen gemeinsamen Namen. Einzelne Beteiligte werden erst geprüft, wenn für die gemeinsame Identität kein geeigneter Treffer vorhanden ist.
+
+### Roon Radio, Spotify und Hörbücher
+
+- **Roon Radio:** angepasste Darstellung, bis eine normale Warteschlange vorliegt.
+- **Spotify- oder externe Streams:** Stream-Metadaten und Cover werden bevorzugt; nicht passende Dauer- oder Sprungelemente werden ausgeblendet.
+- **Hörbücher:** Kapitel, Position, Lesezeichen und Fortsetzen stehen im Vordergrund.
+
+## 6. Playlisten erzeugen
+
+![Mit Roon abgeglichene KI-Playlist](../assets/screenshots/playlist.png)
+
+### Verfügbare Quellen
+
+- **KI-Playlist:** freier Musikwunsch mit zusätzlichen Filtern.
+- **Last.fm:** Vorschläge aus Tags und Stimmungen.
+- **Taglisten:** gepflegte Kategorien für verschiedene Playlistquellen.
+- **Wrapped Top 20:** persönliche Favoriten aus dem lokalen Wrapped-Verlauf.
+
+### KI-Playlist erstellen
+
+1. **Playlist** öffnen.
+2. KI-Playlist als Quelle wählen.
+3. Musikwunsch beschreiben, beispielsweise Stil, Anlass oder gewünschte Mischung.
+4. Optional Jahrzehnte, Genres, Stimmung, Energie und Sprache eingrenzen.
+5. Zielzone und gewünschte Titelanzahl wählen.
+6. Playlist erzeugen.
+
+### Roon-Abgleich verstehen
+
+Die Vorschläge werden nicht ungeprüft abgespielt. Die App sucht jeden Kandidaten in der tatsächlichen Roon-Bibliothek und zeigt:
+
+- sicher gefundene Titel,
+- unsichere oder alternative Treffer,
+- nicht gefundene Kandidaten,
+- mögliche Ersatztracks.
+
+Erst danach kann die Liste abgespielt, zur Queue hinzugefügt oder gespeichert werden. Externe IDs werden nicht blind als Roon-Bibliothekseinträge behandelt.
+
+### Ergebnis verwenden
+
+Je nach Ansicht stehen zur Verfügung:
+
+- sofort in der gewählten Zone abspielen,
+- zur vorhandenen Queue hinzufügen,
+- Reihenfolge mischen,
+- als M3U speichern,
+- eine gespeicherte Liste laden und erneut prüfen.
+
+### Taglisten verwalten
+
+Die auswählbaren Kategorien für Last.fm-, KI- und Deezer-basierte Quellen können unter **Konfiguration > Dienste** bearbeitet und geprüft werden. Änderungen sollten vor dem Speichern validiert werden.
+
+## 7. Live Radio
+
+![Aufbereitete Live-Radio-Metadaten mit Cover und Interpretenbildern](../assets/screenshots/radio_new.png)
+
+### Warum eine zusätzliche Aufbereitung nötig ist
+
+Roon erhält Live-Radio-Metadaten aus dem Stream. Manche Sender liefern vollständige Felder, andere nur einen Text, vertauschte Namen, fehlerhafte Zeichen oder Werbeeinträge. Die App versucht daraus einen belastbaren Musiktitel zu bilden.
+
+### Such- und Anzeigekette
+
+Je nach vorhandenen Angaben werden verwendet:
+
+1. ausdrückliche Roon-Albuminformationen,
+2. TIDAL und bereits gespeicherte sichere Treffer,
+3. MusicBrainz und Cover Art Archive,
+4. Last.fm,
+5. Deezer als weiterer Fallback.
+
+Die App kann Artist, Titel und Album korrigieren, wenn ein sicherer Treffer vorliegt. Unpassende Compilations, Best-of-, Soundtrack-, Live- oder Remaster-Ergebnisse werden abgewertet, wenn sie nicht zu den vorhandenen Hinweisen passen.
+
+### Nicht-Musik-Inhalte
+
+Typische Jingles, Werbung, Nachrichten, Wetter, Intros, Outros, Senderkennungen und technische Automationsnamen werden möglichst vor der Providersuche erkannt. Dadurch entstehen weniger falsche Cover und weniger unerwünschte Wrapped-Einträge.
+
+### Zeichensatzreparatur
+
+Beschädigte Umlaute, Apostrophe und ähnliche Zeichen werden vor der Suche normalisiert. Die sichtbare Anzeige verwendet nach Möglichkeit ebenfalls die reparierte Schreibweise.
+
+### Metadatenmodi pro Sender
+
+Der Modus wird unter **Roon Tools** am jeweiligen Sender gespeichert:
+
+- **Normal (`N`):** vollständige Suche und Anzeige; qualifizierte Musik wird regulär in Wrapped übernommen.
+- **Vorsichtig (`V`):** exakt dieselbe Suche, Anzeige, Cover-, Interpretenbild- und `T+`-Funktion wie Normal. Nur Wrapped unterscheidet sich: Ohne verwertbaren Treffer erfolgt keine Aufnahme.
+- **Aus (`A`):** keine externe Suche und keine Wrapped-Aufnahme; angezeigt werden die vom Sender beziehungsweise von Roon gelieferten Werte.
+
+Das Moduszeichen erscheint neben dem Sendernamen in Zonenkarte und Detailansicht.
+
+### `T+` bei Live Radio
+
+In Normal und Vorsichtig kann ein erkannter Titel über `T+` in die für diese Zone konfigurierte TIDAL-Zielplaylist übernommen werden. Im Modus Aus steht die externe Aktion nicht zur Verfügung.
+
+### Was tun bei einem falschen Treffer?
+
+- Den Titelwechsel abwarten, um einen veralteten Zwischenstand auszuschließen.
+- Prüfen, welchen Metadatenmodus der Sender verwendet.
+- Im Fehlerprotokoll nach einem Provider- oder Zeichensatzfehler suchen.
+- Einen später in Wrapped gespeicherten Eintrag über **Offene Cover verwalten** korrigieren.
+
+## 8. TIDAL-Werkzeuge
+
+Nach erfolgreicher TIDAL-Verbindung kann die App:
+
+- Titel, Alben und Interpreten suchen,
+- Beziehungen zwischen Titel, Album und Künstler auflösen,
+- TIDAL-Mixe übernehmen,
+- Ausschlussfilter für Mixe speichern,
+- pro Roon-Zone eine TIDAL-Zielplaylist festlegen,
+- laufende oder erkannte Radio-Titel über `T+` hinzufügen.
+
+### Zielplaylist einrichten
+
+1. TIDAL in **Konfiguration > Dienste** aktivieren und verbinden.
+2. Die verfügbaren Playlisten laden.
+3. Für die gewünschte Roon-Zone eine Zielplaylist auswählen.
+4. Einstellungen speichern.
+
+Der `T+`-Button erscheint nur dort, wo eine sinnvolle TIDAL-Aktion möglich ist.
+
+### Fehlersituationen
+
+- Ein leerer Treffer bedeutet nicht automatisch einen Verbindungsfehler.
+- Abgelaufene Anmeldung erneut verbinden.
+- Bei Providerfehlern Verbindung und Dienstestatus prüfen.
+- Ein TIDAL-Treffer ist nicht automatisch derselbe Bibliothekseintrag in Roon; die App führt deshalb getrennte Abgleiche durch.
+
+## 9. Hörbücher
+
+![Hörbuchplayer mit Kapiteln und Lesezeichen](../assets/screenshots/audiobooks.png)
+
+### Bibliothek synchronisieren
+
+1. **Hörbücher** öffnen.
+2. **Hörbücher synchronisieren** wählen.
+3. Warten, bis alle entsprechenden Roon-Alben geladen wurden.
+4. **Hörbücher analysieren** ausführen, um Kapitel und Dauer vollständig zu erfassen.
+
+Die Analyse verwendet vollständige Seitennavigation und ist auch für Bücher mit mehreren hundert Kapiteln vorgesehen.
+
+### Bibliotheksansicht
+
+Zur Verfügung stehen:
+
+- Listen- und Kachelansicht,
+- Sortierung nach Titel, Autor, Fortschritt oder Aktualisierung,
+- Cover, Autor, Kapitelzahl und Gesamtdauer,
+- aktuelle Hörposition und Restzeit,
+- Fortsetzen und Neustart.
+
+### Hörbuchplayer
+
+Die Detailansicht zeigt:
+
+- großes Cover,
+- Titel und Autor,
+- Wiedergabezone,
+- aktuelle Position,
+- Kapitelliste,
+- Kapitelnummern und Dauer,
+- automatische und manuelle Lesezeichen,
+- Transport- und Sprungsteuerung.
+
+### Fortschritt und Lesezeichen
+
+Der Fortschritt ist an das Hörbuch gebunden, nicht an eine einzige Zone. Wird ein bekanntes Buch in einer überwachten Roon-Zone wiedergegeben, kann dieselbe Buchposition fortgeschrieben werden.
+
+- **Automatisches Lesezeichen:** wird durch die laufende Wiedergabe aktualisiert.
+- **Manuelles Lesezeichen:** hält eine bewusst gespeicherte Position fest und kann wieder gelöscht werden.
+- **Fortsetzen:** startet an der gespeicherten Position.
+- **Von Anfang:** startet das Buch neu.
+
+Erkannte Hörbücher werden nicht als normale Musik in Wrapped übernommen und lösen keine nächtlichen Musik-Interpretenbildsuchen aus.
+
+### Optionale Hörbuchaufnahme
+
+Die Aufnahme ist für bereits synchronisierte und analysierte Hörbücher vorgesehen.
+
+Vor dem ersten Start:
+
+1. unter **Konfiguration > Basis > Hörbuchaufnahme** Zielordner und exklusive Aufnahmezone wählen,
+2. **System prüfen** ausführen,
+3. alle gemeldeten Voraussetzungen erfüllen,
+4. die zusätzliche Roon-Erweiterung **Roon AI Hoerbuchaufnahme** autorisieren.
+
+Der Systemcheck prüft unter anderem Audiowerkzeuge, Eingabegerät, Roon-Zone, Schreibzugriff und freien Speicherplatz.
+
+Während der Aufnahme:
+
+- ist die konfigurierte Zone exklusiv reserviert,
+- entstehen zunächst fortlaufende Mastersegmente,
+- werden beobachtete Kapitelwechsel protokolliert,
+- kann **Nach diesem Kapitel pausieren** vorgemerkt und wieder aufgehoben werden,
+- beginnt Fortsetzen mit dem nächsten Kapitel in einem neuen Segment.
+
+Nach der Aufnahme werden nummerierte MP3-Kapitel mit Titel, Autor, Album, Tracknummer und eingebettetem Cover erzeugt. Bei einem echten Fehler bleiben vorhandene Mastersegmente als Rettungsdateien erhalten.
+
+## 10. Roon Wrapped
+
+![Persönliche Wrapped-Show](../assets/screenshots/wrapped.png)
+
+### Was wird erfasst?
+
+Wrapped speichert qualifizierte lokale Hörsitzungen aus:
+
+- normaler Roon-Musikwiedergabe,
+- Live Radio im passenden Sendermodus,
+- erkannten Spotify- oder externen Musikstreams.
+
+Kurze Fehlstarts werden aus Hörzeit und Top-Listen herausgehalten, können aber für Skip- und Qualitätswerte berücksichtigt werden. Hörbücher und gefilterte Nicht-Musik-Inhalte werden ausgeschlossen.
+
+### Ansichten
+
+- **Dashboard:** Kernwerte, Top-Listen, Tageszeiten, Quellen und letzte Sitzungen.
+- **Show:** kompakte visuelle Zusammenfassung mit Covermosaik und Höhepunkten.
+- **Story:** nacheinander ablaufende Kapitelkarten mit Navigation und Autoplay.
+- **Status:** Tracking-Zeitraum, Datenqualität, Coverabdeckung und fehlende Daten.
+- **Gehörte Titel:** filterbare Liste der historischen Wiedergaben.
+
+### Zeiträume
+
+- aktuelles Jahr,
+- aktuelles Quartal,
+- aktueller Monat,
+- letzte 30 Tage,
+- letzte 90 Tage,
+- gesamter Bestand,
+- benutzerdefinierter Zeitraum.
+
+### Historische Titel erneut abspielen
+
+Ein Klick auf einen Titel oder Top-Track öffnet eine Zonenauswahl. Die App sucht den Titel in Roon und startet ihn in der gewünschten Zone. Findet Roon dabei bessere Daten, können fehlende Album- oder Coverinformationen ergänzt werden.
+
+### Exporte
+
+Je nach Oberfläche können folgende Exporte erstellt werden:
+
+- PNG-Karte,
+- PDF-Bericht,
+- CSV-Daten.
+
+PDF ist für die vollständige Windows-App vorgesehen. Browser und Viewer verwenden vor allem PNG, CSV und die Bildschirmansichten.
+
+### Wrapped-Daten vervollständigen
+
+Unter **Konfiguration > Wrapped > Datenverwaltung** führt **Wrapped-Daten vervollständigen** drei Schritte aus:
+
+1. fehlende Alben ermitteln,
+2. fehlende Cover suchen,
+3. externe Bilder lokal speichern.
+
+Alle offenen Gruppen werden bearbeitet, bis kein weiterer Fortschritt möglich ist. **Automatisch vervollständigen** startet denselben Ablauf sofort und prüft anschließend alle fünf Minuten auf neue Lücken. **Lauf stoppen** beendet den aktuellen Vorgang.
+
+### Offene Cover verwalten
+
+Unter **Erweiterte Aktionen > Offene Cover verwalten** erscheinen weiterhin ungelöste Titel gruppiert. Für eine Gruppe können:
+
+- Interpret, Titel und Album korrigiert,
+- die korrigierten Werte gespeichert und sofort neu gesucht,
+- die Suche ohne Änderung wiederholt,
+- die betroffenen Wrapped-Wiedergaben nach Bestätigung gelöscht werden.
+
+Vor dem Löschen zeigt die App die genaue Zahl der betroffenen Wiedergaben. Eine zusätzliche Prüfung verhindert, dass eine zwischenzeitlich geänderte Gruppe versehentlich gelöscht wird.
+
+## 11. Cover und Interpretenbilder
+
+### Anbieterreihenfolge
+
+Unter **Konfiguration > Wrapped > Interpretenbilder verwalten** können folgende Anbieter sortiert oder deaktiviert werden:
+
+- fanart.tv,
+- TIDAL,
+- Roon,
+- Last.fm,
+- Deezer,
+- TheAudioDB.
+
+Der erste brauchbare Treffer der gewählten Reihenfolge gewinnt. Manuell festgelegte Bilder behalten Vorrang.
+
+### Bildaktionen
+
+- vorhandene lokale Treffer ansehen,
+- ein Bild für einen Künstler festlegen,
+- einen Treffer nur für diesen Künstler ablehnen,
+- eine Ablehnung zurücknehmen,
+- externe Neusuche für einen Künstler starten,
+- eigenes JPEG-, PNG- oder WebP-Bild hinterlegen.
+
+### Porträt und Hintergrund
+
+Die App unterscheidet normale Künstlerbilder und breite Hintergründe. Bei Live Radio kann deshalb oben ein Porträt und unten ein separates Fanart-Banner erscheinen. Fehlt ein geeigneter Hintergrund, kann auf ein normales Künstlerbild zurückgefallen werden.
+
+### Mehrfachinterpreten
+
+Namen wie Duos, Bands oder gemeinsame Credits werden zuerst vollständig gesucht. Nur wenn die Einheit kein brauchbares Bild liefert, werden einzelne Beteiligte geprüft. Eine geteilte Darstellung wird nur verwendet, wenn die Einzelergebnisse sinnvoll vollständig sind.
+
+## 12. Roon Tools
+
+Roon Tools bündelt schnelle Roon-Aktionen:
+
+- Live-Radio-Sender laden und starten,
+- Metadatenmodus pro Sender wählen,
+- Roon-Playlisten laden und starten,
+- Playzone auswählen,
+- Playlist-Sortierung wählen,
+- Queue der gewählten Zone anzeigen,
+- konfigurierte Remote-Slots auslösen.
+
+Die Queue-Karte in Roon Tools ist eine kompakte Warteschlangenansicht und nicht identisch mit der vollständigen Zonen-Detailansicht.
+
+### Playlist-Sortierung
+
+Roon-Playlisten können alphabetisch, nach Titelanzahl oder in der in Roon sichtbaren Reihenfolge angezeigt werden. Die zuletzt gewählte Sortierung wird gespeichert.
+
+## 13. Remote-Slots
+
+Unter **Konfiguration > Remote** können bis zu zehn Schnellaktionen angelegt werden. Ein Slot besitzt:
+
+- eine Nummer,
+- ein sichtbares Label,
+- eine Zielzone,
+- eine Aktion.
+
+Mögliche Aktionen sind beispielsweise:
+
+- Live-Radio-Sender starten,
+- Roon-Playlist starten,
+- Wiedergabe einer Zone starten oder umschalten.
+
+Jeder Slot kann in der Konfiguration getestet werden. Aktive Slots erscheinen an den vorgesehenen Stellen der Oberfläche und können auch von kompatiblen lokalen Fernbedienungslösungen ausgelöst werden.
+
+## 14. Netzwerk-Trigger
+
+Netzwerk-Trigger verbinden den Roon-Wiedergabestatus mit externen Geräten.
+
+### Typische Anwendungen
+
+- Verstärker beim Wiedergabestart einschalten,
+- aktive Lautsprecher oder Steckdosen zeitverzögert ausschalten,
+- IR- oder Hausautomationsbridge ansteuern,
+- mehrere Geräte einer Zone gemeinsam verwalten.
+
+### Trigger einrichten
+
+1. **Konfiguration > Remote > Netzwerk-Trigger** öffnen.
+2. Trigger hinzufügen und verständlich benennen.
+3. Eine oder mehrere Roon-Zonen zuordnen.
+4. EIN- und/oder AUS-Adresse eintragen; mindestens eine Richtung ist erforderlich.
+5. Ausschaltverzögerung wählen, wenn ein AUS-Befehl vorhanden ist.
+6. Konfiguration validieren.
+7. EIN und AUS getrennt testen.
+8. Einstellungen speichern und Status beobachten.
+
+### Zulässige Varianten
+
+- **EIN und AUS:** vollständige automatische Steuerung.
+- **Nur EIN:** beim Start einschalten; kein Ausschalt-Timer.
+- **Nur AUS:** beim Wiedergabestart für den nächsten Pause-/Stopp-Vorgang vormerken, aber keinen EIN-Befehl senden.
+
+### Scheduler-Verhalten
+
+- Beginnt oder lädt mindestens eine zugeordnete Zone, wird ein geplanter AUS-Vorgang abgebrochen und gegebenenfalls EIN gesendet.
+- Sind alle zugeordneten Zonen pausiert oder gestoppt, startet die Ausschaltverzögerung.
+- Beginnt die Wiedergabe erneut, wird der Timer abgebrochen.
+- Fehlt eine zugeordnete Zone oder ist ihr Zustand unsicher, wird aus Sicherheitsgründen nicht ausgeschaltet.
+- Beim Ablauf wird AUS einmal gesendet, sofern alle Zonen weiterhin inaktiv sind.
+
+### Manueller AUS-Schalter
+
+Zonen mit einem aktiven Trigger und AUS-Befehl erhalten in allen Zonenansichten einen manuellen AUS-Schalter. Er:
+
+1. stoppt die Roon-Zone,
+2. beendet zugehörige Ausschalt-Timer,
+3. sendet die AUS-Befehle der zugeordneten Trigger sofort.
+
+Bei einem gemeinsamen Trigger warnt die Oberfläche, wenn eine andere zugeordnete Zone noch aktiv ist. Die manuelle Aktion darf den nächsten echten Wiedergabestart nicht blockieren.
+
+## 15. Fernbedienungs-Proxy
+
+Der optionale Dummy-Zonen-Proxy kann Play, Pause, Next und Previous einer Bluetooth- oder ähnlichen Fernbedienung an die zuletzt aktive Musik- oder Hörbuchzone weiterleiten.
+
+Benötigt werden:
+
+- eine eigene Roon-Dummy-Zone,
+- eine festgelegte Musikzone,
+- eine festgelegte Hörbuchzone,
+- die bereitgestellten langen Markertracks in definierter Reihenfolge.
+
+Die App unterscheidet absichtliche Markerbewegungen von natürlichem Titelende und Rückkopplungen. Zielzone, Marker, letzter Befehl und Bestätigungszeit werden in der Konfiguration angezeigt. Lautstärke und Mute werden nicht weitergeleitet.
+
+Vor der Verwendung sollte die Konfiguration validiert und die Dummy-Zone synchronisiert werden.
+
+## 16. Browser und RoonAIViewer
+
+### Browserzugriff
+
+Für den Zugriff von einem anderen Gerät:
+
+1. LAN-Zugriff in der App aktivieren,
+2. einen API-Token konfigurieren,
+3. den verwendeten Port in der Firewall des Serverrechners freigeben,
+4. Serveradresse und Port im Browser öffnen.
+
+Der Zugriff ist für ein vertrauenswürdiges privates Netzwerk gedacht und sollte nicht direkt ins Internet freigegeben werden.
+
+### RoonAIViewer
+
+RoonAIViewer zeigt dieselbe Oberfläche in einem eigenen Windows-Fenster. Der Viewer:
+
+- startet keinen eigenen App-Dienst,
+- stellt keine direkte Roon-Verbindung her,
+- besitzt Tray-Betrieb und Autostart,
+- speichert einen Zoom von 90 bis 130 Prozent,
+- prüft Serveradresse und Token nativ,
+- schützt den Token mit Windows DPAPI,
+- kann eine fälschliche Offline-Anzeige automatisch neu laden.
+
+Die komplette Einrichtung, Bedienung, Fehlerbehebung und Deinstallation steht im [RoonAIViewer-Handbuch](ROONAI_VIEWER_DE.md).
+
+## 17. Konfiguration
+
+### Basis
+
+- Server- und Desktop-Grundverhalten,
+- Start mit Windows und minimierter Start,
+- Bild- und Cover-Speicher,
+- Hörbuchaufnahme und Zielzone,
+- grundlegende Roon-Einstellungen.
+
+### UI
+
+- Sprache,
+- sichtbare Ansichten,
+- Darstellungsoptionen,
+- Browser-Zoom für Übersicht und Detailansicht.
+
+### AI
+
+- KI-Funktion vollständig aktivieren oder deaktivieren,
+- Anbieter und Modell auswählen,
+- lokale oder externe Verbindung konfigurieren,
+- Verbindung testen.
+
+### Dienste
+
+- TIDAL,
+- Last.fm,
+- Deezer,
+- fanart.tv,
+- weitere Metadaten- und Bildquellen,
+- Playlist-Taglisten.
+
+### Wrapped
+
+- Tracking aktivieren,
+- Zeit- und Qualitätsregeln,
+- Exportoptionen,
+- Daten vervollständigen,
+- offene Cover und Interpretenbilder verwalten,
+- Anbieterreihenfolge festlegen.
+
+### Remote
+
+- bis zu zehn Remote-Slots,
+- Netzwerk-Trigger,
+- Dummy-Zonen-Proxy.
+
+### Wartung und Logs
+
+- Healthcheck,
+- Dienstestatus,
+- Sicherungen und Wiederherstellung,
+- Datenprüfung,
+- Fehlerprotokoll und Export,
+- Speicher- und Cacheinformationen.
+
+Die meisten Änderungen werden nach **Änderungen speichern** sofort wirksam. Änderungen an grundlegender Serveradresse oder Port können einen automatischen Neustart des App-Dienstes auslösen.
+
+## 18. Sicherung und Wiederherstellung
+
+### Was eine App-Sicherung enthält
+
+Je nach Sicherungsart können enthalten sein:
+
+- App-Konfiguration,
+- Zugangsdaten und Tokens,
+- Wrapped-Daten,
+- Hörbuchbestand und Fortschritt,
+- Remote-Slots und Netzwerk-Trigger,
+- Metadaten- und Bildzuordnungen,
+- SQLite-Datenbank und portabler Snapshot.
+
+Sicherungen sind vertraulich zu behandeln.
+
+### Manuelle Sicherung
+
+1. **Konfiguration > Wartung** öffnen.
+2. Backup-Export starten.
+3. Ziel auswählen.
+4. Fortschritt und Abschlussmeldung abwarten.
+5. Sicherungsdatei an einem geschützten Ort aufbewahren.
+
+Während eine Sicherung läuft, sind weitere Backup-Aktionen gesperrt.
+
+### Wiederherstellung
+
+1. Wenn möglich vorher den aktuellen Stand separat sichern.
+2. Keine laufende Medienpflege oder Hörbuchaufnahme aktiv lassen.
+3. Wiederherstellung öffnen und Sicherungsdatei wählen.
+4. Prüfung der Datei abwarten.
+5. Wiederherstellung bestätigen.
+6. Nach dem Neustart Roon-Verbindung, Dienste, Zonen und Wartungsstatus prüfen.
+
+Vor jedem App-Update wird eine aktuelle Sicherung empfohlen.
+
+## 19. Speicher und Wartung
+
+### Bild- und Cover-Speicher verschieben
+
+Unter **Konfiguration > Basis > Bild- und Cover-Speicher** werden aktiver Ordner, Größe und Objektanzahl angezeigt.
+
+1. neuen Ordner wählen oder absoluten Pfad eintragen,
+2. **Inhalte verschieben** starten,
+3. Bestätigung abwarten.
+
+Die App kopiert und prüft die Dateien, bevor sie auf den neuen Speicherort umschaltet. Bei einer Kollision oder einem Prüffehler bleibt der bisherige Bestand erhalten.
+
+### Medienverarbeitung
+
+Providerabfragen, Bilddownloads, Bildprüfung, Hashing und Cache-Arbeiten werden getrennt überwacht. Umfangreiche Coverpflege soll deshalb Player, Roon-Verbindung, Weboberfläche und Netzwerk-Trigger nicht unterbrechen.
+
+### Healthcheck
+
+Der Healthcheck prüft unter anderem:
+
+- Roon-Verbindung,
+- zentrale Datenspeicher,
+- Medienverarbeitung,
+- Cache- und Speicherzustand,
+- ausgewählte Konfigurationsfehler.
+
+### Fehlerprotokoll
+
+Das kombinierte Fehlerprotokoll enthält Zeit, Quelle, Bereich, Meldung, Details und Anzahl. Wiederholte identische Fehler können zusammengefasst werden. Für eine Diagnose sind Zeitpunkt, aktive Wiedergabe und die unmittelbar vorher verwendete Funktion besonders wichtig.
+
+## 20. Sicherheit und Datenschutz
+
+- Die App nur in einem vertrauenswürdigen privaten Netzwerk betreiben.
+- Für Browser und Viewer einen API-Token verwenden.
+- Keine direkte Freigabe des App-Dienstes ins Internet einrichten.
+- API-Schlüssel und Tokens nicht in Screenshots oder öffentlichen Dokumenten zeigen.
+- Sicherungen wie Passwörter behandeln, da sie Zugangsdaten und Hörhistorien enthalten können.
+- Nur benötigte externe Dienste aktivieren.
+- Netzwerk-Trigger-Adressen sorgfältig prüfen, weil sie reale Geräte steuern können.
+
+Wrapped, Hörbuchdaten und Bildcaches werden lokal verwaltet. Externe Anfragen entstehen nur durch aktivierte Funktionen und unterliegen zusätzlich den Regeln des jeweiligen Anbieters.
+
+## 21. Fehlerbehebung
+
+### Roon ist nicht verbunden
+
+- Läuft der Roon Core?
+- Ist **AI Playlist Generator** unter Roon-Erweiterungen autorisiert?
+- Befinden sich beide Systeme im selben Netzwerk?
+- Blockiert eine Firewall die Erkennung?
+- App-Dienst über das Tray-Menü neu starten.
+
+### Eine Zone fehlt
+
+- Zone in Roon aktivieren und benennen.
+- Prüfen, ob sie zu einer anderen Zonengruppe gehört.
+- Roon-Verbindung neu aufbauen.
+- Danach die Konfiguration der betroffenen Remote- oder Triggerfunktion aktualisieren.
+
+### Queue-Anzahl ist sichtbar, aber Titel fehlen
+
+- Kurz auf das Queue-Update warten.
+- Prüfen, ob tatsächlich ein weiterer Titel existiert.
+- Nach einem Roon-Core-Neustart die App-Verbindung neu herstellen.
+
+### KI-Playlist wird nicht erzeugt
+
+- Ist KI in der Konfiguration aktiviert?
+- Anbieter, Modell und Zugangsdaten prüfen.
+- Verbindungstest ausführen.
+- Bei Ollama auf einem anderen Rechner dessen LAN-Adresse statt `localhost` verwenden.
+
+### TIDAL-Suche oder `T+` funktioniert nicht
+
+- TIDAL-Verbindung und Anmeldung prüfen.
+- Zielplaylist für die Zone kontrollieren.
+- Sicherstellen, dass der aktuelle Inhalt als Musiktitel erkannt wurde.
+- Providerfehler im Log prüfen.
+
+### Live Radio zeigt keine Ergänzungen
+
+- Sendermodus prüfen: `A` deaktiviert externe Anreicherung.
+- Prüfen, ob Interpret und Titel überhaupt als Musik erkennbar sind.
+- Bei `V` bleibt die Anzeige wie bei Normal; nur Wrapped ist vorsichtiger.
+- Bei einem Jingle oder Werbesegment ist eine fehlende Suche beabsichtigt.
+
+### Live Radio zeigt einen falschen Treffer
+
+- Rohangaben des Senders und den aktuellen Titelwechsel prüfen.
+- Auf beschädigte Zeichen oder vertauschte Felder achten.
+- Providerfehler beziehungsweise besten Kandidaten im Log ansehen.
+- Falls der Eintrag in Wrapped liegt, Metadaten unter **Offene Cover verwalten** korrigieren und neu suchen.
+
+### Interpretenbild fehlt
+
+- Anbieterreihenfolge prüfen.
+- Sicherstellen, dass mindestens ein Anbieter aktiv ist.
+- Namen zuerst als vollständige Künstleridentität suchen lassen.
+- Gezielte Neusuche starten.
+- Falls nötig ein eigenes Bild festlegen.
+
+### Wrapped enthält einen Titel nicht
+
+- Prüfen, ob Wrapped aktiviert ist.
+- War die Wiedergabe lang genug, um als qualifiziert zu gelten?
+- Handelt es sich um ein Hörbuch, Jingle oder anderes gefiltertes Segment?
+- Bei Live Radio den Sendermodus prüfen.
+- Im vorsichtigen Modus ist ohne verwertbaren Treffer keine Aufnahme vorgesehen.
+
+### Wrapped-Cover bleibt offen
+
+- **Wrapped-Daten vervollständigen** ausführen.
+- Danach **Offene Cover verwalten** öffnen.
+- Schreibweise von Interpret, Titel und Album korrigieren.
+- Gezielte Neusuche starten oder eigenes Bild verwenden.
+
+### Hörbuchkapitel sind unvollständig
+
+- Hörbuch erneut synchronisieren.
+- Analyse erneut ausführen.
+- Prüfen, ob Roon das Buch als zusammenhängendes Album darstellt.
+- Browse- oder Verbindungsfehler im Wartungslog prüfen.
+
+### Hörbuchaufnahme startet nicht
+
+- **System prüfen** erneut ausführen.
+- Exklusive Zone, Eingabegerät, Zielordner und Speicherplatz prüfen.
+- Zusätzliche Roon-Erweiterung autorisieren.
+- Sicherstellen, dass das Buch synchronisiert und vollständig analysiert wurde.
+
+### Netzwerk-Trigger reagiert nur auf Test
+
+- Ist der Trigger aktiviert und der richtigen Zone zugeordnet?
+- Wurde seit der letzten manuellen AUS-Aktion ein echter neuer Wiedergabestart erkannt?
+- Zustand Playing/Loading in der Triggerkarte prüfen.
+- Bei Gruppen kontrollieren, ob eine andere Zone noch aktiv ist.
+- EIN- und AUS-Konfiguration sowie Schedulerstatus prüfen.
+
+### Browser oder Viewer meldet offline
+
+- Serveradresse und Port prüfen.
+- API-Token kontrollieren.
+- Firewall und Netzwerkverbindung prüfen.
+- Im Viewer **Verbindung einrichten** und **Verbindung testen** verwenden.
+- Danach vollständig neu laden.
+
+## 22. Empfohlener Einrichtungsablauf
+
+Für eine neue Installation hat sich folgende Reihenfolge bewährt:
+
+1. Roon verbinden und Zonen im Player prüfen.
+2. Sprache und UI-Zoom einstellen.
+3. API-Token und sicheren LAN-Zugriff konfigurieren, falls Browser oder Viewer genutzt werden.
+4. Nur benötigte externe Dienste aktivieren und einzeln testen.
+5. TIDAL-Zielplaylisten pro Zone festlegen.
+6. Live-Radio-Sender laden und deren Modi auswählen.
+7. Wrapped aktivieren und gewünschte Regeln festlegen.
+8. Interpretenbild-Anbieter sortieren.
+9. Hörbücher synchronisieren und analysieren.
+10. Remote-Slots und Netzwerk-Trigger einzeln einrichten und testen.
+11. Bildspeicher festlegen.
+12. Healthcheck ausführen.
+13. Erste vollständige Sicherung erstellen.
+
+Damit ist die Kernfunktion geprüft, bevor automatische Datenpflege, Hörbuchaufnahme oder externe Gerätesteuerung dauerhaft aktiviert werden.

@@ -170,6 +170,7 @@ Browser- und RoonAIViewer-Zugriff sollten mit einem API-Token geschützt werden.
 
 ## Dokumentation
 
+- [Vollständiges Benutzerhandbuch](docs/BENUTZERHANDBUCH_DE.md)
 - [Funktionen über Roon hinaus](docs/FEATURES_BEYOND_ROON_DE.md)
 - [App-Überblick](docs/APP_UEBERBLICK_DE.md)
 - [Erste Schritte](docs/ERSTE_SCHRITTE_DE.md)

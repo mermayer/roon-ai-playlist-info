@@ -37,3 +37,5 @@ Für Browser oder RoonAIViewer muss der App-Dienst Verbindungen aus dem lokalen 
 ## Updates
 
 Vor einem Update sollte eine aktuelle Sicherung erstellt werden. Nach der Installation bleiben die vorhandenen Einstellungen und lokalen Daten normalerweise erhalten. Nach dem ersten Start der neuen Version sollten Roon-Verbindung, Playeransicht und Wartungsstatus kurz geprüft werden.
+
+Die ausführliche Bedienung aller App-Bereiche steht im [vollständigen Benutzerhandbuch](BENUTZERHANDBUCH_DE.md).

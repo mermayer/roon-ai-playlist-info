@@ -37,3 +37,5 @@ For a browser or RoonAIViewer, the application service must accept connections f
 ## Updates
 
 Create a current backup before updating. Existing settings and local data are normally retained after installation. Following the first launch of a new version, briefly check the Roon connection, Player view, and maintenance status.
+
+For detailed operation of every application area, continue with the [complete user guide](USER_GUIDE.md).
