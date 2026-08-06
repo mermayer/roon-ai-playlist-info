@@ -16,7 +16,7 @@ All three interfaces display the same zone and media information supplied by the
 
 ### Playlist
 
-Playlists can be created from free-form music requests, tags, Last.fm recommendations, or Wrapped favourites. Before playback, the application checks which tracks are actually available in Roon.
+Playlists can be created from free-form music requests, tags, Last.fm recommendations, or Wrapped favourites. AI requests may use local or API-based providers, the guided ChatGPT Work hand-off, or the fully automatic Google Antigravity CLI. Antigravity needs no API key and can use current high-quality models from Google's free tier after a one-time sign-in. Before playback, the application checks which tracks are actually available in Roon.
 
 ### Player
 
@@ -54,4 +54,4 @@ This area manages connections, optional services, interface settings, Wrapped, a
 
 ## Local operation
 
-The application is intended for use on a private local network. Roon, Wrapped, audiobook, and cache data is managed locally. External requests occur only for enabled services and features, such as AI providers, TIDAL, or artwork and metadata providers.
+The application is intended for use on a private local network. Roon, Wrapped, audiobook, and cache data is managed locally. External requests occur only for enabled services and features, such as AI providers, TIDAL, or artwork and metadata providers. With Antigravity, the local application starts the CLI on the same Windows system; Google processes the submitted playlist request under the signed-in Antigravity account and its current terms and limits.

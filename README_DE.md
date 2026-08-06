@@ -8,8 +8,8 @@
 
 ## Aktuelle Versionen
 
-- Informations- und Dokumentationsausgabe: **1.0.1**
-- Roon AI Playlist: **1.0.458**
+- Informations- und Dokumentationsausgabe: **1.0.2**
+- Roon AI Playlist: **1.0.463**
 - RoonAIViewer: **1.0.3**
 
 ## Was ist Roon AI Playlist?
@@ -24,12 +24,20 @@ Die Anwendung läuft lokal und lässt sich auf drei Arten bedienen:
 - über einen normalen Browser im privaten Netzwerk,
 - über den schlanken Windows-Client **RoonAIViewer** auf einem anderen Rechner oder Display.
 
+## Kostenlose hochwertige KI-Playlisten mit Google Antigravity
+
+Roon AI Playlist kann Playlisten jetzt vollautomatisch über die offizielle **Google Antigravity CLI** erzeugen. Dieser Weg benötigt keinen KI-API-Key, keinen manuellen Kopier-/Einfügeschritt und kein separates nutzungsabhängig abgerechnetes API-Konto. Nach einer einmaligen Google-Anmeldung auf dem Windows-System der App übergibt Roon AI Playlist den Musikwunsch im Hintergrund an die CLI und erhält die strukturierte Titelliste direkt zurück.
+
+Google stellt im kostenlosen Individual-/Standard-Tarif derzeit moderne Modelle wie **Gemini 3.6 Flash, Gemini 3.5 Flash und Gemini 3.1 Pro** bereit – abhängig von Googles aktueller Modellverfügbarkeit und den jeweiligen Nutzungskontingenten. Roon AI Playlist bietet dafür eine echte Modellauswahl mit Denktiefen, kann kontospezifische Einträge aus `agy models` ergänzen und behält ein freies Feld für zukünftige Modell-IDs. **Gemini 3.1 Pro (High)** bleibt die praktisch bewährte Voreinstellung für qualitätsorientierte Playlisten.
+
+Die erzeugte Liste durchläuft weiterhin den normalen Roon-Ablauf der App: Jeder Vorschlag wird gegen die tatsächliche Roon-Bibliothek geprüft, offene Titel können ersetzt werden und die Wiedergabe beginnt erst nach Bestätigung. Die App kauft niemals Credits und blockiert bereits aktivierte kostenpflichtige Antigravity-G1-/AI-Credits standardmäßig. Aktuelle Angaben stehen in Googles [Antigravity-Modellübersicht](https://antigravity.google/docs/models) und auf der Seite [Antigravity-Tarife und Kontingente](https://antigravity.google/pricing).
+
 ## Was ergänzt die App zu Roon?
 
 ### Intelligente Playlist-Erzeugung
 
 - Musikwünsche frei in natürlicher Sprache beschreiben.
-- Ollama, OpenRouter, OpenAI, Gemini oder Claude als KI-Anbieter wählen.
+- Ollama, OpenRouter, OpenAI, Gemini, Claude, die geführte ChatGPT-Work-Übergabe oder die vollautomatische Google Antigravity CLI wählen.
 - Wünsche mit Genre, Jahrzehnt, Stimmung, Energie und Sprache kombinieren.
 - Playlisten aus Last.fm, Deezer, gepflegten Taglisten oder Wrapped-Favoriten erzeugen.
 - Jeden Vorschlag vor der Wiedergabe mit der tatsächlichen Roon-Bibliothek abgleichen.
@@ -38,7 +46,7 @@ Die Anwendung läuft lokal und lässt sich auf drei Arten bedienen:
 
 #### KI-Playlisten mit sichtbarem Roon-Abgleich
 
-Die KI-Quelle verbindet eine optionale freie Beschreibung mit Stimmung und Energie, Jahrzehnt, Genre, Interpreten-Sprache, Zielzone und Titelanzahl. Das gewählte lokale oder Cloud-Modell schlägt die Musik vor, doch diese Vorschläge werden nicht ungeprüft abgespielt. Jeder Eintrag wird zuerst gegen Roon aufgelöst. Die Ergebnisansicht zeigt Titel, Interpret, Energie, Jahr, Providerverfügbarkeit, gefundene und fehlende Anzahl sowie einzelne Ersetzen-/Entfernen-Aktionen. Eine geprüfte Liste kann die Queue der gewählten Zone ersetzen, angehängt, gemischt oder für später gespeichert werden.
+Die KI-Quelle verbindet eine optionale freie Beschreibung mit Stimmung und Energie, Jahrzehnt, Genre, Interpreten-Sprache, Zielzone und Titelanzahl. Das gewählte lokale, Cloud-, ChatGPT-Work- oder Antigravity-Modell schlägt die Musik vor, doch diese Vorschläge werden nicht ungeprüft abgespielt. Jeder Eintrag wird zuerst gegen Roon aufgelöst. Die Ergebnisansicht zeigt Titel, Interpret, Energie, Jahr, Providerverfügbarkeit, gefundene und fehlende Anzahl sowie einzelne Ersetzen-/Entfernen-Aktionen. Eine geprüfte Liste kann die Queue der gewählten Zone ersetzen, angehängt, gemischt oder für später gespeichert werden.
 
 ![KI-Playlist-Erzeugung mit Filtern und gegen Roon geprüften Treffern](assets/screenshots/playlist.png)
 
@@ -236,7 +244,7 @@ Für den normalen Windows-Betrieb:
 - ein erreichbarer Roon Core im lokalen Netzwerk,
 - Autorisierung der Erweiterung unter **Roon > Einstellungen > Erweiterungen**.
 
-Die KI-Playlistfunktion ist optional und kann deaktiviert werden. Zu den optionalen Integrationen gehören TIDAL, Last.fm, Deezer, fanart.tv, MusicBrainz/Cover Art Archive, TheAudioDB, Audible und ein unterstützter KI-Anbieter.
+Die KI-Playlistfunktion ist optional und kann deaktiviert werden. Anbieter mit API-Key bleiben unterstützt; zusätzlich bietet Google Antigravity CLI einen vollautomatischen API-Key-freien Weg und ChatGPT Work eine geführte API-Key-freie Übergabe. Zu den optionalen Integrationen gehören TIDAL, Last.fm, Deezer, fanart.tv, MusicBrainz/Cover Art Archive, TheAudioDB, Audible und der gewählte KI-Dienst.
 
 ## Lokale Daten und Netzwerkzugriff
 

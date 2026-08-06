@@ -8,8 +8,8 @@
 
 ## Current versions
 
-- Information and documentation release: **1.0.1**
-- Roon AI Playlist: **1.0.458**
+- Information and documentation release: **1.0.2**
+- Roon AI Playlist: **1.0.463**
 - RoonAIViewer: **1.0.3**
 
 ## What is Roon AI Playlist?
@@ -24,12 +24,20 @@ The application runs locally and can be operated in three ways:
 - from a regular web browser on the private network,
 - through the lightweight **RoonAIViewer** Windows client on another computer or display.
 
+## Free, high-quality AI playlists with Google Antigravity
+
+Roon AI Playlist can now generate playlists fully automatically through the official **Google Antigravity CLI**. This route needs no AI API key, no manual copy-and-paste step, and no separate usage-based API account. After a one-time Google sign-in on the Windows system running the application, Roon AI Playlist sends the musical request to the CLI in the background and receives the structured track list directly.
+
+Google currently gives its free Individual/Standard tier access to modern models including **Gemini 3.6 Flash, Gemini 3.5 Flash, and Gemini 3.1 Pro**, subject to Google's model availability and usage limits. Roon AI Playlist provides a real model selector with reasoning variants, can import account-specific entries reported by `agy models`, and retains a custom field for future model IDs. **Gemini 3.1 Pro (High)** remains the proven default for quality-focused playlist creation.
+
+The generated list still passes through the application's normal Roon workflow: every suggestion is matched against the actual Roon library, unresolved tracks can be replaced, and nothing starts playing until the user accepts the result. The application never purchases credits and blocks already enabled paid Antigravity G1/AI credits by default. See Google's current [Antigravity model list](https://antigravity.google/docs/models) and [Antigravity plans and limits](https://antigravity.google/pricing).
+
 ## What does it add to Roon?
 
 ### Intelligent playlist creation
 
 - Describe a desired playlist in natural language.
-- Choose Ollama, OpenRouter, OpenAI, Gemini, or Claude as the AI provider.
+- Choose Ollama, OpenRouter, OpenAI, Gemini, Claude, guided ChatGPT Work, or fully automatic Google Antigravity CLI generation.
 - Combine the request with genre, decade, mood, energy, and language filters.
 - Build playlists from Last.fm, Deezer, maintained tag collections, or Wrapped favourites.
 - Match every suggestion against the actual Roon library before playback.
@@ -38,7 +46,7 @@ The application runs locally and can be operated in three ways:
 
 #### AI playlists with visible Roon matching
 
-The AI source combines an optional free-form description with mood and energy, decade, genre, artist language, target zone, and track count. The selected local or cloud model proposes the music, but the proposal is not sent blindly to playback. Every entry is resolved against Roon first. The result view shows title, artist, energy, year, provider availability, successful and missing counts, and individual replace/remove controls. A verified list can replace the selected zone's queue, be appended, shuffled, or saved for later.
+The AI source combines an optional free-form description with mood and energy, decade, genre, artist language, target zone, and track count. The selected local, cloud, ChatGPT Work, or Antigravity model proposes the music, but the proposal is not sent blindly to playback. Every entry is resolved against Roon first. The result view shows title, artist, energy, year, provider availability, successful and missing counts, and individual replace/remove controls. A verified list can replace the selected zone's queue, be appended, shuffled, or saved for later.
 
 ![AI playlist generation with filters and Roon-matched results](assets/screenshots/playlist.png)
 
@@ -236,7 +244,7 @@ For normal Windows use:
 - a reachable Roon Core on the local network,
 - authorisation of the extension under **Roon > Settings > Extensions**.
 
-AI playlist generation is optional and can be disabled. Optional integrations include TIDAL, Last.fm, Deezer, fanart.tv, MusicBrainz/Cover Art Archive, TheAudioDB, Audible, and a supported AI provider.
+AI playlist generation is optional and can be disabled. API-key-based providers remain supported, while Google Antigravity CLI offers a fully automatic API-key-free route and ChatGPT Work offers a guided API-key-free route. Optional integrations include TIDAL, Last.fm, Deezer, fanart.tv, MusicBrainz/Cover Art Archive, TheAudioDB, Audible, and the selected AI service.
 
 ## Local data and network access
 

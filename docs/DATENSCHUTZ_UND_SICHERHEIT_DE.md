@@ -9,6 +9,7 @@ Roon AI Playlist ist für den lokalen Betrieb im privaten Netzwerk ausgelegt. Zo
 Netzwerkzugriffe zu externen Diensten entstehen nur, wenn die jeweilige Funktion aktiviert und verwendet wird. Dazu können gehören:
 
 - ein gewählter KI-Anbieter für Playlist-Vorschläge
+- Google Antigravity bei Auswahl dieses KI-Weges; die lokale CLI übermittelt den Playlistauftrag im angemeldeten Konto an Googles Dienst
 - TIDAL für Suche und Playlistenaktionen
 - Last.fm und Deezer für Musik- und Bildinformationen
 - fanart.tv und TheAudioDB für Interpretenbilder
@@ -21,6 +22,8 @@ Welche Suchbegriffe oder Metadaten an einen Anbieter gesendet werden, hängt von
 ## Zugangsdaten
 
 API-Schlüssel, Tokens und Anmeldedaten werden in der lokalen App-Konfiguration gespeichert. App-Sicherungen können diese Zugangsdaten enthalten und sollten daher wie Passwörter geschützt aufbewahrt werden.
+
+Die Antigravity-Anmeldung wird von der offiziellen CLI auf dem App-System verwaltet und nicht als KI-API-Key in Roon AI Playlist gespeichert. Die App übermittelt den Playlistwunsch und erhält die erzeugte Titelliste; das Google-Passwort erhält sie nicht. Es gelten Googles Datenschutzbedingungen, Modellverfügbarkeit und Kontokontingente. Kostenpflichtige G1-/AI-Credits sind standardmäßig blockiert und die App löst keinen Credit-Kauf aus.
 
 Im RoonAIViewer wird der Server-Token mit Windows DPAPI an das aktuelle Windows-Benutzerkonto gebunden gespeichert.
 

@@ -6,6 +6,7 @@
 - ein erreichbarer Roon Core im selben lokalen Netzwerk
 - die Berechtigung, Erweiterungen in Roon zu autorisieren
 - optionale Zugangsdaten nur für die Dienste, die tatsächlich verwendet werden sollen
+- für kostenlose automatische KI-Playlisten: Google Antigravity CLI auf demselben Windows-System und ein Google-Konto für die einmalige Anmeldung
 
 ## Erster Start
 
@@ -28,7 +29,10 @@ Der Einrichtungsassistent kann später erneut über die Konfiguration geöffnet 
 4. Wrapped aktivieren und den gewünschten Auswertungszeitraum wählen.
 5. Optional Hörbücher synchronisieren und analysieren.
 6. Optional Interpretenbild-Anbieter sortieren und externe Dienste verbinden.
-7. Eine erste App-Sicherung erstellen.
+7. Für kostenlose automatische KI-Playlisten unter **Konfiguration > AI** **Antigravity** wählen, **Anmeldung öffnen** abschließen, **CLI prüfen**, ein Modell wählen und speichern.
+8. Eine erste App-Sicherung erstellen.
+
+Antigravity benötigt keinen KI-API-Key. Nach der Einrichtung überträgt die lokale CLI Playlistwunsch und Ergebnis automatisch. Es gelten Googles jeweils aktueller kostenloser Tarif, die Modellverfügbarkeit und die Nutzungskontingente; die App kauft niemals Credits.
 
 ## Zugriff aus dem Heimnetz
 

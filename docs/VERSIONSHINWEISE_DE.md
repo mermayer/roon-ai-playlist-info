@@ -1,5 +1,15 @@
 # Versionshinweise
 
+## Informations- und Dokumentationsausgabe 1.0.2 — 6. August 2026
+
+- die kostenlose vollautomatische KI-Playlist-Erzeugung mit Google Antigravity CLI an exponierter Stelle in der öffentlichen Übersicht darstellen
+- dokumentieren, dass nach der Einrichtung weder KI-API-Key, nutzungsabhängiges API-Konto noch manueller Kopier-/Einfügeschritt erforderlich sind
+- Installation auf dem App-System, einmalige Google-Anmeldung, **CLI prüfen**, echte Modellauswahl, kontospezifische `agy models`-Einträge, Denktiefen und zukünftige freie Modell-IDs erklären
+- den derzeitigen kostenlosen Zugang zu hochwertigen Gemini-Modellen beschreiben und gleichzeitig Modellverfügbarkeit sowie Kontingente klar als Google-Leistung kennzeichnen
+- die automatische Übergabe in den unveränderten Roon-Abgleich, die Ersatzlogik, Ergebnisprüfung und Wiedergabebestätigung erläutern
+- festhalten, dass die App keine Credits kauft und vorhandene kostenpflichtige G1-/AI-Credits standardmäßig blockiert
+- den dokumentierten App-Stand auf 1.0.463 aktualisieren
+
 ## Informations- und Dokumentationsausgabe 1.0.1 — 4. August 2026
 
 - erklären, wie die eigenständige native macOS-App SpotBridge 1.0.0 lokale Spotify-Wiedergabe an Roon Audio Input übergibt
@@ -21,7 +31,21 @@ Dies ist die erste öffentliche Informationsausgabe zu Roon AI Playlist. Sie ent
 - Screenshots und Erklärungen zu Mehrzonenplayer, KI- und Last.fm-Playlisten, Live Radio, Spotify, TIDAL-Mixen und -Playlisten, Hörbuchsuche, Wrapped, Netzwerk-Triggern, Remote-Slots und RoPieee-Proxy
 - klare Produktabgrenzung: Die App ergänzt Roon außerhalb seiner Oberfläche innerhalb der Möglichkeiten der Roon-Extension-APIs und ersetzt Roon nicht
 
-## Roon AI Playlist 1.0.458
+## Roon AI Playlist 1.0.463
+
+Zu den neu dokumentierten App-Funktionen gehören:
+
+- vollautomatische Playlist-Erzeugung über Google Antigravity CLI auf demselben Windows-System
+- API-Key-freier Betrieb nach einmaliger Anmeldung mit einem Google-Konto
+- auswählbare Denktiefen für Gemini 3.6 Flash, Gemini 3.5 Flash und Gemini 3.1 Pro sowie kontospezifische und freie zukünftige Modelle
+- Gemini 3.1 Pro (High) als praktisch bewährte qualitätsorientierte Voreinstellung
+- Diagnose von CLI, Anmeldung, Kontingent und Modell über **CLI prüfen**
+- automatische strukturierte Ergebnisübergabe an die vorhandene Roon-Suche und Ersatzlogik
+- Schutz vor unbeabsichtigter Verwendung bereits aktivierter kostenpflichtiger Antigravity-Credits
+
+Der für 1.0.458 dokumentierte Funktionsumfang bleibt Bestandteil der aktuellen App:
+
+### Bereits mit 1.0.458 dokumentierte Funktionen
 
 Der dokumentierte Funktionsstand umfasst unter anderem:
 

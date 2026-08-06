@@ -2,6 +2,20 @@
 
 Dieses Änderungsprotokoll erfasst die öffentlichen Informations- und Dokumentationsausgaben zu Roon AI Playlist. App- und RoonAIViewer-Versionen werden getrennt angegeben, weil dieses Repository weder deren Quellcode noch Installationsdateien enthält.
 
+## [1.0.2](https://github.com/mermayer/roon-ai-playlist-info/releases/tag/v1.0.2) — 06.08.2026
+
+### Hinzugefügt
+
+- Hervorgehobene deutsche und englische Einführung in die vollautomatische KI-Playlist-Erzeugung über die offizielle Google Antigravity CLI ohne KI-API-Key und ohne manuellen Kopier-/Einfügeschritt.
+- Vollständige Antigravity-Anleitung zu Installation, einmaliger Google-Anmeldung, CLI-Prüfung, Modellauswahl, Denktiefen, automatischer JSON-Übergabe, Roon-Abgleich und Fehlerbehebung.
+- Erklärung des derzeitigen kostenlosen Antigravity-Tarifs und seiner hochwertigen Gemini-Modelle mit Verweisen auf Googles aktuelle Modell- und Tarifseiten sowie dem Hinweis, dass sich Verfügbarkeit und Kontingente ändern können.
+- Dokumentation des Kostenschutzes der App: Sie kauft keine Credits und blockiert bereits aktivierte kostenpflichtige G1-/AI-Credits ohne ausdrückliche Freigabe.
+
+### Geändert
+
+- Dokumentierten Stand von Roon AI Playlist auf 1.0.463 und die öffentliche Informationsausgabe auf 1.0.2 aktualisiert.
+- README, App-Überblick, Funktionsvergleich, Benutzerhandbuch, Einstiegshilfe, FAQ, Datenschutz-/Sicherheitshinweise, Versionshinweise und beide Änderungsprotokolle erweitert.
+
 ## [1.0.1](https://github.com/mermayer/roon-ai-playlist-info/releases/tag/v1.0.1) — 04.08.2026
 
 ### Hinzugefügt

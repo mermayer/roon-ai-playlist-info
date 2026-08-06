@@ -8,6 +8,20 @@ No. The application deliberately complements Roon instead of reproducing its GUI
 
 No. AI playlist generation can be disabled. Player, live radio, audiobooks, Wrapped, Roon Tools, and other non-AI features remain available.
 
+## Can I create high-quality AI playlists without buying an API key?
+
+Yes. Install the official Google Antigravity CLI on the same Windows system as Roon AI Playlist and complete its one-time Google sign-in. The application can then run current Antigravity models automatically in the background, receive the track list directly, and pass it through the normal Roon matching and replacement workflow. No copying between applications is required.
+
+Google currently offers modern Gemini models in its free Antigravity tier, subject to the current model catalogue and usage quotas. Roon AI Playlist never purchases credits and blocks already enabled paid G1/AI credits by default.
+
+## Which Antigravity model should I select?
+
+**Gemini 3.1 Pro (High)** is the proven default for quality-focused playlist curation. Gemini 3.5 Flash and Gemini 3.6 Flash are useful faster alternatives. **Automatic** uses the account default. Since Google can change availability, **Check CLI** imports models reported by `agy models`, and the custom field supports future IDs.
+
+## Does Antigravity require a browser to remain open?
+
+No. A visible terminal or browser-based Google confirmation may be needed only for the one-time sign-in. Playlist generation afterwards is automatic through the CLI running on the application system.
+
 ## Can the application be used without TIDAL?
 
 Yes. TIDAL extends search, live-radio identification, and playlist actions, but is not required for every part of the application. Other sources or local Roon data remain available depending on the feature.

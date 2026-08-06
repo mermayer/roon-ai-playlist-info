@@ -2,7 +2,7 @@
 
 [Deutsche Version](FEATURES_BEYOND_ROON_DE.md) · [Back to overview](../README.md)
 
-Status: Roon AI Playlist `1.0.458`, August 3, 2026.
+Status: Roon AI Playlist `1.0.463`, August 6, 2026.
 
 This overview lists capabilities that **Roon AI Playlist** adds beyond standard Roon. It is not a proposed replacement for the Roon GUI or any Roon function. The companion exists only to provide useful workflows outside Roon where they are missing, as far as the Roon Extension APIs permit. The comparison assumes Roon without third-party extensions, scripts, or home-automation systems. Roon's own core capabilities—including RAAT playback, DSP, regular zone control and grouping, library management, Roon Radio, normal playlists, TIDAL playback, History, album artwork, Sleep Timer, Roon Display, and Roon database backups—are deliberately not counted as application advantages.
 
@@ -11,7 +11,9 @@ This overview lists capabilities that **Roon AI Playlist** adds beyond standard 
 ![AI playlist filters and Roon-matched result](../assets/screenshots/playlist.png)
 
 - Generate playlists from free-form natural-language requests.
-- Select Ollama, OpenRouter, OpenAI, Gemini, or Claude as the AI provider.
+- Select Ollama, OpenRouter, OpenAI, Gemini, Claude, guided ChatGPT Work, or fully automatic Google Antigravity CLI generation.
+- Use high-quality current Antigravity models without an AI API key or usage-based API account; Google's free tier and its limits apply.
+- Choose Gemini effort variants from a real selector, load account-specific models through `agy models`, or enter a future custom model ID.
 - Combine prompts with genre, decade, mood, and language filters.
 - Compare multiple local models in the model bake-off.
 - Generate suggestions from Last.fm, Deezer, and maintained tag lists.
@@ -21,7 +23,7 @@ This overview lists capabilities that **Roon AI Playlist** adds beyond standard 
 - Use Wrapped Top 20 as a playlist source.
 - Save, load, and validate M3U results.
 
-AI generation remains a proposal stage: the chosen model, structured filters, and optional free text produce candidates, while the application exposes every Roon match before playback. Individual entries can be auditioned, replaced, removed, or queued, and the complete verified result can start or extend a zone queue.
+AI generation remains a proposal stage: the chosen model, structured filters, and optional free text produce candidates, while the application exposes every Roon match before playback. Individual entries can be auditioned, replaced, removed, or queued, and the complete verified result can start or extend a zone queue. In Antigravity mode this whole path is automatic after the one-time Google sign-in: no prompt copying and no API key are required. The application never buys credits and blocks already enabled paid G1/AI credits unless the user explicitly permits them.
 
 ![Last.fm tag selection and matched top tracks](../assets/screenshots/lastfm.png)
 

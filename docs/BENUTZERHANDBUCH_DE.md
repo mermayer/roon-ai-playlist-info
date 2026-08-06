@@ -2,7 +2,7 @@
 
 [English version](USER_GUIDE.md) · [Zurück zur Übersicht](../README_DE.md)
 
-Dokumentationsstand: Roon AI Playlist **1.0.458**, RoonAIViewer **1.0.3**.
+Dokumentationsstand: Roon AI Playlist **1.0.463**, RoonAIViewer **1.0.3**.
 
 ## Inhaltsübersicht
 
@@ -56,7 +56,8 @@ Für den normalen Betrieb werden benötigt:
 
 Optional können folgende Dienste ergänzt werden:
 
-- Ollama, OpenRouter, OpenAI, Gemini oder Claude für KI-Playlisten,
+- Google Antigravity CLI für vollautomatische KI-Playlisten ohne API-Key; Googles kostenloser Tarif kann nach einmaliger Kontoanmeldung verwendet werden,
+- Ollama, OpenRouter, OpenAI, Gemini, Claude oder die geführte ChatGPT-Work-Übergabe als alternative KI-Wege,
 - TIDAL für direkte Suche und Playlistenaktionen,
 - Last.fm und Deezer für Musiksuche und Metadaten,
 - fanart.tv und TheAudioDB für Interpretenbilder,
@@ -233,6 +234,20 @@ Roon AI Playlist verarbeitet diese Wiedergabe erst, nachdem sie Roon erreicht ha
 Die freie Beschreibung darf leer bleiben, wenn die strukturierten Filter den Wunsch bereits vollständig ausdrücken. Stimmung und Energie, Jahrzehnt, Genre und Interpreten-Sprache werden mit dem aktuellen Anbieter und Modell kombiniert. Die Fußzeile nennt das erzeugende Modell und die verwendete Roon-Abgleichsstrategie.
 
 Das Ergebnis ist eine bearbeitbare Arbeitsliste und keine undurchsichtige Ein-Klick-Aktion. Einzelne Kandidaten lassen sich probeweise starten, anhängen, ersetzen oder entfernen, bevor das Gesamtergebnis an Roon übergeben wird. Providerkennzeichnung, Jahr und Energielabel helfen dabei, eine unpassende Ausgabe oder einen Ausreißer zu erkennen.
+
+### Google Antigravity ohne API-Key verwenden
+
+Antigravity ist der direkteste API-Key-freie KI-Weg. Anders als bei der geführten ChatGPT-Work-Methode muss nach der Einrichtung nichts zwischen Anwendungen kopiert werden:
+
+1. Die offizielle Google Antigravity CLI auf demselben Windows-System installieren, auf dem Roon AI Playlist läuft. Googles Windows-Installer kann in PowerShell mit `irm https://antigravity.google/cli/install.ps1 | iex` gestartet werden.
+2. **Konfiguration > AI** öffnen, die KI-Erzeugung aktivieren und **Antigravity** als `ai.mode` wählen.
+3. `agy.exe` als Programm belassen, wenn die CLI im Windows-PATH liegt; andernfalls den vollständigen Pfad eintragen.
+4. **Anmeldung öffnen** wählen. Auf dem App-System öffnet sich ein sichtbares Terminal. Google-Anmeldung und Ersteinrichtung dort einmalig abschließen und das Terminal danach schließen. Auf einem System ohne interaktive Desktopsitzung PowerShell dort manuell öffnen und `agy` ausführen.
+5. **CLI prüfen** wählen. Dadurch werden Programm und Anmeldung geprüft, der Kostenschutz angezeigt und die von `agy models` gemeldeten Modelle in die Auswahl aufgenommen.
+6. Modell und bei Bedarf die Denktiefe wählen. **Gemini 3.1 Pro (High)** ist die bewährte qualitätsorientierte Voreinstellung; Gemini 3.5/3.6 Flash bieten interessante Alternativen. **Automatisch** verwendet den Antigravity-Kontostandard, **Benutzerdefiniert** erlaubt zukünftige Modell-IDs.
+7. Konfiguration speichern und die Playlist normal erzeugen. Die App startet die CLI im Hintergrund, übernimmt deren JSON-Titelliste und verwendet anschließend denselben Roon-Abgleich, dieselbe Ersatzlogik, Ergebnisprüfung und Wiedergabebestätigung wie bei allen anderen Generatoren.
+
+Es wird weder ein separater KI-API-Key noch ein nutzungsabhängig abgerechnetes API-Konto benötigt. Googles kostenloser Individual-/Standard-Tarif stellt derzeit moderne Gemini- und weitere auswählbare Modelle bereit; Verfügbarkeit und Kontingente werden jedoch von Google bestimmt und können sich ändern. Die App kauft niemals Credits. Wurden kostenpflichtige G1-/AI-Credits bereits global in Antigravity aktiviert, blockiert Roon AI Playlist die Erzeugung, bis **Bereits vorhandene kostenpflichtige Antigravity-Credits erlauben** ausdrücklich gewählt wurde. Aktuelle Informationen stehen auf Googles Seiten zu [Modellen](https://antigravity.google/docs/models) und [Tarifen](https://antigravity.google/pricing).
 
 ### Last.fm-Tag-Playlist erstellen
 
@@ -798,7 +813,7 @@ Vor der ersten Aufnahme muss der Systemcheck aus [Kapitel 9](#9-hörbücher) erf
 ### AI: Allgemeine Steuerung
 
 - **KI-Playlist-Erzeugung aktivieren:** Schaltet ausschließlich die KI-Quelle ein oder aus. Player, Last.fm-/Deezer-/Wrapped-Playlisten, TIDAL, Hörbücher und Roon Tools bleiben verfügbar.
-- **`ai.mode`:** Wählt Ollama, OpenRouter, OpenAI, Gemini oder Claude. Nur die Einstellungen des gewählten Anbieters werden für neue KI-Playlisten verwendet.
+- **`ai.mode`:** Wählt Antigravity, ChatGPT Work, Ollama, OpenRouter, OpenAI, Gemini oder Claude. Nur die Einstellungen des gewählten Weges werden für neue KI-Playlisten verwendet.
 - **Request-Timeout:** Maximale Wartezeit je KI-HTTP-Anfrage. Ein größerer Wert hilft langsamen Modellen, verlängert aber die Wartezeit bei echten Ausfällen.
 - **Cloud-Ultra-Sparmodus:** Versucht Cloud-Generierung mit einem einzigen Request und ohne Nachfüllen. Das reduziert Kosten und Anfragen, kann aber weniger Titel als gewünscht liefern.
 - **Deutsche Referenzliste:** Nutzt bei deutschen Vocals oder Schlager eine lokale JSON-Liste als Titelbasis. Pfad bestimmt die Datei; **Max Hints** begrenzt die je Prompt übergebenen Einträge; **Diversity Lookback** meidet zuletzt verwendete Referenztitel.
@@ -814,6 +829,18 @@ Je nach Anbieter werden die Felder **URL**, **API-Key**, **Modell-Preset**, **fr
 - **Quality Mode:** Arbeitet konservativer und gegebenenfalls mit zusätzlichen Prüfungen, benötigt aber mehr Zeit.
 - **Fast Mode:** Reduziert Retries und Wartezeiten; schneller, aber mit weniger Reserve bei kurzzeitigen Providerproblemen.
 - **Sparmodus:** Verwendet möglichst nur einen Request und füllt fehlende Titel nicht nach.
+
+### AI: Google Antigravity CLI
+
+- **Programm:** `agy.exe` verwendet den Windows-PATH; für Installationen außerhalb des PATH kann ein vollständiger Pfad eingetragen werden.
+- **Anmeldung öffnen:** Startet das interaktive Antigravity-Terminal auf dem App-System sichtbar für die einmalige Google-Anmeldung. Es öffnet sich nicht auf einem entfernten Browser- oder RoonAIViewer-Rechner.
+- **CLI prüfen:** Prüft Programm, Version, Anmeldung, Credit-Richtlinie und verfügbare Kontomodelle, ohne eine Playlist zu erzeugen.
+- **Modellauswahl:** Enthält aktuelle Gemini-Varianten und weitere bekannte Antigravity-Modelle. Die Prüfung ergänzt sie um `agy models`. **Automatisch** verwendet den Kontostandard; **Benutzerdefiniert** hält freie zukünftige IDs möglich.
+- **Denktiefe:** Kann automatisch bleiben, wenn sie bereits im Modellnamen enthalten ist. Eine höhere Stufe kann schwierige Musikwünsche verbessern, verbraucht aber gewöhnlich mehr Kontingent und Zeit.
+- **Zeitlimit:** Begrenzt den vollständigen CLI-Lauf im Hintergrund. Für längere Playlisten und hohe Denktiefe ausreichend Reserve einplanen.
+- **Vorhandene kostenpflichtige Credits erlauben:** Ist standardmäßig aus. Nur aktivieren, wenn globale Antigravity-G1-/AI-Credits bewusst für diese App freigegeben werden sollen. Roon AI Playlist selbst kann keine Credits kaufen.
+
+Kostenloser Tarif, Modellangebot und Kontingentzeiträume sind Leistungen von Google und werden nicht von Roon AI Playlist garantiert. Verschwindet ein Modell oder ist es nicht verfügbar, **CLI prüfen** erneut ausführen und einen aktuell für das Konto gemeldeten Eintrag wählen.
 
 ### AI: Ollama
 
@@ -1058,6 +1085,8 @@ Wrapped, Hörbuchdaten und Bildcaches werden lokal verwaltet. Externe Anfragen e
 - Anbieter, Modell und Zugangsdaten prüfen.
 - Verbindungstest ausführen.
 - Bei Ollama auf einem anderen Rechner dessen LAN-Adresse statt `localhost` verwenden.
+- Bei Antigravity zuerst **CLI prüfen** ausführen. Fehlt die Anmeldung, **Anmeldung öffnen** verwenden; ist eine Modell-ID nicht verfügbar, ein von `agy models` gemeldetes Modell wählen.
+- Ist das Antigravity-Kontingent erschöpft, auf den von Google angezeigten Reset warten oder ein anderes Modell mit freiem Kontingent auswählen. Die App umgeht Limits nicht durch einen Credit-Kauf.
 
 ### TIDAL-Suche oder `T+` funktioniert nicht
 

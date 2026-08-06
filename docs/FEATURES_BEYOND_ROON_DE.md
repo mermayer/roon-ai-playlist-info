@@ -2,7 +2,7 @@
 
 [English version](FEATURES_BEYOND_ROON.md) · [Zurück zur Übersicht](../README_DE.md)
 
-Stand: Roon AI Playlist `1.0.458`, 3. August 2026.
+Stand: Roon AI Playlist `1.0.463`, 6. August 2026.
 
 Diese Übersicht nennt Funktionen, die **Roon AI Playlist** zusätzlich zu den Bordmitteln des originalen Roon bereitstellt. Sie beschreibt keinen Ersatz für die Roon-Oberfläche oder irgendeine Roon-Funktion. Die Begleitanwendung soll ausschließlich außerhalb von Roon nützliche, dort fehlende Arbeitsabläufe ermöglichen – so weit es die Roon-Extension-APIs zulassen. Verglichen wird mit Roon ohne weitere Extensions, Skripte oder Hausautomationssysteme. Roons Kernfunktionen wie RAAT-Wiedergabe, DSP, normale Zonensteuerung, Zonengruppierung, Bibliotheksverwaltung, Roon Radio, klassische Playlisten, TIDAL-Wiedergabe, History, Albumcover, Sleep Timer, Roon Display und Roon-Datenbankbackups werden nicht als App-Vorteil gezählt.
 
@@ -11,7 +11,9 @@ Diese Übersicht nennt Funktionen, die **Roon AI Playlist** zusätzlich zu den B
 ![KI-Playlist-Filter und gegen Roon geprüftes Ergebnis](../assets/screenshots/playlist.png)
 
 - Playlisten aus freien natürlichsprachlichen Wünschen erzeugen.
-- Ollama, OpenRouter, OpenAI, Gemini oder Claude als KI-Anbieter wählen.
+- Ollama, OpenRouter, OpenAI, Gemini, Claude, die geführte ChatGPT-Work-Übergabe oder die vollautomatische Google Antigravity CLI wählen.
+- Aktuelle hochwertige Antigravity-Modelle ohne KI-API-Key oder nutzungsabhängiges API-Konto verwenden; es gelten Googles kostenloser Tarif und dessen Kontingente.
+- Gemini-Denktiefen aus einer echten Auswahlliste wählen, kontospezifische Modelle über `agy models` laden oder eine zukünftige Modell-ID frei eintragen.
 - Prompts mit Genre, Jahrzehnt, Stimmung und Sprache kombinieren.
 - Mehrere lokale KI-Modelle im Model-Bake-off vergleichen.
 - Vorschläge aus Last.fm-, Deezer- und gepflegten Taglisten erzeugen.
@@ -21,7 +23,7 @@ Diese Übersicht nennt Funktionen, die **Roon AI Playlist** zusätzlich zu den B
 - Wrapped Top 20 als Playlistquelle verwenden.
 - Ergebnisse als M3U speichern, laden und prüfen.
 
-Die KI-Erzeugung bleibt eine Vorschlagsstufe: Gewähltes Modell, strukturierte Filter und optionaler Freitext liefern Kandidaten, während die App jeden Roon-Treffer vor der Wiedergabe sichtbar macht. Einzelne Einträge lassen sich probeweise starten, ersetzen, entfernen oder anhängen; das vollständige geprüfte Ergebnis kann eine Zonen-Queue starten oder erweitern.
+Die KI-Erzeugung bleibt eine Vorschlagsstufe: Gewähltes Modell, strukturierte Filter und optionaler Freitext liefern Kandidaten, während die App jeden Roon-Treffer vor der Wiedergabe sichtbar macht. Einzelne Einträge lassen sich probeweise starten, ersetzen, entfernen oder anhängen; das vollständige geprüfte Ergebnis kann eine Zonen-Queue starten oder erweitern. Im Antigravity-Modus läuft dieser gesamte Weg nach der einmaligen Google-Anmeldung automatisch: Es müssen weder Prompts kopiert noch API-Keys hinterlegt werden. Die App kauft keine Credits und blockiert bereits aktivierte kostenpflichtige G1-/AI-Credits, solange der Benutzer sie nicht ausdrücklich erlaubt.
 
 ![Last.fm-Tagauswahl und abgeglichene Top-Titel](../assets/screenshots/lastfm.png)
 

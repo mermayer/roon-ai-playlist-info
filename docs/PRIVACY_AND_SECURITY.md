@@ -9,6 +9,7 @@ Roon AI Playlist is designed for local operation on a private network. Zone stat
 Requests to external services occur only when the corresponding feature is enabled and used. These services may include:
 
 - the selected AI provider for playlist suggestions
+- Google Antigravity when that AI route is selected; the local CLI sends the playlist instruction to Google's service under the signed-in account
 - TIDAL for search and playlist actions
 - Last.fm and Deezer for music and image information
 - fanart.tv and TheAudioDB for artist images
@@ -21,6 +22,8 @@ The search terms or metadata sent to a provider depend on the function being use
 ## Credentials
 
 API keys, tokens, and sign-in details are stored in the local application configuration. Application backups may contain these credentials and should therefore be protected like passwords.
+
+Antigravity authentication is managed by the official CLI on the application system rather than by an AI API key stored in Roon AI Playlist. The application submits the playlist request and receives the generated track list; it does not receive the user's Google password. Google's privacy terms, model availability, and account quotas apply. Paid G1/AI credits are blocked by default, and the application never initiates a credit purchase.
 
 RoonAIViewer protects the server token with Windows DPAPI and binds it to the current Windows user account.
 

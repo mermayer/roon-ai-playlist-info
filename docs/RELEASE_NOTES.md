@@ -1,5 +1,15 @@
 # Release notes
 
+## Information and documentation release 1.0.2 — August 6, 2026
+
+- places free, fully automatic AI playlist generation with Google Antigravity CLI prominently in the public overview
+- documents that no AI API key, usage-based API account, or manual copy-and-paste step is needed after setup
+- explains installation on the application system, one-time Google sign-in, **Check CLI**, the real model selector, account-specific `agy models` entries, reasoning variants, and future custom model IDs
+- describes the current free-tier access to high-quality Gemini models while clearly identifying model availability and quotas as Google-controlled services
+- documents automatic transfer into the unchanged Roon matching, replacement, review, and playback-confirmation workflow
+- records that the application never purchases credits and blocks existing paid G1/AI credits by default
+- updates the documented application version to 1.0.463
+
 ## Information and documentation release 1.0.1 — August 4, 2026
 
 - explain how the separate native macOS application SpotBridge 1.0.0 carries local Spotify playback to Roon Audio Input
@@ -21,7 +31,21 @@ This is the first public information release for Roon AI Playlist. It contains n
 - screenshots and explanations for multi-zone playback, AI and Last.fm playlists, Live Radio, Spotify, TIDAL mixes and playlists, audiobook discovery, Wrapped, network triggers, remote slots, and the RoPieee proxy
 - explicit product boundary: the application complements Roon outside its GUI within the possibilities of the Roon Extension APIs and does not replace Roon
 
-## Roon AI Playlist 1.0.458
+## Roon AI Playlist 1.0.463
+
+The newly documented application capabilities include:
+
+- fully automatic playlist generation through Google Antigravity CLI on the same Windows system
+- API-key-free operation after a one-time Google account sign-in
+- selectable Gemini 3.6 Flash, Gemini 3.5 Flash, and Gemini 3.1 Pro effort variants, plus account-reported and custom future models
+- the proven Gemini 3.1 Pro (High) quality-oriented default
+- CLI, authentication, quota, and model diagnostics through **Check CLI**
+- automatic structured result transfer into the existing Roon search and replacement workflow
+- protection against unintended use of already enabled paid Antigravity credits
+
+The feature set documented for 1.0.458 below remains part of the current application:
+
+### Earlier documented capabilities from 1.0.458
 
 The documented feature set includes:
 

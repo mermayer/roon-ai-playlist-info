@@ -2,6 +2,20 @@
 
 This changelog records public information and documentation releases for Roon AI Playlist. Application and RoonAIViewer versions are listed separately because this repository contains neither their source code nor installers.
 
+## [1.0.2](https://github.com/mermayer/roon-ai-playlist-info/releases/tag/v1.0.2) — 2026-08-06
+
+### Added
+
+- Prominent English and German introduction to fully automatic AI playlist generation through the official Google Antigravity CLI without an AI API key or manual copy-and-paste step.
+- Complete Antigravity setup and operating instructions covering installation, one-time Google sign-in, CLI verification, model selection, reasoning variants, automatic JSON hand-off, Roon matching, and troubleshooting.
+- Explanation of the current free Antigravity tier and its high-quality Gemini models, with links to Google's live model and pricing pages and a clear warning that availability and quotas can change.
+- Documentation of the application's cost safeguard: it never purchases credits and blocks already enabled paid G1/AI credits unless explicitly permitted.
+
+### Changed
+
+- Updated the documented Roon AI Playlist version to 1.0.463 and the public information release to 1.0.2.
+- Expanded README, application overview, feature comparison, user guide, getting-started guide, FAQ, privacy/security notes, release notes, and both changelogs.
+
 ## [1.0.1](https://github.com/mermayer/roon-ai-playlist-info/releases/tag/v1.0.1) — 2026-08-04
 
 ### Added

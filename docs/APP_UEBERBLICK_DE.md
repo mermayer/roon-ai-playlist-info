@@ -16,7 +16,7 @@ Alle drei Oberflächen zeigen dieselben vom App-Dienst bereitgestellten Zonen- u
 
 ### Playlist
 
-Playlisten können aus freien Musikwünschen, Tags, Last.fm-Empfehlungen oder Wrapped-Favoriten entstehen. Vor der Wiedergabe prüft die App, welche Titel tatsächlich in Roon verfügbar sind.
+Playlisten können aus freien Musikwünschen, Tags, Last.fm-Empfehlungen oder Wrapped-Favoriten entstehen. Für KI-Wünsche stehen lokale oder API-basierte Anbieter, die geführte ChatGPT-Work-Übergabe und die vollautomatische Google Antigravity CLI zur Verfügung. Antigravity benötigt keinen API-Key und kann nach einmaliger Anmeldung aktuelle hochwertige Modelle aus Googles kostenlosem Tarif verwenden. Vor der Wiedergabe prüft die App, welche Titel tatsächlich in Roon verfügbar sind.
 
 ### Player
 
@@ -54,4 +54,4 @@ Hier werden Verbindungen, optionale Dienste, Oberfläche, Wrapped, Hörbücher, 
 
 ## Lokaler Betrieb
 
-Die App ist für den Betrieb im eigenen Netzwerk ausgelegt. Roon-, Wrapped-, Hörbuch- und Cache-Daten werden lokal verwaltet. Externe Anfragen entstehen nur für aktivierte Dienste und Funktionen, beispielsweise KI-Anbieter, TIDAL oder Bild- und Metadatenanbieter.
+Die App ist für den Betrieb im eigenen Netzwerk ausgelegt. Roon-, Wrapped-, Hörbuch- und Cache-Daten werden lokal verwaltet. Externe Anfragen entstehen nur für aktivierte Dienste und Funktionen, beispielsweise KI-Anbieter, TIDAL oder Bild- und Metadatenanbieter. Bei Antigravity startet die lokale App die CLI auf demselben Windows-System; Google verarbeitet den übermittelten Playlistauftrag im angemeldeten Antigravity-Konto nach den jeweils aktuellen Bedingungen und Kontingenten.

@@ -6,6 +6,7 @@
 - a reachable Roon Core on the same local network
 - permission to authorise extensions in Roon
 - optional credentials only for services that will actually be used
+- for API-key-free automatic AI playlists: Google Antigravity CLI installed on the same Windows system and a Google account for the one-time sign-in
 
 ## First launch
 
@@ -28,7 +29,10 @@ The setup assistant can be opened again later from Configuration.
 4. Enable Wrapped and choose the desired reporting period.
 5. Optionally synchronise and analyse audiobooks.
 6. Optionally arrange artist-image providers and connect external services.
-7. Create the first application backup.
+7. For free automatic AI playlists, select **Antigravity** under **Configuration > AI**, complete **Open sign-in**, run **Check CLI**, choose a model, and save.
+8. Create the first application backup.
+
+Antigravity does not require an AI API key. After setup, playlist requests and results are transferred automatically through the local CLI. Google's current free tier, model availability, and usage limits apply; the application never purchases credits.
 
 ## Access from the home network
 
