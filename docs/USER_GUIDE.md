@@ -2,7 +2,7 @@
 
 [Deutsche Version](BENUTZERHANDBUCH_DE.md) · [Back to overview](../README.md)
 
-Documentation status: Roon AI Playlist **1.0.463**, RoonAIViewer **1.0.3**.
+Documentation status: Roon AI Playlist **1.0.466**, RoonAIViewer **1.0.3**.
 
 ## Contents
 
@@ -71,8 +71,12 @@ Services that are not needed can remain disabled. Player, Roon Tools, audiobooks
 ### Installation
 
 1. Open the separately supplied Windows installer.
-2. Complete installation and start Roon AI Playlist.
-3. Follow the setup assistant on first launch.
+2. Choose **Complete application** when the Player should also be used locally, or **Server + Configuration** when the computer will mainly supply browsers and RoonAIViewer clients.
+3. Complete installation and start Roon AI Playlist.
+4. In Server + Configuration mode, open **Configuration** from the Windows notification-area icon; the full Player window is intentionally not started locally.
+5. Follow the setup assistant on first launch.
+
+The choice does not create two different data sets or reduce server functionality. Both modes use the same configuration, Roon connection, database, caches, automation, and capture components. The difference is whether the complete local Player interface remains loaded.
 
 ### Authorising Roon
 
@@ -120,6 +124,12 @@ The main navigation contains:
 ### Complete Windows application
 
 The complete application contains both the user interface and the central application service. Closing the window can leave the application running in the Windows notification area. Its tray menu opens the application or browser, starts or stops the service, reloads it, or exits completely.
+
+### Server + Configuration mode
+
+This installer option starts the same central application service without creating a permanent local Player window. It is recommended when Roon AI Playlist runs continuously on one Windows computer and is normally operated through RoonAIViewer or a browser elsewhere in the home network.
+
+The notification-area menu opens a dedicated local configuration window when required. Closing that window destroys it and releases its display memory; the server continues running. Roon control, Wrapped, network triggers, remote slots, media processing, scheduled operations, and audiobook capture are unchanged. A Viewer can therefore start and monitor an audiobook capture remotely while the actual audio input and output files remain on the server computer.
 
 ### Browser view
 
@@ -747,10 +757,11 @@ RoonAIViewer manages its server and token through its native connection dialog; 
 
 ### Basic: desktop startup
 
+- **Desktop operating mode:** selects **Complete application** or **Server + Configuration**. Saving a changed mode restarts the desktop application so that the new startup path takes effect.
 - **Start with Windows:** starts the Electron application and its local service after Windows sign-in.
-- **Start minimised in the tray:** initially opens no visible main window. The interface remains available through the notification-area icon.
+- **Start minimised in the tray:** in Complete application mode, initially opens no visible main window. The full interface remains available through the notification-area icon.
 
-Both options apply only to the complete Windows application. Browsers and RoonAIViewer use their own startup mechanisms.
+Server + Configuration mode always starts without the full local Player and therefore does not need the additional minimised-start option. Browsers and RoonAIViewer use their own startup mechanisms.
 
 ### Basic: image and cover storage
 
@@ -768,6 +779,7 @@ The new folder must remain reachable and writable. The verified move and failure
 - **Output format:** fixed MP3 format at 192 kbit/s CBR.
 
 The system check in [section 9](#9-audiobooks) must pass before the first capture.
+Capture also remains available in Server + Configuration mode. Remote controls operate the server-side capture worker; the selected input device and destination folder always belong to the server computer.
 
 ### Basic: server, Roon, and logs
 
@@ -1162,11 +1174,15 @@ Wrapped, audiobook data, and image caches are managed locally. External requests
 - In RoonAIViewer, open connection settings and run the connection test.
 - Then perform a complete reload.
 
+### Only Configuration opens on the server computer
+
+This is expected when **Server + Configuration** is selected. The full Player is supplied to browsers and RoonAIViewer clients but is not kept open as a local Electron window. Use the notification-area icon to reopen Configuration, or change **Desktop operating mode** to **Complete application** and save to restart with the full local interface.
+
 ## 22. Recommended setup sequence
 
 For a new installation, the following order is useful:
 
-1. Connect Roon and verify zones in Player.
+1. Choose the required desktop operating mode, connect Roon, and verify zones in the local Player or a connected browser/Viewer.
 2. Set language and UI zoom.
 3. Configure an API token and secure LAN access when browsers or viewers will be used.
 4. Enable only required external services and test them individually.

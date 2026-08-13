@@ -2,6 +2,21 @@
 
 This changelog records public information and documentation releases for Roon AI Playlist. Application and RoonAIViewer versions are listed separately because this repository contains neither their source code nor installers.
 
+## [1.0.3](https://github.com/mermayer/roon-ai-playlist-info/releases/tag/v1.0.3) — 2026-08-13
+
+### Added
+
+- Complete English and German documentation for the selectable **Server + Configuration** Windows operating mode.
+- Installer and first-launch guidance explaining the difference between the complete local application and an always-on server operated through a browser or RoonAIViewer.
+- Instructions for opening the on-demand local configuration window, switching operating modes later, and understanding the required application restart.
+- Explicit confirmation that Roon control, Wrapped, media processing, network triggers, scheduled tasks, and remotely controlled audiobook capture remain available in server mode.
+
+### Changed
+
+- Updated the documented Roon AI Playlist version to 1.0.466 and the public information release to 1.0.3.
+- Expanded README, application overview, feature comparison, user guide, getting-started guide, Viewer guide, FAQ, privacy/security notes, release notes, and both changelogs.
+- Clarified that Server + Configuration uses the existing data and service architecture while avoiding a permanently loaded local Player window.
+
 ## [1.0.2](https://github.com/mermayer/roon-ai-playlist-info/releases/tag/v1.0.2) — 2026-08-06
 
 ### Added

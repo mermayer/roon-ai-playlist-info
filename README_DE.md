@@ -8,8 +8,8 @@
 
 ## Aktuelle Versionen
 
-- Informations- und Dokumentationsausgabe: **1.0.2**
-- Roon AI Playlist: **1.0.463**
+- Informations- und Dokumentationsausgabe: **1.0.3**
+- Roon AI Playlist: **1.0.466**
 - RoonAIViewer: **1.0.3**
 
 ## Was ist Roon AI Playlist?
@@ -18,11 +18,20 @@ Roon AI Playlist richtet sich an Menschen, die Roon bereits verwenden und mehr K
 
 **Roon AI Playlist soll weder die Roon-Oberfläche noch irgendeine Kernfunktion von Roon ersetzen.** Roon bleibt für Musikbibliothek, Streaming, RAAT, DSP, Zonen, Warteschlangen und Audiowiedergabe zuständig. Diese Begleitanwendung wurde ausschließlich dafür geschaffen, außerhalb von Roon nützliche, dort fehlende Arbeitsabläufe zu ermöglichen – so weit es die Roon-Extension-APIs zulassen. Sie arbeitet mit dem vorhandenen Roon-System und gibt Wiedergabeaktionen an Roon zurück.
 
-Die Anwendung läuft lokal und lässt sich auf drei Arten bedienen:
+Die Anwendung läuft lokal und lässt sich auf vier Arten bedienen:
 
 - als vollständige Windows-App auf dem Serverrechner,
+- im wählbaren Modus **Nur Server + Konfiguration** ohne dauerhaft geladene Player-Oberfläche,
 - über einen normalen Browser im privaten Netzwerk,
 - über den schlanken Windows-Client **RoonAIViewer** auf einem anderen Rechner oder Display.
+
+## Eigener Servermodus für die entfernte Bedienung
+
+Der Windows-Installer kann jetzt entweder die vollständige App oder **Nur Server + Konfiguration** einrichten. Der Servermodus ist für einen Rechner gedacht, auf dem Roon AI Playlist dauerhaft läuft, während die eigentliche Bedienung über RoonAIViewer oder einen Browser auf einem anderen Gerät im Heimnetz erfolgt.
+
+Im Servermodus bleiben der zentrale App-Dienst, die Roon-Verbindung, Netzwerk-Trigger, Wrapped-Aufzeichnung, Medienverarbeitung, Playlist-Werkzeuge, geplante Aufgaben und die Hörbuchaufnahme vollständig verfügbar. Die große lokale Player-Oberfläche wird jedoch nicht dauerhaft im Speicher gehalten. Die Konfiguration lässt sich weiterhin lokal über das Symbol im Windows-Infobereich öffnen; beim Schließen wird auch dieses Fenster wieder freigegeben. Der Betriebsmodus kann später in der Konfiguration geändert und mit einem App-Neustart übernommen werden.
+
+Damit kann die Anwendung als zentraler Roon-Begleitdienst laufen, ohne auf Fernsteuerung oder Hintergrundfunktionen zu verzichten. Auch eine Hörbuchaufnahme lässt sich weiterhin über RoonAIViewer auf einem anderen System starten und überwachen, sofern Aufnahmezone und Ausgabeordner auf dem Serverrechner vorhanden sind.
 
 ## Kostenlose hochwertige KI-Playlisten mit Google Antigravity
 
@@ -218,6 +227,7 @@ RoPieee leitet Fernbedienungsereignisse normalerweise an eine fest gewählte Roo
 - Den Bildspeicher geprüft auf ein anderes lokales Laufwerk verschieben.
 - Dienstestatus, Speicher, Caches, Providerfehler und Roon-Verbindung kontrollieren.
 - Umfangreiche Metadatenabfragen, Bilddownloads, Prüfung, Hashing und Cache-Arbeiten getrennt ausführen, damit Player, Weboberfläche, Roon-Verbindung und Netzwerk-Trigger ansprechbar bleiben.
+- Für ausschließlich entfernt bediente Systeme eine ressourcenschonende Installation **Nur Server + Konfiguration** ohne dauerhaft geladene lokale Player-Oberfläche wählen.
 
 ## RoonAIViewer
 

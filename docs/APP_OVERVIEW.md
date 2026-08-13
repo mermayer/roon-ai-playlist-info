@@ -7,10 +7,11 @@ Roon AI Playlist is a local companion application for Roon. It is not intended t
 | Interface | Best suited for | Distinguishing features |
 |---|---|---|
 | Complete Windows application | Computer that also runs the application service | Main window, notification-area operation, and local administration |
+| Server + Configuration | Always-on application computer operated remotely | Full central service, local configuration on demand, no permanent local Player window |
 | Web browser | Tablets, wall displays, and computers on the home network | no additional client installation required |
 | RoonAIViewer | permanent Windows display connected to a remote server | dedicated window, notification area, autostart, persistent zoom, and encrypted token storage |
 
-All three interfaces display the same zone and media information supplied by the application service. The viewer does not create another Roon connection.
+All display clients use the same zone and media information supplied by the application service. Server + Configuration changes only the local desktop presentation; it does not remove service functions. Browsers and the Viewer create no additional Roon connection.
 
 ## Main areas
 
@@ -50,7 +51,7 @@ Ten configurable action slots can start stations, playlists, or zone actions fro
 
 ### Configuration and maintenance
 
-This area manages connections, optional services, interface settings, Wrapped, audiobooks, image providers, network triggers, backups, and diagnostics.
+This area manages connections, optional services, interface settings, Wrapped, audiobooks, image providers, network triggers, backups, diagnostics, and the desktop operating mode. In Server + Configuration mode it can be opened locally from the Windows notification area and is released again when closed.
 
 ## Local operation
 

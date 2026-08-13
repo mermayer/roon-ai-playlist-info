@@ -19,18 +19,19 @@ RoonAIViewer ist besonders geeignet, wenn:
 
 Für eine gelegentliche Nutzung ohne Installation genügt weiterhin ein normaler Browser.
 
-## Unterschiede zur vollständigen App und zum Browser
+## Unterschiede zur vollständigen App, zum Servermodus und zum Browser
 
-| Eigenschaft | Vollständige Windows-App | Browser | RoonAIViewer |
-|---|---:|---:|---:|
-| enthält den zentralen App-Dienst | ja | nein | nein |
-| Verbindung direkt zur Roon API | über den App-Dienst | nein | nein |
-| Zugriff auf entfernten App-Dienst | möglich | ja | ja |
-| eigenes Windows-Fenster | ja | Browserfenster | ja |
-| Tray-Betrieb | ja | nein | ja |
-| Windows-Autostart | ja | browserabhängig | ja |
-| dauerhaft gespeicherter Zoom | ja | browserabhängig | ja, 90–130 % |
-| geschützte lokale Token-Speicherung | ja | browserabhängig | ja |
+| Eigenschaft | Vollständige Windows-App | Nur Server + Konfiguration | Browser | RoonAIViewer |
+|---|---:|---:|---:|---:|
+| enthält den zentralen App-Dienst | ja | ja | nein | nein |
+| Verbindung direkt zur Roon API | über den App-Dienst | über den App-Dienst | nein | nein |
+| vollständiges lokales Playerfenster | ja | nein | Browserfenster | ja |
+| lokale Konfiguration | ja | bei Bedarf über Infobereich | nein | nein |
+| Zugriff auf entfernten App-Dienst | möglich | nicht zutreffend | ja | ja |
+| Tray-Betrieb | ja | ja | nein | ja |
+| Windows-Autostart | ja | ja | browserabhängig | ja |
+| dauerhaft gespeicherter Zoom | ja | nur Konfigurationsfenster | browserabhängig | ja, 90–130 % |
+| geschützte lokale Token-Speicherung | ja | ja | browserabhängig | ja |
 
 ## Voraussetzungen
 
@@ -48,12 +49,14 @@ WebView2 ist unter Windows 11 normalerweise vorhanden und auf vielen Windows-10-
 Bevor der Viewer eingerichtet wird:
 
 1. Roon AI Playlist auf dem Serverrechner starten.
-2. Sicherstellen, dass die App Verbindungen aus dem lokalen Netzwerk annimmt.
-3. Den verwendeten Port in der Firewall des Serverrechners freigeben.
-4. Für den Netzwerkzugriff ein API-Token konfigurieren.
-5. Servername oder lokale IP-Adresse und Port notieren.
+2. Für ein dauerhaft entfernt bedientes System bei der App-Installation oder später unter **Konfiguration > Basis** den Modus **Nur Server + Konfiguration** wählen.
+3. Sicherstellen, dass die App Verbindungen aus dem lokalen Netzwerk annimmt.
+4. Den verwendeten Port in der Firewall des Serverrechners freigeben.
+5. Für den Netzwerkzugriff ein API-Token konfigurieren.
+6. Servername oder lokale IP-Adresse und Port notieren.
 
 Der Server sollte nur in einem vertrauenswürdigen privaten Netzwerk erreichbar sein. Eine direkte Freigabe ins Internet ist nicht vorgesehen.
+Nur Server + Konfiguration ist optional, verhindert aber, dass auf dem Serverrechner zusätzlich eine vollständige Player-Oberfläche geladen bleibt. Viewer-Funktionen und die serverseitige Hörbuchaufnahme werden dadurch nicht eingeschränkt.
 
 ## Installation
 

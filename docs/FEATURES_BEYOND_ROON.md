@@ -2,7 +2,7 @@
 
 [Deutsche Version](FEATURES_BEYOND_ROON_DE.md) · [Back to overview](../README.md)
 
-Status: Roon AI Playlist `1.0.463`, August 6, 2026.
+Status: Roon AI Playlist `1.0.466`, August 13, 2026.
 
 This overview lists capabilities that **Roon AI Playlist** adds beyond standard Roon. It is not a proposed replacement for the Roon GUI or any Roon function. The companion exists only to provide useful workflows outside Roon where they are missing, as far as the Roon Extension APIs permit. The comparison assumes Roon without third-party extensions, scripts, or home-automation systems. Roon's own core capabilities—including RAAT playback, DSP, regular zone control and grouping, library management, Roon Radio, normal playlists, TIDAL playback, History, album artwork, Sleep Timer, Roon Display, and Roon database backups—are deliberately not counted as application advantages.
 
@@ -167,6 +167,9 @@ This makes a RoPieee-connected Bluetooth remote useful across two changing desti
 - Present cover, artist profile image, and artist background separately.
 - Provide a complete control interface in a normal LAN browser.
 - Use the lightweight Windows WebView2 viewer with tray behavior, startup, zoom, and a DPAPI-protected token.
+- Install the central application in Server + Configuration mode when remote clients are used, keeping every background function while avoiding a permanently loaded local Player window.
+
+The operating mode is selectable during Windows installation and can be changed later in Configuration. Server mode still provides Roon control, Wrapped recording, network triggers, media processing, scheduled tasks, and audiobook capture. Its local configuration window is opened only when needed and released after closing, while browsers and RoonAIViewer continue to receive the complete interface.
 
 ![Spotify playback in the dedicated zone presentation](../assets/screenshots/spotify_pl.png)
 
@@ -187,6 +190,7 @@ Roon Web Display shows Now Playing and lyrics in a browser, but is not a complet
 - Move image and cover storage to another drive with verification.
 - Diagnose event-loop delay, server runtime, worker state, job counts, failures, and restarts.
 - Run provider requests, downloads, hashing, and image storage in a separate supervised media process.
+- Operate the central Windows service without a permanent renderer when the display is provided by a remote browser or RoonAIViewer.
 
 ## Boundary
 

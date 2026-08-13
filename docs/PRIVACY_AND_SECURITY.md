@@ -35,6 +35,8 @@ RoonAIViewer protects the server token with Windows DPAPI and binds it to the cu
 - Do not expose the application directly to the internet.
 - Carefully verify external HTTP or HTTPS commands used by network triggers.
 
+Complete application and Server + Configuration mode use the same local data and network endpoints. Server mode does not publish an additional service or copy data to a Viewer; it only avoids keeping the complete local Player window loaded. Closing its on-demand configuration window does not stop the protected application service.
+
 ## Local images and listening history
 
 Artwork, artist images, and provider responses may be cached locally. Wrapped maintains a local listening history when enabled. Maintenance tools can correct and remove corresponding entries.

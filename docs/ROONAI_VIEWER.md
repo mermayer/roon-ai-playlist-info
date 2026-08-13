@@ -19,18 +19,19 @@ RoonAIViewer is a good choice when:
 
 A regular browser remains sufficient for occasional use without an installation.
 
-## Comparison with the complete app and a browser
+## Comparison with the complete app, server mode, and a browser
 
-| Capability | Complete Windows app | Browser | RoonAIViewer |
-|---|---:|---:|---:|
-| includes the central application service | yes | no | no |
-| direct connection to the Roon API | through the application service | no | no |
-| access to a remote application service | supported | yes | yes |
-| dedicated Windows window | yes | browser window | yes |
-| notification-area operation | yes | no | yes |
-| Windows autostart | yes | browser-dependent | yes |
-| persistent zoom | yes | browser-dependent | yes, 90–130% |
-| protected local token storage | yes | browser-dependent | yes |
+| Capability | Complete Windows app | Server + Configuration | Browser | RoonAIViewer |
+|---|---:|---:|---:|---:|
+| includes the central application service | yes | yes | no | no |
+| direct connection to the Roon API | through the application service | through the application service | no | no |
+| full local Player window | yes | no | browser window | yes |
+| local configuration | yes | on demand from notification area | no | no |
+| access to a remote application service | supported | not applicable | yes | yes |
+| notification-area operation | yes | yes | no | yes |
+| Windows autostart | yes | yes | browser-dependent | yes |
+| persistent zoom | yes | configuration only | browser-dependent | yes, 90–130% |
+| protected local token storage | yes | yes | browser-dependent | yes |
 
 ## Requirements
 
@@ -48,12 +49,14 @@ WebView2 is normally present on Windows 11 and is already installed on many Wind
 Before configuring the viewer:
 
 1. Start Roon AI Playlist on the server computer.
-2. Ensure that it accepts connections from the local network.
-3. Allow the selected port through the server computer's firewall.
-4. Configure an API token for network access.
-5. Note the computer name or local IP address and port.
+2. For a permanently remote-controlled system, select **Server + Configuration** during application installation or later under **Configuration > Basic**.
+3. Ensure that it accepts connections from the local network.
+4. Allow the selected port through the server computer's firewall.
+5. Configure an API token for network access.
+6. Note the computer name or local IP address and port.
 
 The server should be accessible only on a trusted private network. Direct exposure to the internet is not intended.
+Server + Configuration is optional but avoids keeping a second full Player interface loaded on the server computer. It does not restrict Viewer functions or server-side audiobook capture.
 
 ## Installation
 

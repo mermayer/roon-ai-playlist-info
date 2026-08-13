@@ -35,6 +35,8 @@ Im RoonAIViewer wird der Server-Token mit Windows DPAPI an das aktuelle Windows-
 - Die App nicht direkt aus dem Internet erreichbar machen.
 - Externe HTTPS- oder HTTP-Befehle der Netzwerk-Trigger sorgfältig prüfen.
 
+Vollständige App und Nur Server + Konfiguration verwenden dieselben lokalen Daten und Netzwerkendpunkte. Der Servermodus veröffentlicht keinen zusätzlichen Dienst und kopiert keine Daten zum Viewer; er verzichtet lediglich auf das dauerhaft geladene lokale Playerfenster. Das Schließen seines bei Bedarf geöffneten Konfigurationsfensters beendet den geschützten App-Dienst nicht.
+
 ## Lokale Bilder und Hörhistorie
 
 Cover, Interpretenbilder und Providerantworten können lokal zwischengespeichert werden. Wrapped führt eine lokale Hörhistorie, sofern diese Funktion aktiviert ist. Die Wartungsfunktionen ermöglichen die Korrektur und Löschung entsprechender Einträge.

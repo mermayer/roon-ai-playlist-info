@@ -10,6 +10,13 @@
 
 ## Erster Start
 
+Der Windows-Installer bietet zunächst zwei Betriebsarten an:
+
+- **Vollständige App:** zentraler App-Dienst und vollständige lokale Player-Oberfläche.
+- **Nur Server + Konfiguration:** zentraler App-Dienst ohne dauerhaft geladenen lokalen Player; vorgesehen für die Bedienung über Browser oder RoonAIViewer.
+
+Beide Modi stellen dieselben Roon-, Wrapped-, Automations-, Medien- und Hörbuchaufnahmefunktionen bereit. Im Modus Nur Server + Konfiguration wird die lokale Konfiguration bei Bedarf über das Symbol im Windows-Infobereich geöffnet.
+
 Beim ersten Start führt ein Assistent durch die wichtigsten Einstellungen:
 
 1. vorhandene App-Sicherung wiederherstellen oder eine neue Einrichtung beginnen
@@ -37,6 +44,8 @@ Antigravity benötigt keinen KI-API-Key. Nach der Einrichtung überträgt die lo
 ## Zugriff aus dem Heimnetz
 
 Für Browser oder RoonAIViewer muss der App-Dienst Verbindungen aus dem lokalen Netzwerk annehmen. Der verwendete Port muss auf dem Serverrechner in der Firewall erreichbar sein. Für diesen Betrieb sollte ein API-Token eingerichtet und nur in einem vertrauenswürdigen privaten Netzwerk verwendet werden.
+
+Für diese Anordnung eignet sich der Modus Nur Server + Konfiguration besonders gut: Dienst und Hintergrundfunktionen bleiben aktiv, ohne ein dauerhaftes lokales Playerfenster zu laden. Der Betriebsmodus kann später unter **Konfiguration > Basis** geändert werden; nach dem Speichern startet die Desktop-App neu.
 
 ## Updates
 

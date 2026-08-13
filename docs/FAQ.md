@@ -62,6 +62,18 @@ Wrapped data is stored locally on the application system. RoonAIViewer does not 
 
 Yes. On the home network, the interface can be opened in a browser or through RoonAIViewer. The application service must allow network access and should be protected by an API token.
 
+## What is Server + Configuration mode?
+
+It is an installer and configuration option for a Windows computer that runs the central application service but does not need a permanently loaded local Player window. Roon, Wrapped, network triggers, media processing, scheduled work, and audiobook capture continue normally. Local settings remain available from the notification-area icon, while the complete interface is used through a browser or RoonAIViewer.
+
+## Can I change the operating mode later?
+
+Yes. Open **Configuration > Basic**, select the desktop operating mode, and save. The desktop application restarts into the selected mode. Existing settings, databases, caches, and backups are shared and are not converted or duplicated.
+
+## Does audiobook capture work in server mode?
+
+Yes. Capture remains a server-side function and can be started or monitored from a remote browser or RoonAIViewer. The configured audio input, exclusive Roon zone, output folder, and generated files remain on the server computer.
+
 ## Is RoonAIViewer a second server?
 
 No. The viewer only displays the interface of the existing application system. It starts no application service, does not connect directly to Roon, and stores no independent listening history.

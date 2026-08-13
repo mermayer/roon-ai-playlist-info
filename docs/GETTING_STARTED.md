@@ -10,6 +10,13 @@
 
 ## First launch
 
+The Windows installer first offers two operating modes:
+
+- **Complete application:** central service and full local Player interface.
+- **Server + Configuration:** central service without a permanently loaded local Player; intended for operation through a browser or RoonAIViewer.
+
+Both modes provide the same Roon, Wrapped, automation, media, and audiobook-capture functions. In Server + Configuration mode, open the notification-area icon and select **Configuration** when local settings are required.
+
 On first launch, a setup assistant guides the user through the essential settings:
 
 1. restore an existing application backup or begin a fresh setup
@@ -37,6 +44,8 @@ Antigravity does not require an AI API key. After setup, playlist requests and r
 ## Access from the home network
 
 For a browser or RoonAIViewer, the application service must accept connections from the local network. Its port must be reachable through the firewall on the server computer. An API token should be configured for this use, and access should be limited to a trusted private network.
+
+Server + Configuration mode is particularly suitable for this arrangement. It keeps the service and background functions running while avoiding a permanent local Player window. The operating mode can be changed later under **Configuration > Basic**; saving the change restarts the desktop application.
 
 ## Updates
 

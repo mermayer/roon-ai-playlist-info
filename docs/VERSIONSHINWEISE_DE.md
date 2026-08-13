@@ -1,5 +1,15 @@
 # Versionshinweise
 
+## Informations- und Dokumentationsausgabe 1.0.3 — 13. August 2026
+
+- die neue Installer-Auswahl zwischen Vollständige App und Nur Server + Konfiguration dokumentieren
+- die vorgesehene Anordnung mit dauerhaft laufendem Server und RoonAIViewer oder Browser auf einem anderen System erklären
+- beschreiben, dass der Servermodus kein vollständiges lokales Playerfenster dauerhaft lädt und die lokale Konfiguration nur bei Bedarf öffnet
+- bestätigen, dass beide Modi dieselbe Konfiguration, Roon-Verbindung, SQLite-Daten, Caches, Hintergrund-Worker und Sicherungen verwenden
+- bestätigen, dass Roon-Steuerung, Wrapped, Medienverarbeitung, Netzwerk-Trigger, Remote-Slots, geplante Abläufe und Hörbuchaufnahme im Servermodus weiterlaufen
+- den späteren Wechsel des Desktop-Betriebsmodus mit anschließendem kontrolliertem App-Neustart erklären
+- den dokumentierten App-Stand auf 1.0.466 aktualisieren
+
 ## Informations- und Dokumentationsausgabe 1.0.2 — 6. August 2026
 
 - die kostenlose vollautomatische KI-Playlist-Erzeugung mit Google Antigravity CLI an exponierter Stelle in der öffentlichen Übersicht darstellen
@@ -31,9 +41,18 @@ Dies ist die erste öffentliche Informationsausgabe zu Roon AI Playlist. Sie ent
 - Screenshots und Erklärungen zu Mehrzonenplayer, KI- und Last.fm-Playlisten, Live Radio, Spotify, TIDAL-Mixen und -Playlisten, Hörbuchsuche, Wrapped, Netzwerk-Triggern, Remote-Slots und RoPieee-Proxy
 - klare Produktabgrenzung: Die App ergänzt Roon außerhalb seiner Oberfläche innerhalb der Möglichkeiten der Roon-Extension-APIs und ersetzt Roon nicht
 
-## Roon AI Playlist 1.0.463
+## Roon AI Playlist 1.0.466
 
 Zu den neu dokumentierten App-Funktionen gehören:
+
+- im Windows-Installer wählbarer Betriebsmodus Vollständige App oder Nur Server + Konfiguration
+- ressourcenschonender Dauerbetrieb ohne dauerhaft geladenes lokales Playerfenster
+- lokale Konfiguration bei Bedarf über den Windows-Infobereich öffnen und nach dem Schließen wieder freigeben
+- späterer Wechsel des Betriebsmodus über die Konfiguration mit kontrolliertem App-Neustart
+- unveränderter Zugriff auf die vollständige Oberfläche über Browser und RoonAIViewer
+- unveränderte serverseitige Funktionen für Roon, Wrapped, Automation, Medien-Worker und Hörbuchaufnahme
+
+Die für App-Version 1.0.463 dokumentierten Antigravity-Funktionen bleiben Bestandteil der aktuellen App:
 
 - vollautomatische Playlist-Erzeugung über Google Antigravity CLI auf demselben Windows-System
 - API-Key-freier Betrieb nach einmaliger Anmeldung mit einem Google-Konto
@@ -43,7 +62,7 @@ Zu den neu dokumentierten App-Funktionen gehören:
 - automatische strukturierte Ergebnisübergabe an die vorhandene Roon-Suche und Ersatzlogik
 - Schutz vor unbeabsichtigter Verwendung bereits aktivierter kostenpflichtiger Antigravity-Credits
 
-Der für 1.0.458 dokumentierte Funktionsumfang bleibt Bestandteil der aktuellen App:
+Der für 1.0.458 dokumentierte Funktionsumfang bleibt ebenfalls Bestandteil der aktuellen App:
 
 ### Bereits mit 1.0.458 dokumentierte Funktionen
 

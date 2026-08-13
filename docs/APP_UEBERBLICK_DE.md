@@ -7,10 +7,11 @@ Roon AI Playlist ist eine lokale Begleitanwendung für Roon. Sie soll weder die 
 | Oberfläche | Geeignet für | Besonderheiten |
 |---|---|---|
 | Vollständige Windows-App | Rechner, auf dem auch der App-Dienst läuft | Hauptfenster, Tray-Betrieb und lokale Verwaltung |
+| Nur Server + Konfiguration | dauerhaft laufender, entfernt bedienter App-Rechner | vollständiger zentraler Dienst, lokale Konfiguration bei Bedarf, kein dauerhaftes lokales Playerfenster |
 | Browser | Tablets, Wanddisplays und beliebige Rechner im Heimnetz | keine zusätzliche Client-Installation erforderlich |
 | RoonAIViewer | dauerhaft genutzte Windows-Anzeige auf einem entfernten Rechner | eigenes Fenster, Tray, Autostart, fester Zoom und verschlüsselte Token-Speicherung |
 
-Alle drei Oberflächen zeigen dieselben vom App-Dienst bereitgestellten Zonen- und Mediendaten. Der Viewer erzeugt keine zweite Roon-Verbindung.
+Alle Anzeige-Clients verwenden dieselben vom App-Dienst bereitgestellten Zonen- und Mediendaten. Nur Server + Konfiguration verändert ausschließlich die lokale Desktop-Darstellung und entfernt keine Dienstfunktion. Browser und Viewer erzeugen keine zweite Roon-Verbindung.
 
 ## Hauptbereiche
 
@@ -50,7 +51,7 @@ Zehn konfigurierbare Aktionsslots können Sender, Playlisten oder Zonenaktionen 
 
 ### Konfiguration und Wartung
 
-Hier werden Verbindungen, optionale Dienste, Oberfläche, Wrapped, Hörbücher, Bildanbieter, Netzwerk-Trigger, Sicherungen und Diagnosen verwaltet.
+Hier werden Verbindungen, optionale Dienste, Oberfläche, Wrapped, Hörbücher, Bildanbieter, Netzwerk-Trigger, Sicherungen, Diagnosen und der Desktop-Betriebsmodus verwaltet. Im Modus Nur Server + Konfiguration lässt sich dieser Bereich lokal über den Windows-Infobereich öffnen und wird beim Schließen wieder freigegeben.
 
 ## Lokaler Betrieb
 

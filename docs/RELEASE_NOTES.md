@@ -1,5 +1,15 @@
 # Release notes
 
+## Information and documentation release 1.0.3 — August 13, 2026
+
+- documents the new installer choice between Complete application and Server + Configuration
+- explains the intended always-on server arrangement with RoonAIViewer or a browser on another system
+- describes that server mode does not keep the full local Player window loaded and opens Configuration locally only on demand
+- confirms that the same configuration, Roon connection, SQLite data, caches, background workers, and backups are used in both modes
+- confirms that Roon control, Wrapped, media processing, network triggers, remote slots, scheduled work, and audiobook capture continue in server mode
+- explains how the desktop operating mode can be changed later and applied by restarting the application
+- updates the documented application version to 1.0.466
+
 ## Information and documentation release 1.0.2 — August 6, 2026
 
 - places free, fully automatic AI playlist generation with Google Antigravity CLI prominently in the public overview
@@ -31,9 +41,18 @@ This is the first public information release for Roon AI Playlist. It contains n
 - screenshots and explanations for multi-zone playback, AI and Last.fm playlists, Live Radio, Spotify, TIDAL mixes and playlists, audiobook discovery, Wrapped, network triggers, remote slots, and the RoPieee proxy
 - explicit product boundary: the application complements Roon outside its GUI within the possibilities of the Roon Extension APIs and does not replace Roon
 
-## Roon AI Playlist 1.0.463
+## Roon AI Playlist 1.0.466
 
 The newly documented application capabilities include:
+
+- selectable Complete application or Server + Configuration operating mode in the Windows installer
+- lower-overhead continuous operation without a permanently loaded local Player window
+- local configuration opened on demand from the Windows notification area and released again after closing
+- later operating-mode changes through Configuration with a controlled application restart
+- unchanged remote browser and RoonAIViewer access to the complete interface
+- unchanged server-side Roon, Wrapped, automation, media-worker, and audiobook-capture functions
+
+The Antigravity capabilities documented for application 1.0.463 remain part of the current application:
 
 - fully automatic playlist generation through Google Antigravity CLI on the same Windows system
 - API-key-free operation after a one-time Google account sign-in
@@ -43,7 +62,7 @@ The newly documented application capabilities include:
 - automatic structured result transfer into the existing Roon search and replacement workflow
 - protection against unintended use of already enabled paid Antigravity credits
 
-The feature set documented for 1.0.458 below remains part of the current application:
+The feature set documented for 1.0.458 below also remains part of the current application:
 
 ### Earlier documented capabilities from 1.0.458
 

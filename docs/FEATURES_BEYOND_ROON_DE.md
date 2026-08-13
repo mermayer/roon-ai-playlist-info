@@ -2,7 +2,7 @@
 
 [English version](FEATURES_BEYOND_ROON.md) · [Zurück zur Übersicht](../README_DE.md)
 
-Stand: Roon AI Playlist `1.0.463`, 6. August 2026.
+Stand: Roon AI Playlist `1.0.466`, 13. August 2026.
 
 Diese Übersicht nennt Funktionen, die **Roon AI Playlist** zusätzlich zu den Bordmitteln des originalen Roon bereitstellt. Sie beschreibt keinen Ersatz für die Roon-Oberfläche oder irgendeine Roon-Funktion. Die Begleitanwendung soll ausschließlich außerhalb von Roon nützliche, dort fehlende Arbeitsabläufe ermöglichen – so weit es die Roon-Extension-APIs zulassen. Verglichen wird mit Roon ohne weitere Extensions, Skripte oder Hausautomationssysteme. Roons Kernfunktionen wie RAAT-Wiedergabe, DSP, normale Zonensteuerung, Zonengruppierung, Bibliotheksverwaltung, Roon Radio, klassische Playlisten, TIDAL-Wiedergabe, History, Albumcover, Sleep Timer, Roon Display und Roon-Datenbankbackups werden nicht als App-Vorteil gezählt.
 
@@ -167,6 +167,9 @@ Damit kann eine mit RoPieee verbundene Bluetooth-Fernbedienung zwischen zwei wec
 - Cover, Künstlerprofilbild und Künstlerhintergrund getrennt präsentieren.
 - Eine vollständige Bedienoberfläche in einem normalen LAN-Browser bereitstellen.
 - Den schlanken Windows-Viewer mit WebView2, Tray, Autostart, Zoom und per DPAPI geschütztem Token einsetzen.
+- Den zentralen App-Dienst bei entfernter Bedienung im Modus Nur Server + Konfiguration installieren und sämtliche Hintergrundfunktionen ohne dauerhaft geladenes lokales Playerfenster bereitstellen.
+
+Der Betriebsmodus ist während der Windows-Installation wählbar und kann später in der Konfiguration geändert werden. Im Servermodus bleiben Roon-Steuerung, Wrapped-Aufzeichnung, Netzwerk-Trigger, Medienverarbeitung, geplante Aufgaben und Hörbuchaufnahme verfügbar. Das lokale Konfigurationsfenster wird nur bei Bedarf geöffnet und nach dem Schließen freigegeben, während Browser und RoonAIViewer weiterhin die vollständige Oberfläche erhalten.
 
 ![Spotify-Wiedergabe in der eigenen Zonendarstellung](../assets/screenshots/spotify_pl.png)
 
@@ -187,6 +190,7 @@ Roons Web Display zeigt Now Playing und Liedtexte im Browser, ist aber keine vol
 - Bild- und Coverspeicher verifiziert auf ein anderes Laufwerk verschieben.
 - Ereignisschleifenverzögerung, Serverlaufzeit, Workerzustand, Auftragszahlen, Fehler und Neustarts diagnostizieren.
 - Providerabfragen, Downloads, Hashing und Bildspeicherung in einem separaten überwachten Medienprozess ausführen.
+- Den zentralen Windows-Dienst ohne dauerhaften Renderer betreiben, wenn die Anzeige über einen entfernten Browser oder RoonAIViewer erfolgt.
 
 ## Abgrenzung
 

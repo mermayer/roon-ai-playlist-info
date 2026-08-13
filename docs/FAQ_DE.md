@@ -62,6 +62,18 @@ Wrapped-Daten werden lokal auf dem App-System gespeichert. Sie werden nicht vom 
 
 Ja. Im Heimnetz kann die Oberfläche in einem Browser oder mit RoonAIViewer geöffnet werden. Dafür muss der App-Dienst Netzwerkzugriff erlauben und sollte mit einem API-Token geschützt sein.
 
+## Was ist der Modus Nur Server + Konfiguration?
+
+Das ist eine Installer- und Konfigurationsoption für einen Windows-Rechner, der den zentralen App-Dienst ausführt, aber kein dauerhaft geladenes lokales Playerfenster benötigt. Roon, Wrapped, Netzwerk-Trigger, Medienverarbeitung, geplante Abläufe und Hörbuchaufnahme laufen unverändert weiter. Lokale Einstellungen bleiben über das Symbol im Windows-Infobereich erreichbar; die vollständige Oberfläche wird über Browser oder RoonAIViewer verwendet.
+
+## Kann ich den Betriebsmodus später ändern?
+
+Ja. Unter **Konfiguration > Basis** den Desktop-Betriebsmodus wählen und speichern. Die Desktop-App startet anschließend im gewählten Modus neu. Vorhandene Einstellungen, Datenbanken, Caches und Sicherungen werden gemeinsam verwendet und weder konvertiert noch dupliziert.
+
+## Funktioniert die Hörbuchaufnahme im Servermodus?
+
+Ja. Die Aufnahme bleibt eine serverseitige Funktion und kann über einen entfernten Browser oder RoonAIViewer gestartet und überwacht werden. Konfigurierter Audioeingang, exklusive Roon-Zone, Ausgabeordner und erzeugte Dateien verbleiben auf dem Serverrechner.
+
 ## Ist RoonAIViewer ein zweiter Server?
 
 Nein. Der Viewer zeigt nur die Oberfläche des vorhandenen App-Systems. Er startet keinen App-Dienst, verbindet sich nicht direkt mit Roon und speichert keine eigene Hörhistorie.
