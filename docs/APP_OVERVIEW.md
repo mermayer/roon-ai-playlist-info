@@ -31,7 +31,11 @@ SpotBridge 1.0.0 is a separate native macOS menu-bar application that captures t
 
 ### Audiobooks
 
-Audiobooks from Roon are managed with chapters, total duration, progress, and bookmarks. A book can be resumed, restarted, or continued from a saved position. A separate Audible/DNB catalogue supports discovery, while a verified TIDAL album search can add an available edition to the application's audiobook list. Optional capture through an exclusive local Roon zone creates tagged MP3 chapter files.
+Audiobooks from Roon are managed with chapters, total duration, progress, and bookmarks. A separate Audible/DNB catalogue and a direct TIDAL search by title or artist support discovery. TIDAL results can be added to a virtual **Listen later** library, played directly through Roon Audio Input or a selected Windows/USB Bluetooth output, and resumed with automatic or manual bookmarks. Speed and pitch are independently adjustable in 0.05 steps.
+
+Fast capture uses a guided audio and Chrome-companion setup, prefers a verified 4× profile with a 2× compatibility fallback, and displays a complete job status with chapter-boundary pause, resume, and abort controls. Other TIDAL playback is locked while capture is active. The resulting master recording is restored to normal speed and split into tagged MP3 chapter files.
+
+![Direct TIDAL audiobook playback](../assets/screenshots/tidal_audiobook.png)
 
 ### Wrapped
 
@@ -39,7 +43,9 @@ Wrapped records qualified listening sessions locally and presents listening time
 
 ### Direct TIDAL tools
 
-Personal mixes, Daily Discovery, track radio, artist radio, editorial playlists, and user playlists can be filtered, previewed, started, or appended in a selected Roon zone. Selected dynamic mixes can be synchronised into stable TIDAL playlists, while `T+` stores the current or identified live-radio track in a target playlist assigned per zone.
+Personal mixes, Daily Discovery, track radio, artist radio, editorial playlists, and user playlists can be filtered, previewed, started, or appended in a selected Roon zone. Selected dynamic mixes can be synchronised into stable TIDAL playlists, while `T+` stores the current or identified live-radio track in a target playlist assigned per zone. The separate audiobook search prepares covers and album details, supports broad series-aware title matching, up to 200 results, and sorting including oldest first.
+
+![Direct TIDAL audiobook search](../assets/screenshots/tidal_audiobook_search.png)
 
 ### Roon Tools
 

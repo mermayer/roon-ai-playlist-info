@@ -31,7 +31,11 @@ SpotBridge 1.0.0 ist eine eigenständige native macOS-Menüleisten-App, die den 
 
 ### Hörbücher
 
-Hörbücher aus Roon werden mit Kapiteln, Gesamtdauer, Fortschritt und Lesezeichen verwaltet. Ein Buch lässt sich fortsetzen, neu beginnen oder an einer gespeicherten Position weiterhören. Ein eigener Audible-/DNB-Katalog unterstützt die Entdeckung; eine geprüfte TIDAL-Albensuche kann eine verfügbare Ausgabe in die Hörbuchliste der App übernehmen. Die optionale Aufnahme über eine exklusive lokale Roon-Zone erzeugt MP3-Kapiteldateien mit Metadaten.
+Hörbücher aus Roon werden mit Kapiteln, Gesamtdauer, Fortschritt und Lesezeichen verwaltet. Ein eigener Audible-/DNB-Katalog und eine direkte TIDAL-Suche nach Titel oder Interpret unterstützen die Entdeckung. TIDAL-Treffer können in eine virtuelle **Später anhören**-Bibliothek übernommen, direkt über Roon Audio Input oder einen gewählten Windows-/USB-Bluetooth-Ausgang wiedergegeben und über automatische oder manuelle Lesezeichen fortgesetzt werden. Geschwindigkeit und Pitch sind unabhängig in 0,05-Schritten einstellbar.
+
+Die Schnellaufnahme verwendet eine geführte Audio- und Chrome-Begleiter-Einrichtung, bevorzugt ein geprüftes 4×-Profil mit 2×-Kompatibilitätsfallback und zeigt einen vollständigen Auftragsstatus mit Kapitelpause, Fortsetzen und Abbruch. Andere TIDAL-Wiedergaben sind währenddessen gesperrt. Die Masteraufnahme wird anschließend auf Normalgeschwindigkeit zurückgeführt und in MP3-Kapitel mit Metadaten zerlegt.
+
+![Direkte TIDAL-Hörbuchwiedergabe](../assets/screenshots/tidal_audiobook.png)
 
 ### Wrapped
 
@@ -39,7 +43,9 @@ Wrapped zeichnet qualifizierte Hörsitzungen lokal auf und stellt Hörzeit, Tite
 
 ### Direkte TIDAL-Werkzeuge
 
-Persönliche Mixe, Daily Discovery, Titelradio, Interpretenradio, redaktionelle Playlisten und Benutzerplaylisten lassen sich filtern, prüfen, in einer gewählten Roon-Zone starten oder anhängen. Ausgewählte dynamische Mixe können in feste TIDAL-Playlisten synchronisiert werden; `T+` speichert den laufenden oder erkannten Live-Radio-Titel in einer pro Zone festgelegten Zielplaylist.
+Persönliche Mixe, Daily Discovery, Titelradio, Interpretenradio, redaktionelle Playlisten und Benutzerplaylisten lassen sich filtern, prüfen, in einer gewählten Roon-Zone starten oder anhängen. Ausgewählte dynamische Mixe können in feste TIDAL-Playlisten synchronisiert werden; `T+` speichert den laufenden oder erkannten Live-Radio-Titel in einer pro Zone festgelegten Zielplaylist. Die getrennte Hörbuchsuche bereitet Cover und Albumdaten auf, unterstützt eine breite serienbezogene Titelsuche mit bis zu 200 Treffern sowie Sortierungen einschließlich **Älteste zuerst**.
+
+![Direkte TIDAL-Hörbuchsuche](../assets/screenshots/tidal_audiobook_search.png)
 
 ### Roon Tools
 

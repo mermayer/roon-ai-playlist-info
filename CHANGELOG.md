@@ -2,6 +2,22 @@
 
 This changelog records public information and documentation releases for Roon AI Playlist. Application and RoonAIViewer versions are listed separately because this repository contains neither their source code nor installers.
 
+## [1.0.4](https://github.com/mermayer/roon-ai-playlist-info/releases/tag/v1.0.4) — 2026-08-16
+
+### Added
+
+- Complete English and German documentation for direct TIDAL audiobook search, the separate virtual TIDAL library, direct playback, bookmarks, and fast capture.
+- Two current screenshots showing the prepared TIDAL audiobook search and the dedicated playback view.
+- Operating guidance for selectable Roon or Windows/USB Bluetooth output, independent speed and pitch control, AVRCP Play/Pause, and the known Roon live-input pause limitation.
+- Detailed fast-capture workflow covering the setup wizard, verified 4× and 2× profiles, full status page, chapter-boundary pause, cancellation, post-processing, and protection against competing TIDAL playback.
+- Privacy clarification for the managed Chrome profile, local companion, virtual library data, local PCM processing, and generated chapter files.
+
+### Changed
+
+- Updated the documented Roon AI Playlist version from 1.0.466 to 1.0.531 and the public information release to 1.0.4.
+- Expanded both READMEs, application overviews, feature comparisons, full user guides, getting-started guides, FAQs, privacy/security notes, release notes, and changelogs.
+- Replaced the earlier narrow TIDAL candidate-search illustration with the current direct search and playback screenshots where the new workflows are explained.
+
 ## [1.0.3](https://github.com/mermayer/roon-ai-playlist-info/releases/tag/v1.0.3) — 2026-08-13
 
 ### Added

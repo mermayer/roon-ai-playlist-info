@@ -2,7 +2,7 @@
 
 [Deutsche Version](BENUTZERHANDBUCH_DE.md) · [Back to overview](../README.md)
 
-Documentation status: Roon AI Playlist **1.0.466**, RoonAIViewer **1.0.3**.
+Documentation status: Roon AI Playlist **1.0.531**, RoonAIViewer **1.0.3**.
 
 ## Contents
 
@@ -31,7 +31,7 @@ Documentation status: Roon AI Playlist **1.0.466**, RoonAIViewer **1.0.3**.
 
 ## 1. Purpose of the application
 
-Roon AI Playlist extends an existing Roon system. It is not a replacement for the Roon GUI or Roon's own functions. Roon remains responsible for the music library, streaming, RAAT, DSP, zones, queues, and audio playback. The application exists to make additional workflows available outside Roon where Roon does not provide them, within the possibilities and limits of the Roon Extension APIs:
+Roon AI Playlist extends an existing Roon system. It is not a replacement for the Roon GUI or Roon's own functions. Roon remains responsible for its music library, streaming integrations, RAAT, DSP, zones, queues, and normal Roon playback. The dedicated TIDAL audiobook mode is a bounded exception that processes official browser playback for Roon Audio Input or Windows output. The application exists to make additional workflows available outside Roon where Roon does not provide them, within the possibilities and limits of the Roon Extension APIs:
 
 - intelligent and external playlist generation,
 - visual multi-zone control,
@@ -411,11 +411,38 @@ The **Audiobook search** tab is for discovery before a title is part of the loca
 
 ### Finding the audiobook on TIDAL
 
-![Verified TIDAL album candidates for an audiobook](../assets/screenshots/tidal_search.png)
+![Direct TIDAL audiobook search](../assets/screenshots/tidal_audiobook_search.png)
 
-The TIDAL dialog searches album candidates and then resolves their artist relationship separately. Only albums whose TIDAL artist fits the searched author are retained. Every candidate shows artwork, artist, year, duration, and track count so editions and volumes can be distinguished before **Add to my albums** is used. No result is a valid availability outcome and is presented differently from authentication, timeout, or provider errors.
+The **TIDAL search** tab works independently or receives title and author from an Audible/DNB card. Before searching, choose **Audiobook title** or **Artist**. Title search also checks plausible TIDAL series artists, so catalogues that credit an author while TIDAL credits the series can still meet. When an Audible/DNB title finds no result, **Search by artist** remains available as an explicit fallback.
 
-Adding a result creates the application's audiobook record; it does not purchase content and does not import audio files. Playback availability remains governed by TIDAL and Roon.
+Album cards are prepared with artwork, TIDAL artist, year, duration, and track count. The result set can contain up to 200 albums and can be sorted by relevance, newest first, oldest first, title A–Z/Z–A, artist A–Z, or longest first. Missing release dates remain at the end of chronological sorting.
+
+Available actions depend on the result:
+
+- **Search by artist** repeats the search through the displayed TIDAL artist.
+- **Add album** adds the album to the user's TIDAL album collection.
+- **Listen later** creates a virtual audiobook entry in this application.
+- **Fast capture** opens the protected capture workflow described below.
+
+No result is a valid availability outcome and is displayed differently from authentication, timeout, or provider errors. Adding a result does not purchase content or import audio files; availability remains governed by the TIDAL subscription and region.
+
+### Virtual TIDAL audiobook library
+
+The **TIDAL library** is separate from the Roon audiobook library. It stores references to marked TIDAL albums together with their chapter list, progress, automatic bookmark, and named manual bookmarks. The audio remains at TIDAL.
+
+![TIDAL audiobook player with speed, pitch, chapters, and bookmarks](../assets/screenshots/tidal_audiobook.png)
+
+For direct listening:
+
+1. Select either a **Roon zone** or **Windows output**.
+2. With Roon output, choose the audiobook zone once; the most recently used TIDAL audiobook zone is remembered.
+3. With Windows output, choose the default device or an explicit USB/USB-Bluetooth output.
+4. Set speed from 1.00× to 2.00× and pitch from 0.50 to 1.50 in independent 0.05 steps.
+5. Use **Resume**, a bookmark, or a chapter to start.
+
+The application routes the captured PCM through speech-oriented Rubber Band processing when pitch differs from 1.00. Roon receives a continuous 48 kHz stereo Ogg-FLAC stream through the official Audio Input API; Windows output receives the same processed PCM. Pitch 1.00 bypasses Rubber Band. Compatible Bluetooth-headset AVRCP Play/Pause is accepted while Windows audiobook output is active.
+
+Use Play/Pause in the application for dependable session control and automatic bookmark updates. Roon Previous/Next can change chapters. Roon clients do not all expose a resumable Play action after stopping a live Audio Input stream, so Roon Stop/Pause should not be relied upon as the primary audiobook pause control.
 
 ### Synchronising the library
 
@@ -460,9 +487,26 @@ Progress belongs to the audiobook rather than one particular zone. When a known 
 
 Recognised audiobooks are not recorded as ordinary music in Wrapped and do not launch overnight music artist-image searches.
 
-### Optional audiobook capture
+### Audiobook capture
 
-Capture is intended for audiobooks that have already been synchronised and analysed.
+Two capture paths are available:
+
+- **TIDAL fast capture** starts from a TIDAL result or audiobook entry and records the official browser playback at a verified accelerated profile.
+- **Roon fallback capture** retains the established exclusive-zone workflow for a book already synchronised and analysed in Roon.
+
+#### TIDAL fast capture
+
+Before the first fast capture, open the setup wizard and complete every current check. The wizard verifies the managed Chrome profile, current local companion extension, concrete virtual output, native WASAPI capture, real PCM signal, and the available profile. A verified 4×/192 kHz path is preferred; 2×/96 kHz remains the compatibility fallback.
+
+Starting **Fast capture** opens a complete status page. It shows cover, title, chapter, profile, destination, captured duration, estimated remaining time, recording state, and post-processing state. **Pause after this chapter** may be queued and cancelled before the boundary; a paused job can continue with the next chapter. **Abort** ends the raw capture and does not present a partial file as a completed book.
+
+Only one TIDAL stream may be used by this workflow. While capture is active, the application blocks direct TIDAL audiobook playback as well as TIDAL mix and playlist starts, and the managed Chrome window blocks manual player actions. After completion, failure, or cancellation, that managed Chrome session is closed so stale playback state cannot affect the next job.
+
+The browser produces continuous master audio. Post-processing restores normal speed and creates numbered MP3 chapter files with title, author, album, track number, and embedded artwork. Continuous restoration avoids cuts, duplicated syllables, and fades at chapter boundaries. Master segments remain available as rescue files after a real processing failure.
+
+#### Roon fallback capture
+
+Roon capture is intended for audiobooks that have already been synchronised and analysed.
 
 Before the first capture:
 
@@ -473,7 +517,7 @@ Before the first capture:
 
 The system check validates audio tools, input device, Roon zone, write access, and free storage.
 
-During capture:
+During Roon capture:
 
 - the configured zone is reserved exclusively,
 - continuous master segments are recorded first,
@@ -1106,6 +1150,22 @@ Wrapped, audiobook data, and image caches are managed locally. External requests
 - Verify the target playlist assigned to the zone.
 - Ensure that the current item was identified as music.
 - Inspect provider errors in the log.
+
+### Direct TIDAL audiobook does not start or resume
+
+- Confirm that the local Chrome companion reports connected and current.
+- Ensure no fast capture is active; capture deliberately locks other TIDAL starts.
+- With Roon output, confirm that Audio Input is available and the remembered audiobook zone is online.
+- With Windows output, confirm that the selected device is still active.
+- If the managed TIDAL player remains at 0:00 with a loading indicator, end the listening session and use **Reconnect & resume**. The application reopens its managed session and restores the saved chapter and position.
+
+### TIDAL fast capture does not start
+
+- Open the capture setup and review the current wizard checks; messages from an older failed job are shown separately and do not determine readiness.
+- Reload the local companion when the wizard reports an outdated extension version.
+- Repeat the concrete virtual-output permission and real-signal test if the audio route, Chrome profile, or helper changed.
+- A spinning TIDAL Play/Pause indicator at 0:00 is not a confirmed start. Allow the built-in retry to finish and use its reported player-readiness and PCM details for diagnosis.
+- After a terminal failure or cancellation, the application closes only its managed Chrome profile. Start the next job normally; ordinary Chrome windows are unaffected.
 
 ### Live radio receives no enrichment
 

@@ -1,5 +1,17 @@
 # Versionshinweise
 
+## Informations- und Dokumentationsausgabe 1.0.4 — 16. August 2026
+
+- die direkte TIDAL-Hörbuchsuche nach Titel oder Interpret, breitere serienbezogene Zuordnung, aufbereitete Cover und Albumdaten, bis zu 200 Treffer und Sortierungen einschließlich **Älteste zuerst** dokumentieren
+- **Album hinzufügen**, **Später anhören** und **Schnellaufnahme** als getrennte Aktionen erklären
+- die virtuelle TIDAL-Hörbuchbibliothek mit Kapiteln, Fortschritt, Autolesezeichen und benannten manuellen Lesezeichen vorstellen
+- die Direktwiedergabe über Roon Audio Input oder einen gewählten Windows-/USB-Bluetooth-Ausgang beschreiben
+- unabhängige Geschwindigkeit von 1,00× bis 2,00× und Pitch von 0,50 bis 1,50 in 0,05-Schritten, auf Sprache abgestimmte Rubber-Band-Verarbeitung und AVRCP Play/Pause erläutern
+- die clientabhängige Roon-Live-Input-Pauseneinschränkung nennen und Play/Pause in der App als verlässliche Steuerung empfehlen
+- Schnellaufnahme-Wizard, geprüfte 4×-/192-kHz- und 2×-/96-kHz-Profile, vollständige Statusseite, Kapitelpause, Abbruch, TIDAL-Wiedergabesperre, Aufräumen des verwalteten Chrome und durchgehende Nachverarbeitung dokumentieren
+- aktuelle Such- und Wiedergabe-Screenshots in die deutschen und englischen Dokumentationspfade aufnehmen
+- den dokumentierten App-Stand auf 1.0.531 aktualisieren
+
 ## Informations- und Dokumentationsausgabe 1.0.3 — 13. August 2026
 
 - die neue Installer-Auswahl zwischen Vollständige App und Nur Server + Konfiguration dokumentieren
@@ -40,6 +52,24 @@ Dies ist die erste öffentliche Informationsausgabe zu Roon AI Playlist. Sie ent
 - Dokumente zu ersten Schritten, Datenschutz, Sicherheit, häufigen Fragen und App-Überblick
 - Screenshots und Erklärungen zu Mehrzonenplayer, KI- und Last.fm-Playlisten, Live Radio, Spotify, TIDAL-Mixen und -Playlisten, Hörbuchsuche, Wrapped, Netzwerk-Triggern, Remote-Slots und RoPieee-Proxy
 - klare Produktabgrenzung: Die App ergänzt Roon außerhalb seiner Oberfläche innerhalb der Möglichkeiten der Roon-Extension-APIs und ersetzt Roon nicht
+
+## Roon AI Playlist 1.0.531
+
+Zu den neu dokumentierten App-Funktionen gehören:
+
+- direkte TIDAL-Hörbuchsuche nach Titel oder Interpret mit breiter Zuordnung, vollständiger Albumaufbereitung, verbesserten Covern und wählbarer Sortierung
+- getrennte virtuelle TIDAL-Bibliothek, die aus TIDAL-Suche, Audible-/DNB-Übergabe oder Aufnahmekandidatenauswahl befüllt wird
+- direkte Hörbuchwiedergabe mit Kapitelwahl, Fortschritt, automatischen und manuellen Lesezeichen, unabhängiger Geschwindigkeit und Pitch sowie gespeichertem Ausgabeziel
+- wählbare Ausgabe über Roon Audio Input oder Windows/USB-Bluetooth einschließlich AVRCP Play/Pause kompatibler Kopfhörer bei Windows-Ausgabe
+- auf Sprache abgestimmte Rubber-Band-R3/Finer-Pitchverarbeitung mit vollständiger Umgehung bei Pitch 1,00
+- ein verwaltetes TIDAL-Chrome-Fenster mit Überwachung doppelter Tabs und Wiederverbindung
+- geführte Schnellaufnahme-Einrichtung zur Prüfung von Begleiter, konkreter virtueller Route, nativer PCM-Aufnahme, Realsignal und nutzbarem Beschleunigungsprofil
+- vollständige produktive Aufnahmestatusseite mit Laufzeit, Restzeit, Kapitel, Ziel, Pause an der Kapitelgrenze, Fortsetzen und echtem Abbruch
+- exklusive TIDAL-Aufnahmesperre für direkte Hörbücher, Mixe, Playlisten und manuelle Steuerung im verwalteten Chrome-Fenster
+- frische verwaltete Chrome-Sitzung zwischen Aufnahmeaufträgen und durchgehende Rückwandlung vor der MP3-Kapiteltrennung zum Schutz der Kapitelgrenzen
+- vollständige deutsche/englische Lokalisierung und kontextbezogene Tooltips für die neuen TIDAL-Hör- und Aufnahmefunktionen
+
+Die zuvor dokumentierten Servermodus-Funktionen aus 1.0.466 bleiben Bestandteil der aktuellen App.
 
 ## Roon AI Playlist 1.0.466
 

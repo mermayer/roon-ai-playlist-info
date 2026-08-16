@@ -10,7 +10,7 @@ Requests to external services occur only when the corresponding feature is enabl
 
 - the selected AI provider for playlist suggestions
 - Google Antigravity when that AI route is selected; the local CLI sends the playlist instruction to Google's service under the signed-in account
-- TIDAL for search and playlist actions
+- TIDAL for search, album actions, audiobook metadata, and subscribed browser playback
 - Last.fm and Deezer for music and image information
 - fanart.tv and TheAudioDB for artist images
 - MusicBrainz and Cover Art Archive for album information and artwork
@@ -40,6 +40,8 @@ Complete application and Server + Configuration mode use the same local data and
 ## Local images and listening history
 
 Artwork, artist images, and provider responses may be cached locally. Wrapped maintains a local listening history when enabled. Maintenance tools can correct and remove corresponding entries.
+
+The virtual TIDAL audiobook library stores album references, chapters, progress, and bookmarks locally; it does not copy the subscribed audio into the library. Direct listening and fast capture use the official TIDAL browser player in a separately managed local Chrome profile. The narrowly scoped companion coordinates that player and its selected audio output but does not extract TIDAL credentials, licence keys, or protected stream data. Captured PCM, speed/pitch processing, temporary master segments, and generated chapter files remain on the application system.
 
 ## Backups
 

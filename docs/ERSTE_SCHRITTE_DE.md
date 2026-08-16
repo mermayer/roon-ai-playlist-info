@@ -35,11 +35,15 @@ Der Einrichtungsassistent kann später erneut über die Konfiguration geöffnet 
 3. Gewünschte Live-Radio-Sender in Roon Tools laden und deren Metadatenmodus festlegen.
 4. Wrapped aktivieren und den gewünschten Auswertungszeitraum wählen.
 5. Optional Hörbücher synchronisieren und analysieren.
-6. Optional Interpretenbild-Anbieter sortieren und externe Dienste verbinden.
-7. Für kostenlose automatische KI-Playlisten unter **Konfiguration > AI** **Antigravity** wählen, **Anmeldung öffnen** abschließen, **CLI prüfen**, ein Modell wählen und speichern.
-8. Eine erste App-Sicherung erstellen.
+6. Für direkte TIDAL-Hörbücher TIDAL verbinden, die **TIDAL-Suche** öffnen und einen Treffer mit **Später anhören** vormerken.
+7. Vor der ersten TIDAL-Schnellaufnahme den getrennten Einrichtungsassistenten öffnen und Begleiter-, Audiorouten-, Profil- und Realsignalprüfung abschließen. Ein bestandener versionsgebundener Bereitschaftsnachweis bleibt gültig, bis sich eine relevante Komponente ändert.
+8. Optional Interpretenbild-Anbieter sortieren und externe Dienste verbinden.
+9. Für kostenlose automatische KI-Playlisten unter **Konfiguration > AI** **Antigravity** wählen, **Anmeldung öffnen** abschließen, **CLI prüfen**, ein Modell wählen und speichern.
+10. Eine erste App-Sicherung erstellen.
 
 Antigravity benötigt keinen KI-API-Key. Nach der Einrichtung überträgt die lokale CLI Playlistwunsch und Ergebnis automatisch. Es gelten Googles jeweils aktueller kostenloser Tarif, die Modellverfügbarkeit und die Nutzungskontingente; die App kauft niemals Credits.
+
+Der TIDAL-Aufnahmeassistent und die produktive Statusseite sind getrennte Ansichten. Beim erneuten Öffnen der Einrichtung erscheint immer der vollständige Wizard; der Start von **Schnellaufnahme** zeigt den aktuellen Auftrag mit Fortschritt, Restzeit, Kapitelpause, Fortsetzen und Abbruch.
 
 ## Zugriff aus dem Heimnetz
 

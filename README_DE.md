@@ -8,15 +8,15 @@
 
 ## Aktuelle Versionen
 
-- Informations- und Dokumentationsausgabe: **1.0.3**
-- Roon AI Playlist: **1.0.466**
+- Informations- und Dokumentationsausgabe: **1.0.4**
+- Roon AI Playlist: **1.0.531**
 - RoonAIViewer: **1.0.3**
 
 ## Was ist Roon AI Playlist?
 
 Roon AI Playlist richtet sich an Menschen, die Roon bereits verwenden und mehr Kontrolle über Musikentdeckung, Darstellung, Hörhistorie, Live Radio, Hörbücher und angeschlossene Geräte wünschen.
 
-**Roon AI Playlist soll weder die Roon-Oberfläche noch irgendeine Kernfunktion von Roon ersetzen.** Roon bleibt für Musikbibliothek, Streaming, RAAT, DSP, Zonen, Warteschlangen und Audiowiedergabe zuständig. Diese Begleitanwendung wurde ausschließlich dafür geschaffen, außerhalb von Roon nützliche, dort fehlende Arbeitsabläufe zu ermöglichen – so weit es die Roon-Extension-APIs zulassen. Sie arbeitet mit dem vorhandenen Roon-System und gibt Wiedergabeaktionen an Roon zurück.
+**Roon AI Playlist soll weder die Roon-Oberfläche noch irgendeine Kernfunktion von Roon ersetzen.** Roon bleibt für seine Musikbibliothek, Streaming-Integrationen, RAAT, DSP, Zonen, Warteschlangen und normale Roon-Wiedergabe zuständig. Diese Begleitanwendung ergänzt außerhalb von Roon nützliche, dort fehlende Arbeitsabläufe – so weit es die Roon-Extension-APIs zulassen. Die meisten Wiedergabeaktionen gehen zurück an Roon; der eigene TIDAL-Hörbuchmodus ist die ausdrücklich beschriebene Ausnahme und kann offizielle Browserwiedergabe für Roon Audio Input oder einen gewählten Windows-Ausgang verarbeiten.
 
 Die Anwendung läuft lokal und lässt sich auf vier Arten bedienen:
 
@@ -135,9 +135,25 @@ Die Hörbuchsuche ist eine eigenständige Katalogansicht für aktuelle deutschsp
 
 ![Hörbuchentdeckung über den Audible-Katalog](assets/screenshots/audible.png)
 
-Die anschließende TIDAL-Hörbuchsuche sucht passende Alben und prüft die Interpretenbeziehung des Albums unabhängig. Vor der Übernahme in die persönliche Hörbuchliste zeigt sie Cover, Autor beziehungsweise Interpret, Jahr, Laufzeit und Titelanzahl. Dadurch lässt sich auch ein echtes „bei TIDAL nicht verfügbar“ von einer gestörten Providerverbindung unterscheiden.
+Der TIDAL-Hörbuchbereich besitzt zusätzlich eine eigenständige Suche nach Hörbuchtitel oder Interpret. Die breitere Titelsuche kann passende Serieninterpreten einbeziehen und bis zu 200 aufbereitete Alben anzeigen. Die Treffer lassen sich nach Relevanz, neuestem oder ältestem Erscheinungsdatum, Titel, Interpret oder Laufzeit sortieren; vollständige Albumdaten und Cover werden vor der Anzeige aufgelöst. Ein Audible-/DNB-Ergebnis kann weiterhin direkt übergeben werden, und **Mit Interpret suchen** bleibt auch dann verfügbar, wenn die erste Titelsuche keinen Treffer liefert.
 
-![TIDAL-Albensuche zu einem ausgewählten Hörbuch](assets/screenshots/tidal_search.png)
+![Direkte TIDAL-Hörbuchsuche mit aufbereiteten Albumtreffern](assets/screenshots/tidal_audiobook_search.png)
+
+Jeder Treffer kann zur Albensammlung hinzugefügt, mit **Später anhören** vorgemerkt oder an die **Schnellaufnahme** übergeben werden. Die virtuelle TIDAL-Bibliothek kopiert keine Audiodateien: Sie speichert Album- und Kapitelinformationen, Hörfortschritt, ein Autolesezeichen und benannte manuelle Lesezeichen, sodass ein abonnierter Titel innerhalb der App ähnlich wie ein lokales Hörbuch behandelt werden kann.
+
+#### Direkt aus TIDAL anhören
+
+Der eigene TIDAL-Hörbuchplayer kann am gespeicherten Kapitel und Zeitpunkt fortsetzen, ein Kapitel direkt wählen und Geschwindigkeit sowie Pitch unabhängig verändern. Die Geschwindigkeit reicht von 1,00× bis 2,00×, der Pitch von 0,50 bis 1,50; beide sind in 0,05-Schritten einstellbar. Für die Tonhöhenänderung wird eine auf Sprache abgestimmte Rubber-Band-Verarbeitung verwendet; bei Pitch 1,00 wird sie umgangen.
+
+Die Ausgabe erfolgt wahlweise über Roon Audio Input an die zuletzt verwendete TIDAL-Hörbuchzone oder über einen ausgewählten Windows-Ausgang wie einen USB-Bluetooth-Transmitter. Bei Windows-Ausgabe verarbeitet die Hörbuchsession Play/Pause-Befehle kompatibler Kopfhörer über AVRCP. Roon Previous/Next kann die Kapitel wechseln; Play/Pause direkt in der App ist der verlässliche Weg zum Anhalten, ohne vom Verhalten einzelner Roon-Clients bei einem Live-Audio-Input abhängig zu sein.
+
+![Direkte TIDAL-Hörbuchwiedergabe mit Geschwindigkeit, Pitch, Kapiteln und Lesezeichen](assets/screenshots/tidal_audiobook.png)
+
+#### Geschützte Schnellaufnahme
+
+Die Schnellaufnahme verwendet ein getrennt verwaltetes Chrome-Profil und einen Einrichtungsassistenten, der Begleiter-Erweiterung, virtuelle Audioroute, nutzbares PCM-Signal sowie das verfügbare Profil 4×/192 kHz oder 2×/96 kHz prüft. Eine vollständige Statusseite zeigt aktuelles Kapitel, aufgenommene Laufzeit, geschätzte Restzeit, Profil, Ziel und Verarbeitungszustand. Eine Pause nach dem aktuellen Kapitel kann vorgemerkt oder zurückgenommen werden; außerdem lässt sich der Auftrag fortsetzen oder abbrechen.
+
+Während einer Aufnahme blockiert die App weitere TIDAL-Wiedergabestarts und die manuelle Bedienung in ihrem verwalteten TIDAL-Fenster, um Einzelstream-Abonnements zu schützen. Nach Abschluss, Abbruch oder Fehler wird die verwaltete Chrome-Sitzung geschlossen, damit kein alter Playerzustand die nächste Aufnahme beeinflusst. Das Masteraudio wird auf Normalgeschwindigkeit zurückgeführt und in MP3-Kapitel mit Metadaten und eingebettetem Cover aufgeteilt.
 
 ### Persönliches Roon Wrapped
 
