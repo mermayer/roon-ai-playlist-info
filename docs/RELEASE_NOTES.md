@@ -1,5 +1,17 @@
 # Release notes
 
+## Information and documentation release 1.0.4 — August 16, 2026
+
+- documents the direct TIDAL audiobook search by title or artist, broader series-aware matching, prepared covers and album metadata, up to 200 results, and sorting including oldest first
+- explains **Add album**, **Listen later**, and **Fast capture** as distinct actions
+- introduces the virtual TIDAL audiobook library with chapters, progress, automatic and named manual bookmarks
+- documents direct playback through Roon Audio Input or a selected Windows/USB Bluetooth output
+- covers independent speed from 1.00× to 2.00× and pitch from 0.50 to 1.50 in 0.05 steps, speech-oriented Rubber Band processing, and AVRCP Play/Pause
+- states the client-dependent Roon live-input pause limitation and recommends application Play/Pause as the dependable control
+- documents the fast-capture wizard, verified 4×/192 kHz and 2×/96 kHz profiles, full status page, chapter-boundary pause, abort, TIDAL playback lock, managed-Chrome cleanup, and continuous post-processing
+- adds current search and playback screenshots in both English and German documentation paths
+- updates the documented application version to 1.0.531
+
 ## Information and documentation release 1.0.3 — August 13, 2026
 
 - documents the new installer choice between Complete application and Server + Configuration
@@ -40,6 +52,24 @@ This is the first public information release for Roon AI Playlist. It contains n
 - getting-started, privacy, security, FAQ, and application-overview documents
 - screenshots and explanations for multi-zone playback, AI and Last.fm playlists, Live Radio, Spotify, TIDAL mixes and playlists, audiobook discovery, Wrapped, network triggers, remote slots, and the RoPieee proxy
 - explicit product boundary: the application complements Roon outside its GUI within the possibilities of the Roon Extension APIs and does not replace Roon
+
+## Roon AI Playlist 1.0.531
+
+The newly documented application capabilities include:
+
+- direct TIDAL audiobook search by title or artist with broad matching, complete album preparation, improved artwork, and selectable sorting
+- a separate virtual TIDAL library populated from TIDAL search, Audible/DNB hand-off, or capture candidate selection
+- direct audiobook playback with chapter selection, progress, automatic and manual bookmarks, independent speed and pitch, and remembered output selection
+- selectable Roon Audio Input or Windows/USB Bluetooth output, including AVRCP Play/Pause for compatible headsets on Windows output
+- speech-oriented Rubber Band R3/Finer pitch processing with a complete bypass at pitch 1.00
+- one managed TIDAL Chrome window with duplicate-tab monitoring and reconnection handling
+- a guided fast-capture setup that verifies the companion, concrete virtual route, native PCM capture, real signal, and the usable accelerated profile
+- a full production capture status page with elapsed and remaining time, chapter, destination, pause-at-boundary, resume, and genuine abort
+- an exclusive TIDAL capture lock across direct audiobooks, mixes, playlists, and manual controls in the managed Chrome window
+- fresh managed-Chrome lifecycle between capture jobs and continuous restoration before MP3 chapter splitting to protect chapter boundaries
+- complete German/English localisation and contextual tooltips for the new TIDAL listening and capture controls
+
+The previously documented 1.0.466 server-mode capabilities remain part of the current application.
 
 ## Roon AI Playlist 1.0.466
 

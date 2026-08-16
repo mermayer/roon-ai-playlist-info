@@ -2,7 +2,7 @@
 
 [English version](FEATURES_BEYOND_ROON.md) · [Zurück zur Übersicht](../README_DE.md)
 
-Stand: Roon AI Playlist `1.0.466`, 13. August 2026.
+Stand: Roon AI Playlist `1.0.531`, 16. August 2026.
 
 Diese Übersicht nennt Funktionen, die **Roon AI Playlist** zusätzlich zu den Bordmitteln des originalen Roon bereitstellt. Sie beschreibt keinen Ersatz für die Roon-Oberfläche oder irgendeine Roon-Funktion. Die Begleitanwendung soll ausschließlich außerhalb von Roon nützliche, dort fehlende Arbeitsabläufe ermöglichen – so weit es die Roon-Extension-APIs zulassen. Verglichen wird mit Roon ohne weitere Extensions, Skripte oder Hausautomationssysteme. Roons Kernfunktionen wie RAAT-Wiedergabe, DSP, normale Zonensteuerung, Zonengruppierung, Bibliotheksverwaltung, Roon Radio, klassische Playlisten, TIDAL-Wiedergabe, History, Albumcover, Sleep Timer, Roon Display und Roon-Datenbankbackups werden nicht als App-Vorteil gezählt.
 
@@ -91,7 +91,16 @@ Roon kann Bibliotheksalben identifizieren und eigene Albumcover übernehmen, bes
 - Manuelle und automatische, zonenunabhängige Lesezeichen speichern.
 - Audible-Metadaten und Cover ergänzen.
 - Hörbücher und Autoren zuverlässig von Wrapped und Musik-Interpretenbildsuchen ausschließen.
+- TIDAL-Hörbücher eigenständig nach Titel oder Interpret suchen, Cover und Albumdaten aufbereiten und bis zu 200 Treffer einschließlich **Älteste zuerst** sortieren.
+- TIDAL-Titel ohne Audioimport in einer getrennten virtuellen Merkliste verwalten.
+- Ein TIDAL-Hörbuch über Roon Audio Input oder einen gewählten Windows-/USB-Bluetooth-Ausgang wiedergeben.
+- Geschwindigkeit von 1,00× bis 2,00× und Pitch von 0,50 bis 1,50 unabhängig in 0,05-Schritten einstellen.
+- Auf Sprache abgestimmte Rubber-Band-Tonhöhenverarbeitung sowie AVRCP Play/Pause kompatibler Bluetooth-Hörer bei Windows-Ausgabe verwenden.
+- TIDAL-Kapitel, Hörfortschritt, Autolesezeichen und benannte manuelle Lesezeichen verwalten.
 - Ein bekanntes Hörbuch automatisch in einer exklusiven lokalen Roon-Aufnahmezone starten.
+- Die TIDAL-Schnellaufnahme direkt aus einem Suchtreffer starten und bevorzugt ein geprüftes 4×-Profil mit 2×-Fallback verwenden.
+- Eine vollständige Aufnahmestatusseite mit Kapitel, Laufzeit, Restzeit, Profil, Ziel, Pause, Fortsetzen und Abbruch anzeigen.
+- Weitere TIDAL-Wiedergabe der App und im verwalteten Chrome während einer laufenden Aufnahme sperren.
 - Vorher FFmpeg, FFprobe, `libmp3lame`, VB-CABLE, Roon-Zone, Zielordner und Speicherplatz prüfen.
 - Das Buch in einem separaten überwachten Prozess als durchgehende Mastersegmente aufnehmen.
 - Beobachtete Roon-Kapitelwechsel anschließend in nummerierte MP3-Kapitel mit 192 kbit/s CBR aufteilen.
@@ -100,11 +109,15 @@ Roon kann Bibliotheksalben identifizieren und eigene Albumcover übernehmen, bes
 - Aufnahme- und Verarbeitungfortschritt, Restzeit, Prozesszustand und Fehler anzeigen.
 - Mastersegmente bei einem Fehler als sichtbare Rettungsdateien erhalten.
 
-Der Entdeckungskatalog lässt sich nach Autor, Titel, Suchwort, Genre, Jahr und Quelle filtern und kann Sprecher, Laufzeit, Bewertung, Hörprobe sowie Quellverweise zeigen. Ein Katalogtreffer kann anschließend eine eigene TIDAL-Suche öffnen, statt seine Verfügbarkeit dort vorauszusetzen.
+Der Entdeckungskatalog lässt sich nach Autor, Titel, Suchwort, Genre, Jahr und Quelle filtern und kann Sprecher, Laufzeit, Bewertung, Hörprobe sowie Quellverweise zeigen. Ein Katalogtreffer kann anschließend eine eigene TIDAL-Suche öffnen, statt seine Verfügbarkeit dort vorauszusetzen. Die Titelsuche folgt zusätzlich plausiblen Serieninterpreten; auch nach einem leeren ersten Ergebnis bleibt die Interpretensuche verfügbar.
 
-![Für ein gewähltes Hörbuch geprüfte TIDAL-Kandidaten](../assets/screenshots/tidal_search.png)
+![Aufbereitete TIDAL-Hörbuchtreffer](../assets/screenshots/tidal_audiobook_search.png)
 
-TIDAL-Albumkandidaten werden über ihre Interpretenbeziehung gegengeprüft und mit Ausgabedetails dargestellt, bevor sie in die Hörbuchliste der App gelangen. Leere Verfügbarkeit und Providerfehler bleiben getrennte Ergebnisse.
+TIDAL-Albumkandidaten erscheinen mit Cover, Interpret, Jahr, Laufzeit und Kapitelzahl. **Album hinzufügen**, **Später anhören** und **Schnellaufnahme** bleiben getrennte Aktionen. Beim direkten Anhören verwaltet die virtuelle Bibliothek den Hörbuchzustand, während das Originalaudio bei TIDAL verbleibt.
+
+![Direkte TIDAL-Hörbuchwiedergabe](../assets/screenshots/tidal_audiobook.png)
+
+Play/Pause direkt in der App ist der verlässliche Pausenweg. Roon Previous/Next kann Kapitel wechseln; nach dem Stoppen eines Live-Audio-Input-Stroms entfernen einzelne Roon-Clients jedoch ihre fortsetzbare Play-Aktion. Diese clientabhängige Einschränkung wird deshalb nicht als vollständige Roon-Transportsteuerung beworben.
 
 ## 6. Roon Wrapped
 
@@ -194,4 +207,4 @@ Roons Web Display zeigt Now Playing und Liedtexte im Browser, ist aber keine vol
 
 ## Abgrenzung
 
-Die App ersetzt Roon nicht. Roon bleibt für Musikbibliothek, Streaming, Audioausgabe, RAAT, DSP, Zonen, Queue und Transport zuständig. Roon AI Playlist nutzt die Roon-Extension-APIs und ergänzt darauf aufbauend die oben beschriebenen Workflows.
+Die App ersetzt Roon nicht. Roon bleibt für seine Bibliothek, Streaming-Integrationen, RAAT, DSP, Zonen, Queue und normalen Roon-Transport zuständig. Roon AI Playlist nutzt die Roon-Extension-APIs und ergänzt darauf aufbauend die oben beschriebenen Workflows; nur der ausdrücklich dokumentierte TIDAL-Hörbuchmodus verarbeitet offizielle Browserwiedergabe für Roon Audio Input oder einen Windows-Ausgang.

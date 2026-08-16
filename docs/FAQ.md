@@ -26,6 +26,26 @@ No. A visible terminal or browser-based Google confirmation may be needed only f
 
 Yes. TIDAL extends search, live-radio identification, and playlist actions, but is not required for every part of the application. Other sources or local Roon data remain available depending on the feature.
 
+## Does the TIDAL audiobook library download audio files?
+
+No. **Listen later** stores a virtual local record with album, chapters, progress, and bookmarks. The audio remains at TIDAL and direct listening uses the official browser player under the connected subscription.
+
+## Can speed and pitch be changed separately during TIDAL audiobook playback?
+
+Yes. Speed ranges from 1.00× to 2.00× and pitch from 0.50 to 1.50 in 0.05 steps. Changes can be made during playback. Pitch 1.00 bypasses processing; other pitch values use speech-oriented Rubber Band processing.
+
+## Can a TIDAL audiobook play without a Roon zone?
+
+Yes. Select **Windows output** and choose the default device or a specific USB/USB-Bluetooth output. Compatible Bluetooth-headset AVRCP Play/Pause is handled while that Windows audiobook session is active.
+
+## Why should I pause a direct TIDAL audiobook in the application?
+
+The app pause updates the automatic bookmark and keeps its listening session controlled. Roon Previous/Next can change chapters, but some Roon clients remove the resumable Play action after stopping a live Audio Input stream. App Play/Pause is therefore the dependable pause path.
+
+## What prevents another TIDAL stream from interrupting fast capture?
+
+During an active capture, the application blocks its direct TIDAL audiobook, mix, and playlist starts. Manual player actions are also blocked in the separately managed TIDAL Chrome window. The managed session is closed after completion, cancellation, or failure so stale playback state does not carry into the next job.
+
 ## How does Spotify playback reach Roon AI Playlist?
 
 Through Roon. The separate native macOS application SpotBridge can capture the local Spotify process with a CoreAudio Process Tap and send it to Roon Audio Input as AAC or losslessly encoded Ogg-FLAC. SpotBridge also forwards artist, title, album, and artwork and can coordinate transport events. After the stream appears in a selected Roon zone, Roon AI Playlist can display it and record a qualified Wrapped session. Roon AI Playlist does not capture Spotify audio or log in to Spotify itself.

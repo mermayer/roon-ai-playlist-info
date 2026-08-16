@@ -10,7 +10,7 @@ Netzwerkzugriffe zu externen Diensten entstehen nur, wenn die jeweilige Funktion
 
 - ein gewählter KI-Anbieter für Playlist-Vorschläge
 - Google Antigravity bei Auswahl dieses KI-Weges; die lokale CLI übermittelt den Playlistauftrag im angemeldeten Konto an Googles Dienst
-- TIDAL für Suche und Playlistenaktionen
+- TIDAL für Suche, Albumaktionen, Hörbuchmetadaten und abonnierte Browserwiedergabe
 - Last.fm und Deezer für Musik- und Bildinformationen
 - fanart.tv und TheAudioDB für Interpretenbilder
 - MusicBrainz und Cover Art Archive für Albumdaten und Cover
@@ -40,6 +40,8 @@ Vollständige App und Nur Server + Konfiguration verwenden dieselben lokalen Dat
 ## Lokale Bilder und Hörhistorie
 
 Cover, Interpretenbilder und Providerantworten können lokal zwischengespeichert werden. Wrapped führt eine lokale Hörhistorie, sofern diese Funktion aktiviert ist. Die Wartungsfunktionen ermöglichen die Korrektur und Löschung entsprechender Einträge.
+
+Die virtuelle TIDAL-Hörbuchbibliothek speichert Albumverweise, Kapitel, Fortschritt und Lesezeichen lokal; sie kopiert das abonnierte Audio nicht in die Bibliothek. Direktes Anhören und Schnellaufnahme verwenden den offiziellen TIDAL-Browserplayer in einem getrennt verwalteten lokalen Chrome-Profil. Der eng begrenzte Begleiter koordiniert diesen Player und seinen gewählten Audioausgang, liest jedoch keine TIDAL-Zugangsdaten, Lizenzschlüssel oder geschützten Streamdaten aus. Erfasstes PCM, Geschwindigkeits-/Pitchverarbeitung, temporäre Mastersegmente und erzeugte Kapiteldateien verbleiben auf dem App-System.
 
 ## Sicherungen
 

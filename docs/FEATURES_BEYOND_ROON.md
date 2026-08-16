@@ -2,7 +2,7 @@
 
 [Deutsche Version](FEATURES_BEYOND_ROON_DE.md) · [Back to overview](../README.md)
 
-Status: Roon AI Playlist `1.0.466`, August 13, 2026.
+Status: Roon AI Playlist `1.0.531`, August 16, 2026.
 
 This overview lists capabilities that **Roon AI Playlist** adds beyond standard Roon. It is not a proposed replacement for the Roon GUI or any Roon function. The companion exists only to provide useful workflows outside Roon where they are missing, as far as the Roon Extension APIs permit. The comparison assumes Roon without third-party extensions, scripts, or home-automation systems. Roon's own core capabilities—including RAAT playback, DSP, regular zone control and grouping, library management, Roon Radio, normal playlists, TIDAL playback, History, album artwork, Sleep Timer, Roon Display, and Roon database backups—are deliberately not counted as application advantages.
 
@@ -91,7 +91,16 @@ Roon can identify library albums and accept custom album artwork, but it does no
 - Store manual and automatic zone-independent bookmarks.
 - Add Audible metadata and artwork.
 - Keep audiobooks and their authors out of Wrapped and music artist-image searches.
+- Search TIDAL audiobooks independently by title or artist, prepare covers and album data, and sort up to 200 results including oldest first.
+- Keep TIDAL titles in a separate virtual Listen later library without importing audio files.
+- Play a TIDAL audiobook through Roon Audio Input or a selected Windows/USB Bluetooth output.
+- Set speed from 1.00× to 2.00× and pitch from 0.50 to 1.50 independently in 0.05 steps.
+- Use speech-oriented Rubber Band pitch processing and AVRCP Play/Pause with compatible Bluetooth headsets on Windows output.
+- Track TIDAL chapters, progress, an automatic bookmark, and named manual bookmarks.
 - Start a known book automatically in an exclusive local Roon capture zone.
+- Start TIDAL fast capture directly from a search result and prefer a verified 4× profile with a 2× fallback.
+- Display a complete capture status page with current chapter, elapsed and remaining time, profile, destination, pause, resume, and abort.
+- Lock other application and managed-Chrome TIDAL playback while a capture is active.
 - Validate FFmpeg, FFprobe, `libmp3lame`, VB-CABLE, the Roon zone, destination, and free space first.
 - Record continuous master segments in a separate supervised process.
 - Split observed Roon chapter transitions afterwards into numbered 192 kbit/s CBR MP3 chapters.
@@ -100,11 +109,15 @@ Roon can identify library albums and accept custom album artwork, but it does no
 - Display recording and processing progress, remaining time, process state, and failures.
 - Preserve master segments as visible rescue files after a real failure.
 
-The discovery catalogue can be filtered by author, title, keyword, genre, year, and source and can expose narrator, duration, rating, sample, and source links. A catalogue result can then open a dedicated TIDAL search rather than assuming that the audiobook is available there.
+The discovery catalogue can be filtered by author, title, keyword, genre, year, and source and can expose narrator, duration, rating, sample, and source links. A catalogue result can then open a dedicated TIDAL search rather than assuming that the audiobook is available there. The title search also follows plausible series artists, and an artist-search action remains available even after an empty initial result.
 
-![TIDAL candidates verified for a selected audiobook](../assets/screenshots/tidal_search.png)
+![Prepared TIDAL audiobook results](../assets/screenshots/tidal_audiobook_search.png)
 
-TIDAL album candidates are cross-checked through their artist relationship and presented with edition details before they enter the application's audiobook list. Empty availability and provider failure are separate outcomes.
+TIDAL album candidates are shown with cover, artist, year, duration, and chapter count. **Add album**, **Listen later**, and **Fast capture** remain separate actions. During direct listening, the virtual library keeps the audiobook state while the original audio stays at TIDAL.
+
+![Direct TIDAL audiobook playback](../assets/screenshots/tidal_audiobook.png)
+
+Direct app Play/Pause is the dependable pause path. Roon Previous/Next can change chapters, but Roon clients can remove their resumable Play action after stopping a live Audio Input stream; this client-dependent limitation is not presented as full Roon transport support.
 
 ## 6. Roon Wrapped
 
@@ -194,4 +207,4 @@ Roon Web Display shows Now Playing and lyrics in a browser, but is not a complet
 
 ## Boundary
 
-The application does not replace Roon. Roon remains responsible for the music library, streaming, audio output, RAAT, DSP, zones, queue, and transport. Roon AI Playlist uses the Roon Extension APIs and adds the workflows described above.
+The application does not replace Roon. Roon remains responsible for its library, streaming integrations, RAAT, DSP, zones, queues, and normal Roon transport. Roon AI Playlist uses the Roon Extension APIs and adds the workflows described above; only the explicitly documented TIDAL audiobook mode processes official browser audio for Roon Audio Input or Windows output.

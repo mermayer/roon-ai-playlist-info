@@ -35,11 +35,15 @@ The setup assistant can be opened again later from Configuration.
 3. Load desired live-radio stations in Roon Tools and choose their metadata mode.
 4. Enable Wrapped and choose the desired reporting period.
 5. Optionally synchronise and analyse audiobooks.
-6. Optionally arrange artist-image providers and connect external services.
-7. For free automatic AI playlists, select **Antigravity** under **Configuration > AI**, complete **Open sign-in**, run **Check CLI**, choose a model, and save.
-8. Create the first application backup.
+6. For direct TIDAL audiobooks, connect TIDAL, open **TIDAL search**, and mark a result **Listen later**.
+7. Before the first TIDAL fast capture, open its separate setup wizard and complete the companion, audio-route, profile, and real-signal checks. A passed, version-bound readiness result is reused until a relevant component changes.
+8. Optionally arrange artist-image providers and connect external services.
+9. For free automatic AI playlists, select **Antigravity** under **Configuration > AI**, complete **Open sign-in**, run **Check CLI**, choose a model, and save.
+10. Create the first application backup.
 
 Antigravity does not require an AI API key. After setup, playlist requests and results are transferred automatically through the local CLI. Google's current free tier, model availability, and usage limits apply; the application never purchases credits.
+
+The TIDAL capture wizard and the production status page are separate views. Reopening setup always displays the complete wizard; starting **Fast capture** displays the current job with progress, remaining time, chapter-boundary pause, resume, and abort controls.
 
 ## Access from the home network
 

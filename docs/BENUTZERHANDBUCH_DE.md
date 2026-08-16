@@ -2,7 +2,7 @@
 
 [English version](USER_GUIDE.md) · [Zurück zur Übersicht](../README_DE.md)
 
-Dokumentationsstand: Roon AI Playlist **1.0.466**, RoonAIViewer **1.0.3**.
+Dokumentationsstand: Roon AI Playlist **1.0.531**, RoonAIViewer **1.0.3**.
 
 ## Inhaltsübersicht
 
@@ -31,7 +31,7 @@ Dokumentationsstand: Roon AI Playlist **1.0.466**, RoonAIViewer **1.0.3**.
 
 ## 1. Aufgabe der App
 
-Roon AI Playlist ergänzt ein vorhandenes Roon-System. Sie ist kein Ersatz für die Roon-Oberfläche oder Roons eigene Funktionen. Roon bleibt für Musikbibliothek, Streaming, RAAT, DSP, Zonen, Warteschlangen und Audiowiedergabe verantwortlich. Die App wurde geschaffen, um außerhalb von Roon zusätzliche, dort fehlende Arbeitsabläufe bereitzustellen – innerhalb der Möglichkeiten und Grenzen der Roon-Extension-APIs:
+Roon AI Playlist ergänzt ein vorhandenes Roon-System. Sie ist kein Ersatz für die Roon-Oberfläche oder Roons eigene Funktionen. Roon bleibt für seine Musikbibliothek, Streaming-Integrationen, RAAT, DSP, Zonen, Warteschlangen und normale Roon-Wiedergabe verantwortlich. Der eigene TIDAL-Hörbuchmodus ist eine klar begrenzte Ausnahme, die offizielle Browserwiedergabe für Roon Audio Input oder Windows-Ausgabe verarbeitet. Die App wurde geschaffen, um außerhalb von Roon zusätzliche, dort fehlende Arbeitsabläufe bereitzustellen – innerhalb der Möglichkeiten und Grenzen der Roon-Extension-APIs:
 
 - intelligente und externe Playlist-Erzeugung,
 - visuelle Mehrzonensteuerung,
@@ -411,11 +411,38 @@ Die Registerkarte **Hörbuchsuche** dient der Entdeckung, bevor ein Titel zur lo
 
 ### Hörbuch bei TIDAL finden
 
-![Geprüfte TIDAL-Albumkandidaten für ein Hörbuch](../assets/screenshots/tidal_search.png)
+![Direkte TIDAL-Hörbuchsuche](../assets/screenshots/tidal_audiobook_search.png)
 
-Der TIDAL-Dialog sucht Albumkandidaten und löst anschließend deren Interpretenbeziehung getrennt auf. Es bleiben nur Alben übrig, deren TIDAL-Interpret zum gesuchten Autor passt. Jeder Kandidat zeigt Cover, Interpret, Jahr, Laufzeit und Titelanzahl, damit Ausgaben und Bände vor **Zu meinen Alben hinzufügen** unterschieden werden können. Kein Treffer ist ein gültiges Verfügbarkeitsergebnis und wird anders dargestellt als Anmelde-, Timeout- oder Providerfehler.
+Die Registerkarte **TIDAL-Suche** arbeitet eigenständig oder übernimmt Titel und Autor aus einer Audible-/DNB-Karte. Vor der Suche wird zwischen **Hörbuchtitel** und **Interpret** gewählt. Die Titelsuche prüft zusätzlich plausible TIDAL-Serieninterpreten, damit auch Kataloge zusammenfinden, die beim Autor und bei TIDAL unter der Serie geführt werden. Findet eine Audible-/DNB-Suche nichts, bleibt **Mit Interpret suchen** als ausdrücklicher Ausweichweg verfügbar.
 
-Die Übernahme erzeugt den Hörbucheintrag der App; sie kauft keine Inhalte und importiert keine Audiodateien. Die Wiedergabeverfügbarkeit bleibt von TIDAL und Roon abhängig.
+Die Albumkarten werden mit Cover, TIDAL-Interpret, Jahr, Laufzeit und Titelanzahl aufbereitet. Bis zu 200 Alben lassen sich nach Relevanz, neuestem oder ältestem Erscheinungsdatum, Titel A–Z/Z–A, Interpret A–Z oder längster Laufzeit sortieren. Fehlende Erscheinungsdaten bleiben bei chronologischer Sortierung am Ende.
+
+Je nach Treffer stehen folgende Aktionen zur Verfügung:
+
+- **Interpret suchen** wiederholt die Suche über den angezeigten TIDAL-Interpreten.
+- **Album hinzufügen** übernimmt das Album in die TIDAL-Albensammlung des Benutzers.
+- **Später anhören** legt einen virtuellen Hörbucheintrag in dieser App an.
+- **Schnellaufnahme** öffnet den nachfolgend beschriebenen geschützten Aufnahmeablauf.
+
+Kein Treffer ist ein gültiges Verfügbarkeitsergebnis und wird anders dargestellt als Anmelde-, Timeout- oder Providerfehler. Eine Übernahme kauft keine Inhalte und importiert keine Audiodateien; die Verfügbarkeit richtet sich weiterhin nach TIDAL-Abonnement und Region.
+
+### Virtuelle TIDAL-Hörbuchbibliothek
+
+Die **TIDAL-Bibliothek** ist von der Roon-Hörbuchbibliothek getrennt. Sie speichert Verweise auf vorgemerkte TIDAL-Alben zusammen mit Kapitelliste, Hörfortschritt, Autolesezeichen und benannten manuellen Lesezeichen. Die Audiodaten verbleiben bei TIDAL.
+
+![TIDAL-Hörbuchplayer mit Geschwindigkeit, Pitch, Kapiteln und Lesezeichen](../assets/screenshots/tidal_audiobook.png)
+
+Für das direkte Anhören:
+
+1. **Roon-Zone** oder **Windows-Ausgabe** wählen.
+2. Bei Roon-Ausgabe einmalig die Hörbuchzone wählen; die zuletzt verwendete TIDAL-Hörbuchzone wird gespeichert.
+3. Bei Windows-Ausgabe das Standardgerät oder einen bestimmten USB-/USB-Bluetooth-Ausgang wählen.
+4. Geschwindigkeit von 1,00× bis 2,00× und Pitch von 0,50 bis 1,50 unabhängig in 0,05-Schritten einstellen.
+5. Über **Fortsetzen**, ein Lesezeichen oder ein Kapitel starten.
+
+Bei einem von 1,00 abweichenden Pitch führt die App das erfasste PCM durch eine auf Sprache abgestimmte Rubber-Band-Verarbeitung. Roon erhält über die offizielle Audio-Input-API einen kontinuierlichen 48-kHz-Stereo-Ogg-FLAC-Strom; der Windows-Ausgang erhält dasselbe verarbeitete PCM. Bei Pitch 1,00 wird Rubber Band umgangen. Bei aktiver Windows-Hörbuchausgabe verarbeitet die App Play/Pause über AVRCP von kompatiblen Bluetooth-Kopfhörern.
+
+Play/Pause in der App ist der verlässliche Weg für Sitzungssteuerung und Autolesezeichen. Roon Previous/Next kann Kapitel wechseln. Nicht alle Roon-Clients bieten nach einem Stopp eines Live-Audio-Input-Stroms wieder eine fortsetzbare Play-Aktion an; Roon Stop/Pause sollte deshalb nicht als primäre Hörbuchpausensteuerung verwendet werden.
 
 ### Bibliothek synchronisieren
 
@@ -460,9 +487,26 @@ Der Fortschritt ist an das Hörbuch gebunden, nicht an eine einzige Zone. Wird e
 
 Erkannte Hörbücher werden nicht als normale Musik in Wrapped übernommen und lösen keine nächtlichen Musik-Interpretenbildsuchen aus.
 
-### Optionale Hörbuchaufnahme
+### Hörbuchaufnahme
 
-Die Aufnahme ist für bereits synchronisierte und analysierte Hörbücher vorgesehen.
+Es stehen zwei Aufnahmewege zur Verfügung:
+
+- Die **TIDAL-Schnellaufnahme** startet aus einem TIDAL-Treffer oder Hörbucheintrag und zeichnet die offizielle Browserwiedergabe mit einem geprüften beschleunigten Profil auf.
+- Die **Roon-Fallback-Aufnahme** bewahrt den bisherigen Exklusivzonen-Ablauf für ein bereits in Roon synchronisiertes und analysiertes Buch.
+
+#### TIDAL-Schnellaufnahme
+
+Vor der ersten Schnellaufnahme den Einrichtungsassistenten öffnen und alle aktuellen Prüfungen abschließen. Der Wizard prüft das verwaltete Chrome-Profil, die aktuelle lokale Begleiter-Erweiterung, einen konkreten virtuellen Ausgang, die native WASAPI-Aufnahme, ein reales PCM-Signal und das verfügbare Profil. Bevorzugt wird ein geprüftes 4×-/192-kHz-Profil; 2×/96 kHz bleibt als Kompatibilitätsfallback erhalten.
+
+**Schnellaufnahme** öffnet eine vollständige Statusseite. Sie zeigt Cover, Titel, Kapitel, Profil, Ziel, aufgenommene Laufzeit, geschätzte Restzeit, Aufnahmezustand und Nachverarbeitung. **Nach diesem Kapitel pausieren** kann vorgemerkt und vor der Grenze zurückgenommen werden; ein pausierter Auftrag setzt mit dem nächsten Kapitel fort. **Abbrechen** beendet die Rohaufnahme und stellt eine Teildatei nicht als fertiges Hörbuch dar.
+
+Dieser Ablauf darf nur einen TIDAL-Strom verwenden. Während der Aufnahme blockiert die App die direkte TIDAL-Hörbuchwiedergabe sowie TIDAL-Mix- und Playliststarts; im verwalteten Chrome-Fenster sind manuelle Playeraktionen gesperrt. Nach Abschluss, Fehler oder Abbruch wird diese Chrome-Sitzung geschlossen, damit kein alter Wiedergabezustand den nächsten Auftrag beeinflusst.
+
+Der Browser erzeugt ein durchgehendes Masteraudio. Die Nachverarbeitung stellt Normalgeschwindigkeit wieder her und erzeugt nummerierte MP3-Kapitel mit Titel, Autor, Album, Tracknummer und eingebettetem Cover. Die durchgehende Rückwandlung vermeidet Schnitte, doppelte Silben und Einblendungen an Kapitelgrenzen. Nach einem echten Verarbeitungsfehler bleiben Mastersegmente als Rettungsdateien erhalten.
+
+#### Roon-Fallback-Aufnahme
+
+Die Roon-Aufnahme ist für bereits synchronisierte und analysierte Hörbücher vorgesehen.
 
 Vor dem ersten Start:
 
@@ -473,7 +517,7 @@ Vor dem ersten Start:
 
 Der Systemcheck prüft unter anderem Audiowerkzeuge, Eingabegerät, Roon-Zone, Schreibzugriff und freien Speicherplatz.
 
-Während der Aufnahme:
+Während der Roon-Aufnahme:
 
 - ist die konfigurierte Zone exklusiv reserviert,
 - entstehen zunächst fortlaufende Mastersegmente,
@@ -1106,6 +1150,22 @@ Wrapped, Hörbuchdaten und Bildcaches werden lokal verwaltet. Externe Anfragen e
 - Zielplaylist für die Zone kontrollieren.
 - Sicherstellen, dass der aktuelle Inhalt als Musiktitel erkannt wurde.
 - Providerfehler im Log prüfen.
+
+### Direktes TIDAL-Hörbuch startet nicht oder lässt sich nicht fortsetzen
+
+- Prüfen, ob der lokale Chrome-Begleiter als verbunden und aktuell gemeldet wird.
+- Sicherstellen, dass keine Schnellaufnahme läuft; sie sperrt andere TIDAL-Starts absichtlich.
+- Bei Roon-Ausgabe prüfen, ob Audio Input verfügbar und die gespeicherte Hörbuchzone online ist.
+- Bei Windows-Ausgabe prüfen, ob das gewählte Gerät weiterhin aktiv ist.
+- Bleibt der verwaltete TIDAL-Player mit Ladekreisel bei 0:00, die Hörsession beenden und **Neu verbinden & fortsetzen** verwenden. Die App öffnet ihre verwaltete Sitzung neu und stellt Kapitel sowie gespeicherte Position wieder her.
+
+### TIDAL-Schnellaufnahme startet nicht
+
+- Die Aufnahme-Einrichtung öffnen und die aktuellen Wizard-Prüfungen kontrollieren; Meldungen eines älteren fehlgeschlagenen Auftrags erscheinen getrennt und bestimmen die Bereitschaft nicht.
+- Meldet der Wizard eine veraltete Begleiterversion, die lokale Erweiterung neu laden.
+- Nach einer Änderung von Audioroute, Chrome-Profil oder Helfer die Freigabe des konkreten virtuellen Ausgangs und den Realsignaltest wiederholen.
+- Ein TIDAL-Play/Pause-Ladekreisel bei 0:00 ist noch keine bestätigte Wiedergabe. Den eingebauten Wiederholungsversuch abwarten und die gemeldeten Player-Bereitschafts- und PCM-Details zur Diagnose verwenden.
+- Nach einem endgültigen Fehler oder Abbruch schließt die App nur ihr verwaltetes Chrome-Profil. Der nächste Auftrag kann normal gestartet werden; gewöhnliche Chrome-Fenster bleiben unberührt.
 
 ### Live Radio zeigt keine Ergänzungen
 

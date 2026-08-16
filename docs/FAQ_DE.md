@@ -26,6 +26,26 @@ Nein. Ein sichtbares Terminal beziehungsweise eine Bestätigung im Browser kann 
 
 Ja. TIDAL erweitert Suche, Live-Radio-Erkennung und Playlistenaktionen, ist aber nicht für alle App-Bereiche erforderlich. Je nach Funktion stehen weitere Quellen oder lokale Roon-Daten zur Verfügung.
 
+## Lädt die TIDAL-Hörbuchbibliothek Audiodateien herunter?
+
+Nein. **Später anhören** speichert einen virtuellen lokalen Eintrag mit Album, Kapiteln, Fortschritt und Lesezeichen. Das Audio verbleibt bei TIDAL; das direkte Anhören verwendet den offiziellen Browserplayer mit dem verbundenen Abonnement.
+
+## Lassen sich Geschwindigkeit und Pitch während der TIDAL-Hörbuchwiedergabe getrennt ändern?
+
+Ja. Die Geschwindigkeit reicht von 1,00× bis 2,00×, der Pitch von 0,50 bis 1,50; beide sind in 0,05-Schritten einstellbar. Änderungen sind während der Wiedergabe möglich. Pitch 1,00 umgeht die Verarbeitung, andere Pitchwerte verwenden eine auf Sprache abgestimmte Rubber-Band-Verarbeitung.
+
+## Kann ein TIDAL-Hörbuch ohne Roon-Zone wiedergegeben werden?
+
+Ja. **Windows-Ausgabe** wählen und das Standardgerät oder einen bestimmten USB-/USB-Bluetooth-Ausgang festlegen. Play/Pause kompatibler Bluetooth-Hörer über AVRCP wird verarbeitet, solange diese Windows-Hörbuchsession aktiv ist.
+
+## Warum sollte ich ein direktes TIDAL-Hörbuch in der App pausieren?
+
+Die App-Pause aktualisiert das Autolesezeichen und hält die Hörsession kontrolliert offen. Roon Previous/Next kann Kapitel wechseln; einzelne Roon-Clients entfernen nach dem Stoppen eines Live-Audio-Input-Stroms jedoch die fortsetzbare Play-Aktion. Play/Pause in der App ist deshalb der verlässliche Pausenweg.
+
+## Was verhindert, dass eine andere TIDAL-Wiedergabe die Schnellaufnahme unterbricht?
+
+Während einer aktiven Aufnahme blockiert die App ihre direkte TIDAL-Hörbuch-, Mix- und Playlistwiedergabe. Im getrennt verwalteten TIDAL-Chrome sind außerdem manuelle Playeraktionen gesperrt. Nach Abschluss, Abbruch oder Fehler wird diese Sitzung geschlossen, damit kein alter Wiedergabezustand in den nächsten Auftrag übernommen wird.
+
 ## Wie gelangt Spotify-Wiedergabe zu Roon AI Playlist?
 
 Über Roon. Die eigenständige native macOS-App SpotBridge kann den lokalen Spotify-Prozess mit einem CoreAudio Process Tap aufnehmen und als AAC oder verlustfrei codiertes Ogg-FLAC an Roon Audio Input senden. SpotBridge übermittelt außerdem Interpret, Titel, Album und Cover und kann Transportereignisse koordinieren. Nachdem der Stream in einer ausgewählten Roon-Zone erscheint, kann Roon AI Playlist ihn darstellen und eine qualifizierte Wrapped-Sitzung erfassen. Roon AI Playlist selbst nimmt kein Spotify-Audio auf und meldet sich nicht bei Spotify an.
