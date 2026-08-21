@@ -90,6 +90,7 @@ After a successful test, the viewer opens the interface provided by the server.
 - **Im Standardbrowser öffnen** opens the same server interface in the normal web browser.
 - External links are automatically passed to the Windows default browser.
 - **Verbindung einrichten** reopens the server address, token, zoom, and autostart settings.
+- The complete Wrapped track action is available: direct playback in a chosen Roon zone or **Create AI playlist** from the exact historical recording. If Roon reconnects while that menu is open, returning zones are inserted automatically.
 
 ## Zoom and display
 

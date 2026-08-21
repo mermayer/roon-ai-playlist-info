@@ -2,6 +2,22 @@
 
 Dieses Änderungsprotokoll erfasst die öffentlichen Informations- und Dokumentationsausgaben zu Roon AI Playlist. App- und RoonAIViewer-Versionen werden getrennt angegeben, weil dieses Repository weder deren Quellcode noch Installationsdateien enthält.
 
+## [1.0.5](https://github.com/mermayer/roon-ai-playlist-info/releases/tag/v1.0.5) — 21.08.2026
+
+### Hinzugefügt
+
+- Vollständige deutsche und englische Dokumentation zur Erzeugung einer KI-Playlist aus genau einer Aufnahme unter `Wrapped > Titel`.
+- Erklärung des reinen KI-Aufnahmeprofils aus engem Genre/Subgenre, tatsächlich gesungener Sprache, Stil, Instrumentierung/Klangbild, Epoche/Produktion, Gesangscharakter und Energie.
+- Dokumentation der unabhängigen Vorschlagsprüfung automatischer Anbieter, der sichtbaren bearbeitbaren Ergebnisliste und des automatischen Roon-Zonennachladens im bereits geöffneten Aktionsmenü.
+- Ein hervorgehobener, fairer Vergleich mit Roon Radio: bequeme fortlaufende Entdeckung gegenüber einer ausdrücklichen, endlichen, vorab geprüften, bearbeitbaren und reproduzierbaren Kuratierung.
+- Datenschutzhinweise zu Aufnahmeprofil- und Kandidatenprüfungen beim konfigurierten KI-Anbieter.
+
+### Geändert
+
+- Dokumentierten Stand von Roon AI Playlist von 1.0.531 auf 1.0.549 und die öffentliche Informationsausgabe auf 1.0.5 aktualisiert.
+- Beide READMEs, App-Überblicke, Funktionsvergleiche, vollständige Benutzerhandbücher, Einstiegshilfen, FAQs, Datenschutz-/Sicherheitshinweise, Viewer-Handbücher, Versionshinweise und Änderungsprotokolle erweitert.
+- Klargestellt, dass Last.fm eine getrennte Playlist- und Metadatenquelle bleibt und für das genaue Wrapped-Aufnahmeprofil nicht abgefragt wird.
+
 ## [1.0.4](https://github.com/mermayer/roon-ai-playlist-info/releases/tag/v1.0.4) — 16.08.2026
 
 ### Hinzugefügt

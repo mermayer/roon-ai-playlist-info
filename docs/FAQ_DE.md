@@ -14,6 +14,18 @@ Ja. Dazu wird die offizielle Google Antigravity CLI auf demselben Windows-System
 
 Google bietet derzeit moderne Gemini-Modelle im kostenlosen Antigravity-Tarif an; es gelten der jeweils aktuelle Modellkatalog und die Nutzungskontingente. Roon AI Playlist kauft niemals Credits und blockiert bereits aktivierte kostenpflichtige G1-/AI-Credits standardmäßig.
 
+## Worin unterscheidet sich eine Wrapped-KI-Playlist von Roon Radio?
+
+Roon Radio ist für eine bequeme fortlaufende Entdeckungswiedergabe gedacht und bleibt die beste Wahl, wenn die Musik einfach weiterlaufen soll. Die Wrapped-Aktion dient kontrollierter Kuratierung: Sie beginnt mit genau einer gehörten Aufnahme, zeigt das von der KI abgeleitete Genre-/Sprach-/Klangprofil, behandelt es verbindlich und prüft bei automatischen Anbietern jeden Vorschlag vor der Anzeige. Die endliche Ergebnisliste lässt sich prüfen, ersetzen, umsortieren, speichern und reproduzieren, bevor sie an eine Roon-Zone geht.
+
+## Verwendet das Wrapped-Aufnahmeprofil Last.fm-Tags?
+
+Nein. Für diese Aktion klassifiziert ausschließlich der konfigurierte KI-Anbieter die konkrete Aufnahme nach engem Genre, tatsächlich gesungener Sprache, Stil, Instrumentierung, Produktionsepoche, Gesangscharakter und Energie. Last.fm bleibt als getrennte Playlist- und Metadatenquelle verfügbar, ist an diesem Aufnahmeprofil aber nicht beteiligt.
+
+## Warum zeigt eine Wrapped-Titelaktion kurz, dass Roon-Zonen geladen werden?
+
+Der Aktionsdialog kann geöffnet worden sein, während Roon sich neu verbindet oder bevor der aktuelle Zonenstand im Renderer angekommen ist. Der Dialog fragt den Server sofort erneut ab und bleibt aktiv: Zurückkehrende Zonen erscheinen im bereits geöffneten Dialog, ohne dass die Seite geschlossen oder neu geladen werden muss.
+
 ## Welches Antigravity-Modell sollte ich wählen?
 
 **Gemini 3.1 Pro (High)** ist die praktisch bewährte Voreinstellung für qualitätsorientierte Playlisten. Gemini 3.5 Flash und Gemini 3.6 Flash sind interessante schnellere Alternativen. **Automatisch** verwendet den Kontostandard. Da Google die Verfügbarkeit ändern kann, übernimmt **CLI prüfen** die von `agy models` gemeldeten Modelle; das freie Feld erlaubt zukünftige IDs.

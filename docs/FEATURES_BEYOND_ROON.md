@@ -2,7 +2,7 @@
 
 [Deutsche Version](FEATURES_BEYOND_ROON_DE.md) · [Back to overview](../README.md)
 
-Status: Roon AI Playlist `1.0.531`, August 16, 2026.
+Status: Roon AI Playlist `1.0.549`, August 21, 2026.
 
 This overview lists capabilities that **Roon AI Playlist** adds beyond standard Roon. It is not a proposed replacement for the Roon GUI or any Roon function. The companion exists only to provide useful workflows outside Roon where they are missing, as far as the Roon Extension APIs permit. The comparison assumes Roon without third-party extensions, scripts, or home-automation systems. Roon's own core capabilities—including RAAT playback, DSP, regular zone control and grouping, library management, Roon Radio, normal playlists, TIDAL playback, History, album artwork, Sleep Timer, Roon Display, and Roon database backups—are deliberately not counted as application advantages.
 
@@ -20,6 +20,10 @@ This overview lists capabilities that **Roon AI Playlist** adds beyond standard 
 - Edit and validate custom grouped tag lists.
 - Match candidates against the actual Roon library and expose match confidence.
 - Find replacement tracks for missing or uncertain candidates.
+- Turn one exact recording from `Wrapped > Tracks` into the fixed seed of a normal, fully editable AI playlist.
+- Profile that recording without Last.fm by narrow genre/subgenre, actual sung language, style, instrumentation and sonic palette, era/production, vocal character, and energy.
+- Treat the visible profile as binding and, with automatic providers, independently audit every suggestion before display.
+- Keep the seed first exactly once, then review, replace, reorder, save, queue, or play the finite result in a selected Roon zone.
 - Use Wrapped Top 20 as a playlist source.
 - Save, load, and validate M3U results.
 
@@ -29,7 +33,7 @@ AI generation remains a proposal stage: the chosen model, structured filters, an
 
 Last.fm playlists use maintained decade, language, genre, style, and atmosphere tags instead of requiring an AI prompt. Several tags can be combined and the popular candidates pass through exactly the same visible Roon matching and editing workflow.
 
-Roon provides its own recommendation engine through Valence and Roon Radio and manages conventional playlists, but it does not provide free-form multi-provider AI playlist generation. See [Roon Valence](https://help.roonlabs.com/portal/en/kb/articles/valence) and [Roon Playlists](https://help.roonlabs.com/portal/en/kb/articles/playlists).
+Roon Radio remains the convenient choice for effortless, continuous discovery. The Wrapped-seeded workflow serves deliberate curation instead: the exact seed and constraints are visible, genre and sung language are enforced before playback, and the finite result can be reviewed, edited, saved, and reproduced. Roon provides its own recommendation engine through Valence and Roon Radio and manages conventional playlists, but it does not provide this free-form, pre-audited multi-provider AI playlist workflow. See [Roon Valence](https://help.roonlabs.com/portal/en/kb/articles/valence) and [Roon Playlists](https://help.roonlabs.com/portal/en/kb/articles/playlists).
 
 ## 2. Direct TIDAL tools
 

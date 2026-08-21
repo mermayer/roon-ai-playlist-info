@@ -19,6 +19,8 @@ Requests to external services occur only when the corresponding feature is enabl
 
 The search terms or metadata sent to a provider depend on the function being used. Optional services are also governed by their own privacy policies.
 
+When **Create AI playlist** is selected for a Wrapped recording, title, artist, album, and the generated recording-profile request are sent to the configured AI provider. That provider classifies narrow genre, actual sung language, style, instrumentation, era/production, vocal character, and energy; automatic modes may send the proposed candidates for a second independent profile audit. Last.fm is not contacted for this recording profile. The resulting profile and playlist remain in the local application state except for the normal requests required by the selected AI service and Roon matching.
+
 ## Credentials
 
 API keys, tokens, and sign-in details are stored in the local application configuration. Application backups may contain these credentials and should therefore be protected like passwords.

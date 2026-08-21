@@ -39,7 +39,8 @@ Der Einrichtungsassistent kann später erneut über die Konfiguration geöffnet 
 7. Vor der ersten TIDAL-Schnellaufnahme den getrennten Einrichtungsassistenten öffnen und Begleiter-, Audiorouten-, Profil- und Realsignalprüfung abschließen. Ein bestandener versionsgebundener Bereitschaftsnachweis bleibt gültig, bis sich eine relevante Komponente ändert.
 8. Optional Interpretenbild-Anbieter sortieren und externe Dienste verbinden.
 9. Für kostenlose automatische KI-Playlisten unter **Konfiguration > AI** **Antigravity** wählen, **Anmeldung öffnen** abschließen, **CLI prüfen**, ein Modell wählen und speichern.
-10. Eine erste App-Sicherung erstellen.
+10. Einen repräsentativen Titel abspielen, später unter **Wrapped > Titel** öffnen und **AI-Playlist erzeugen** wählen. Das genaue Aufnahmeprofil und den Roon-Abgleich prüfen, bevor eine Zone gewählt wird. Diesen kontrollierten Ablauf verwenden, wenn Sprache, enges Genre und eine bearbeitbare endliche Liste wichtig sind; Roon Radio verwenden, wenn eine bequeme fortlaufende Entdeckung gewünscht ist.
+11. Eine erste App-Sicherung erstellen.
 
 Antigravity benötigt keinen KI-API-Key. Nach der Einrichtung überträgt die lokale CLI Playlistwunsch und Ergebnis automatisch. Es gelten Googles jeweils aktueller kostenloser Tarif, die Modellverfügbarkeit und die Nutzungskontingente; die App kauft niemals Credits.
 

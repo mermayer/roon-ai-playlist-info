@@ -19,6 +19,8 @@ Netzwerkzugriffe zu externen Diensten entstehen nur, wenn die jeweilige Funktion
 
 Welche Suchbegriffe oder Metadaten an einen Anbieter gesendet werden, hängt von der verwendeten Funktion ab. Für optionale Dienste gelten zusätzlich deren eigene Datenschutzbestimmungen.
 
+Wird für eine Wrapped-Aufnahme **AI-Playlist erzeugen** gewählt, werden Titel, Interpret, Album und der Auftrag zur Ermittlung des Aufnahmeprofils an den konfigurierten KI-Anbieter übermittelt. Dieser klassifiziert enges Genre, tatsächlich gesungene Sprache, Stil, Instrumentierung, Epoche/Produktion, Gesangscharakter und Energie; automatische Modi können die vorgeschlagenen Titel für eine zweite unabhängige Profilprüfung übermitteln. Last.fm wird für dieses Aufnahmeprofil nicht angesprochen. Profil und Playlist verbleiben ansonsten im lokalen App-Zustand; extern entstehen nur die normalen Anfragen des gewählten KI-Dienstes und der Roon-Abgleich.
+
 ## Zugangsdaten
 
 API-Schlüssel, Tokens und Anmeldedaten werden in der lokalen App-Konfiguration gespeichert. App-Sicherungen können diese Zugangsdaten enthalten und sollten daher wie Passwörter geschützt aufbewahrt werden.

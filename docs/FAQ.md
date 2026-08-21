@@ -14,6 +14,18 @@ Yes. Install the official Google Antigravity CLI on the same Windows system as R
 
 Google currently offers modern Gemini models in its free Antigravity tier, subject to the current model catalogue and usage quotas. Roon AI Playlist never purchases credits and blocks already enabled paid G1/AI credits by default.
 
+## How is a Wrapped-seeded AI playlist different from Roon Radio?
+
+Roon Radio is designed for convenient continuous discovery and remains the best choice when playback should simply continue. The Wrapped action is designed for controlled curation: it starts from one exact played recording, exposes the AI-derived genre/language/sound profile, treats that profile as binding, and—with automatic providers—audits every suggestion before display. The resulting finite list can be reviewed, replaced, reordered, saved, and reproduced before it is sent to a Roon zone.
+
+## Does the Wrapped playlist profile use Last.fm tags?
+
+No. For this action, only the configured AI provider classifies the exact recording by narrow genre, actual sung language, style, instrumentation, production era, vocal character, and energy. Last.fm remains available as a separate playlist and metadata source but is not involved in this recording profile.
+
+## Why does a Wrapped track action briefly show that Roon zones are loading?
+
+The renderer may have opened the action while Roon is reconnecting or before its current zone snapshot has arrived. The dialog requests the latest server state immediately and remains live: returning zones appear in the same open dialog without closing or reloading the page.
+
 ## Which Antigravity model should I select?
 
 **Gemini 3.1 Pro (High)** is the proven default for quality-focused playlist curation. Gemini 3.5 Flash and Gemini 3.6 Flash are useful faster alternatives. **Automatic** uses the account default. Since Google can change availability, **Check CLI** imports models reported by `agy models`, and the custom field supports future IDs.
