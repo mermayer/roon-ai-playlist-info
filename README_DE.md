@@ -8,8 +8,8 @@
 
 ## Aktuelle Versionen
 
-- Informations- und Dokumentationsausgabe: **1.0.4**
-- Roon AI Playlist: **1.0.531**
+- Informations- und Dokumentationsausgabe: **1.0.5**
+- Roon AI Playlist: **1.0.549**
 - RoonAIViewer: **1.0.3**
 
 ## Was ist Roon AI Playlist?
@@ -41,6 +41,16 @@ Google stellt im kostenlosen Individual-/Standard-Tarif derzeit moderne Modelle 
 
 Die erzeugte Liste durchläuft weiterhin den normalen Roon-Ablauf der App: Jeder Vorschlag wird gegen die tatsächliche Roon-Bibliothek geprüft, offene Titel können ersetzt werden und die Wiedergabe beginnt erst nach Bestätigung. Die App kauft niemals Credits und blockiert bereits aktivierte kostenpflichtige Antigravity-G1-/AI-Credits standardmäßig. Aktuelle Angaben stehen in Googles [Antigravity-Modellübersicht](https://antigravity.google/docs/models) und auf der Seite [Antigravity-Tarife und Kontingente](https://antigravity.google/pricing).
 
+## Aus einer konkreten Wrapped-Aufnahme wird eine kontrollierte KI-Playlist
+
+Ein Klick auf eine gehörte Aufnahme unter **Wrapped > Titel** bietet jetzt neben der direkten Roon-Zonenwiedergabe **AI-Playlist erzeugen**. Der konfigurierte KI-Anbieter profiliert zuerst genau diese Aufnahme nach engem Genre und Subgenre, tatsächlich gesungener Sprache, charakteristischem Stil, Instrumentierung und Klangbild, Epoche und Produktionscharakter, Gesangscharakter und Energie. Last.fm wird für dieses Aufnahmeprofil nicht abgefragt. Automatische Anbieter prüfen danach jeden Vorschlag unabhängig und ersetzen Titel, die nur oberflächlich ähnlich wirken oder bei Sprache beziehungsweise Klang abweichen.
+
+Die Ausgangsaufnahme bleibt genau einmal an erster Stelle. Die endliche Ergebnisliste ist vor der Wiedergabe sichtbar und kann probegehört, entfernt, ersetzt, umsortiert, gespeichert, eingereiht oder an eine gewählte Roon-Zone übergeben werden. Verbindet sich Roon bei geöffnetem Aktionsmenü gerade neu, erscheinen zurückkehrende Zonen automatisch.
+
+### Der Vorteil gegenüber Roon Radio
+
+Roon Radio bleibt hervorragend für eine bequeme, fortlaufende Entdeckungswiedergabe. Dieser Ablauf richtet sich an bewusste Kuratierung: Ausgangstitel und Vorgaben sind sichtbar, Genre und Gesangssprache gelten schon vor der Wiedergabe verbindlich, jeder Vorschlag kann geprüft werden und die fertige Liste ist reproduzierbar sowie bearbeitbar. Das ist besonders nützlich, wenn „mehr davon“ wirklich dieselbe enge Musikfamilie und Sprache bedeuten soll – nicht einen offenen Endlosstrom von Empfehlungen.
+
 ## Was ergänzt die App zu Roon?
 
 ### Intelligente Playlist-Erzeugung
@@ -49,6 +59,7 @@ Die erzeugte Liste durchläuft weiterhin den normalen Roon-Ablauf der App: Jeder
 - Ollama, OpenRouter, OpenAI, Gemini, Claude, die geführte ChatGPT-Work-Übergabe oder die vollautomatische Google Antigravity CLI wählen.
 - Wünsche mit Genre, Jahrzehnt, Stimmung, Energie und Sprache kombinieren.
 - Playlisten aus Last.fm, Deezer, gepflegten Taglisten oder Wrapped-Favoriten erzeugen.
+- Eine konkrete gehörte Wrapped-Aufnahme als verbindlichen, unabhängig geprüften KI-Playlist-Ausgangspunkt verwenden.
 - Jeden Vorschlag vor der Wiedergabe mit der tatsächlichen Roon-Bibliothek abgleichen.
 - Treffer, unsichere Ergebnisse, fehlende Titel und mögliche Alternativen anzeigen.
 - Ergebnis in einer gewählten Roon-Zone starten oder als M3U speichern.
@@ -163,6 +174,7 @@ Während einer Aufnahme blockiert die App weitere TIDAL-Wiedergabestarts und die
 - Dashboard, Show, Covermosaik und automatisch ablaufende Story öffnen.
 - Jahr, Quartal, Monat, letzte 30/90 Tage, Gesamtzeitraum oder freie Zeitspanne wählen.
 - Historische Titel direkt in einer ausgewählten Roon-Zone starten.
+- Aus jeder aufgeführten Aufnahme eine eng profilierte, vollständig bearbeitbare KI-Playlist erzeugen; dasselbe Aktionsmenü lädt Roon-Zonen nach einer Wiederverbindung automatisch nach.
 - Ergebnisse als PNG, PDF oder CSV exportieren.
 - Datenqualität prüfen und fehlende Alben oder Cover nacharbeiten.
 
@@ -170,7 +182,7 @@ Während einer Aufnahme blockiert die App weitere TIDAL-Wiedergabestarts und die
 
 #### Hörhistorie bis zum einzelnen Titel
 
-Die Ansicht **Tracks** ist die nachvollziehbare Datengrundlage hinter den visuellen Zusammenfassungen. Sie zeigt jede gezählte Wiedergabe mit Cover, Titel, Interpret, Album, Zeitpunkt, Quelle, gegebenenfalls Sender und tatsächlich gewerteter Hörzeit. Die Liste kann nach Zeitraum und Quelle – Roon, Live Radio oder Spotify – gefiltert werden; ein historischer Titel lässt sich erneut an eine ausgewählte Roon-Zone senden. Unvollständige oder falsche historische Metadaten bleiben hier sichtbar, statt in einer aggregierten Grafik zu verschwinden.
+Die Ansicht **Tracks** ist die nachvollziehbare Datengrundlage hinter den visuellen Zusammenfassungen. Sie zeigt jede gezählte Wiedergabe mit Cover, Titel, Interpret, Album, Zeitpunkt, Quelle, gegebenenfalls Sender und tatsächlich gewerteter Hörzeit. Die Liste kann nach Zeitraum und Quelle – Roon, Live Radio oder Spotify – gefiltert werden. Ein Klick auf einen Titel öffnet eine gemeinsame Aktion für direkte Roon-Zonenwiedergabe oder **AI-Playlist erzeugen** aus genau dieser Aufnahme. Unvollständige oder falsche historische Metadaten bleiben hier sichtbar, statt in einer aggregierten Grafik zu verschwinden.
 
 ![Filterbare Wrapped-Titelhistorie](assets/screenshots/tracks.png)
 

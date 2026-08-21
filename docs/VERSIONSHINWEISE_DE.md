@@ -1,5 +1,15 @@
 # Versionshinweise
 
+## Informations- und Dokumentationsausgabe 1.0.5 — 21. August 2026
+
+- **AI-Playlist erzeugen** aus genau einer historischen Aufnahme unter `Wrapped > Titel` dokumentieren
+- das reine KI-Profil aus engem Genre/Subgenre, tatsächlich gesungener Sprache, Stil, Instrumentierung/Klangbild, Epoche/Produktion, Gesangscharakter und Energie erklären
+- verbindliches Profil, unabhängige Prüfung durch automatische Anbieter, Ersatz abweichender Kandidaten und das bearbeitbare Roon-geprüfte Ergebnis dokumentieren
+- automatisches Laden und laufende Aktualisierung der Zonen in einem bereits geöffneten Aktionsmenü während einer Roon-Wiederverbindung erklären
+- den Vorteil gegenüber Roon Radio für kontrollierte Nutzung hervorheben: sichtbarer exakter Ausgangstitel, ausdrückliche Vorgaben, endliche Vorschau, Prüfung vor der Wiedergabe, Bearbeitung, Speicherung und Reproduzierbarkeit
+- klarstellen, dass Roon Radio die bequeme Wahl für mühelose fortlaufende Entdeckung bleibt und Last.fm an diesem Aufnahmeprofil nicht beteiligt ist
+- den dokumentierten App-Stand auf 1.0.549 aktualisieren
+
 ## Informations- und Dokumentationsausgabe 1.0.4 — 16. August 2026
 
 - die direkte TIDAL-Hörbuchsuche nach Titel oder Interpret, breitere serienbezogene Zuordnung, aufbereitete Cover und Albumdaten, bis zu 200 Treffer und Sortierungen einschließlich **Älteste zuerst** dokumentieren
@@ -52,6 +62,19 @@ Dies ist die erste öffentliche Informationsausgabe zu Roon AI Playlist. Sie ent
 - Dokumente zu ersten Schritten, Datenschutz, Sicherheit, häufigen Fragen und App-Überblick
 - Screenshots und Erklärungen zu Mehrzonenplayer, KI- und Last.fm-Playlisten, Live Radio, Spotify, TIDAL-Mixen und -Playlisten, Hörbuchsuche, Wrapped, Netzwerk-Triggern, Remote-Slots und RoPieee-Proxy
 - klare Produktabgrenzung: Die App ergänzt Roon außerhalb seiner Oberfläche innerhalb der Möglichkeiten der Roon-Extension-APIs und ersetzt Roon nicht
+
+## Roon AI Playlist 1.0.549
+
+Zu den neu dokumentierten App-Funktionen gehören:
+
+- gemeinsame Aktion unter `Wrapped > Titel` für direkte Roon-Zonenwiedergabe oder KI-Playlist-Erzeugung aus genau der gehörten Aufnahme
+- reine KI-Klassifizierung dieser Aufnahme nach engem Genre, tatsächlich gesungener Sprache, Stil, Instrumentierung, Produktionsepoche, Gesangscharakter und Energie
+- sichtbares verbindliches Ausgangsprofil und unabhängige Einzelprüfung jedes Vorschlags bei automatischen Anbietern
+- exakter Ausgangstitel genau einmal vorne und ein endliches Ergebnis, das vollständig bearbeitbar, ersetzbar, einreihbar, speicherbar und abspielbar bleibt
+- sofortige serverseitige Zonenaktualisierung und laufende Ergänzung, wenn ein geöffnetes Aktionsmenü eine Roon-Wiederverbindung überbrückt
+- kontrollierte, nachvollziehbare Alternative zum bequemen fortlaufenden Empfehlungsstrom von Roon Radio
+
+Die für App-Version 1.0.531 dokumentierten Funktionen bleiben Bestandteil der aktuellen App.
 
 ## Roon AI Playlist 1.0.531
 

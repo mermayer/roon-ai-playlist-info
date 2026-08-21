@@ -2,7 +2,7 @@
 
 [Deutsche Version](BENUTZERHANDBUCH_DE.md) · [Back to overview](../README.md)
 
-Documentation status: Roon AI Playlist **1.0.531**, RoonAIViewer **1.0.3**.
+Documentation status: Roon AI Playlist **1.0.549**, RoonAIViewer **1.0.3**.
 
 ## Contents
 
@@ -244,6 +244,17 @@ Roon AI Playlist consumes the playback only after it reaches Roon. It provides t
 The description may be left empty when the structured filters already express the request. Mood and energy, decade, genre, and artist language are combined with the current provider and model. The footer identifies which model generated the result and which Roon-matching strategy was applied.
 
 The result is an editable working list rather than an opaque one-click action. Individual candidates can be auditioned, queued, replaced, or removed before the complete result is sent to Roon. Provider badges, year, and energy labels make it easier to spot an unsuitable edition or an outlier.
+
+### Creating a controlled playlist from one Wrapped recording
+
+1. Open **Wrapped > Tracks** and select the exact recording that should define the playlist.
+2. Choose **Create AI playlist** in the shared action menu. Direct playback in a Roon zone remains available in the same menu.
+3. The configured AI provider classifies that recording by narrow genre/subgenre, actual sung language, distinctive style, instrumentation and sonic palette, era/production character, vocal character, and energy. Last.fm is not used for this recording profile.
+4. Review the visible seed profile. It becomes a binding generation rule; old general playlist filters are not silently carried into this task.
+5. Start generation. With an automatic provider, a second independent AI pass audits every exact suggestion and replaces uncertain, superficial, wrong-language, or sonically incompatible recordings before the list is displayed.
+6. Review, audition, replace, remove, or reorder the result, then save it, queue it, or select a Roon zone for playback. The chosen seed stays first exactly once.
+
+This is the main advantage over Roon Radio when precise control matters. Roon Radio remains ideal for effortless continuous discovery, whereas the Wrapped workflow creates a finite, inspectable, language- and genre-bound list before playback. The list can be reproduced and edited instead of becoming an open-ended stream whose next choices are not visible in advance.
 
 ### Using Google Antigravity without an API key
 
@@ -555,7 +566,7 @@ Short false starts are excluded from listening time and top lists but may remain
 
 The **Tracks** view exposes the individual plays behind the summary values. Each row includes cover, title, artist, album, timestamp, source, station when applicable, and counted listening time. The period selector can show a day or a broader Wrapped range; the source selector can isolate normal Roon playback, Live Radio, or Spotify.
 
-Selecting a row opens a zone chooser. The application searches the historical title in Roon and sends the resolved result to the selected zone. This view also helps locate entries whose artist, album, or cover needs repair, because the original source and listening time remain visible.
+Selecting a row opens one shared action menu. Choose a Roon zone to resolve and play the historical recording directly, or choose **Create AI playlist** to use that exact recording as the binding seed described above. If the renderer has no cached zones while Roon is reconnecting, the menu shows a loading state and updates itself as soon as zones return. This view also helps locate entries whose artist, album, or cover needs repair, because the original source and listening time remain visible.
 
 ### Date ranges
 
@@ -569,7 +580,7 @@ Selecting a row opens a zone chooser. The application searches the historical ti
 
 ### Playing a historical track
 
-Selecting a track or top-track entry opens a zone chooser. The application searches Roon and starts playback in the selected zone. If Roon supplies better metadata, missing album or artwork information can be completed.
+Selecting a track or top-track entry opens the shared action menu for **Create AI playlist** or direct playback. For playback, the application searches Roon and starts the resolved recording in the selected zone. If Roon supplies better metadata, missing album or artwork information can be completed.
 
 ### Exports
 

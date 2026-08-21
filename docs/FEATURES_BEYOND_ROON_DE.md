@@ -2,7 +2,7 @@
 
 [English version](FEATURES_BEYOND_ROON.md) · [Zurück zur Übersicht](../README_DE.md)
 
-Stand: Roon AI Playlist `1.0.531`, 16. August 2026.
+Stand: Roon AI Playlist `1.0.549`, 21. August 2026.
 
 Diese Übersicht nennt Funktionen, die **Roon AI Playlist** zusätzlich zu den Bordmitteln des originalen Roon bereitstellt. Sie beschreibt keinen Ersatz für die Roon-Oberfläche oder irgendeine Roon-Funktion. Die Begleitanwendung soll ausschließlich außerhalb von Roon nützliche, dort fehlende Arbeitsabläufe ermöglichen – so weit es die Roon-Extension-APIs zulassen. Verglichen wird mit Roon ohne weitere Extensions, Skripte oder Hausautomationssysteme. Roons Kernfunktionen wie RAAT-Wiedergabe, DSP, normale Zonensteuerung, Zonengruppierung, Bibliotheksverwaltung, Roon Radio, klassische Playlisten, TIDAL-Wiedergabe, History, Albumcover, Sleep Timer, Roon Display und Roon-Datenbankbackups werden nicht als App-Vorteil gezählt.
 
@@ -20,6 +20,10 @@ Diese Übersicht nennt Funktionen, die **Roon AI Playlist** zusätzlich zu den B
 - Eigene gruppierte Taglisten bearbeiten und validieren.
 - Kandidaten gegen die tatsächliche Roon-Bibliothek prüfen und Trefferqualität anzeigen.
 - Ersatztracks für fehlende oder unsichere Kandidaten ermitteln.
+- Eine konkrete Aufnahme aus `Wrapped > Titel` zum festen Ausgangstitel einer normalen, vollständig bearbeitbaren KI-Playlist machen.
+- Diese Aufnahme ohne Last.fm nach engem Genre/Subgenre, tatsächlich gesungener Sprache, Stil, Instrumentierung/Klangbild, Epoche/Produktion, Gesangscharakter und Energie profilieren.
+- Das sichtbare Profil verbindlich anwenden und bei automatischen Anbietern jeden Vorschlag vor der Anzeige unabhängig prüfen.
+- Den Ausgangstitel genau einmal vorne halten und das endliche Ergebnis anschließend prüfen, ersetzen, umsortieren, speichern, einreihen oder in einer gewählten Roon-Zone wiedergeben.
 - Wrapped Top 20 als Playlistquelle verwenden.
 - Ergebnisse als M3U speichern, laden und prüfen.
 
@@ -29,7 +33,7 @@ Die KI-Erzeugung bleibt eine Vorschlagsstufe: Gewähltes Modell, strukturierte F
 
 Last.fm-Playlisten verwenden gepflegte Jahrzehnt-, Sprach-, Genre-, Stil- und Atmosphäre-Tags und benötigen keinen KI-Prompt. Mehrere Tags lassen sich kombinieren; die populären Kandidaten durchlaufen anschließend exakt denselben sichtbaren Roon-Abgleich und Bearbeitungsablauf.
 
-Roon besitzt mit Valence und Roon Radio eine eigene Empfehlungslogik und verwaltet normale Playlisten, bietet aber keine frei formulierbare Multi-KI-Playlistgenerierung mit wählbarem KI-Anbieter. Siehe [Roon Valence](https://help.roonlabs.com/portal/en/kb/articles/valence) und [Roon Playlists](https://help.roonlabs.com/portal/en/kb/articles/playlists).
+Roon Radio bleibt die bequeme Wahl für eine mühelose, fortlaufende Entdeckungswiedergabe. Der Wrapped-Ausgangstitel dient stattdessen der bewussten Kuratierung: Exakte Aufnahme und Vorgaben sind sichtbar, Genre und Gesangssprache gelten schon vor der Wiedergabe verbindlich und die endliche Liste lässt sich prüfen, bearbeiten, speichern und reproduzieren. Roon besitzt mit Valence und Roon Radio eine eigene Empfehlungslogik und verwaltet normale Playlisten, bietet aber keinen solchen vorab geprüften Multi-KI-Playlistablauf. Siehe [Roon Valence](https://help.roonlabs.com/portal/en/kb/articles/valence) und [Roon Playlists](https://help.roonlabs.com/portal/en/kb/articles/playlists).
 
 ## 2. Direkte TIDAL-Werkzeuge
 

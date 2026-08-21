@@ -1,5 +1,15 @@
 # Release notes
 
+## Information and documentation release 1.0.5 — August 21, 2026
+
+- documents **Create AI playlist** for one exact historical recording under `Wrapped > Tracks`
+- explains the AI-only profile for narrow genre/subgenre, actual sung language, style, instrumentation and sonic palette, era/production, vocal character, and energy
+- documents the binding profile, independent audit by automatic providers, replacement of incompatible candidates, and the editable Roon-matched result
+- explains automatic zone loading and live updates in an already open action menu during a Roon reconnect
+- foregrounds the advantage over Roon Radio for controlled use: a visible exact seed, explicit constraints, finite preview, pre-playback review, editing, saving, and reproducibility
+- clarifies that Roon Radio remains the convenient option for effortless continuous discovery and that Last.fm is not involved in this recording profile
+- updates the documented application version to 1.0.549
+
 ## Information and documentation release 1.0.4 — August 16, 2026
 
 - documents the direct TIDAL audiobook search by title or artist, broader series-aware matching, prepared covers and album metadata, up to 200 results, and sorting including oldest first
@@ -52,6 +62,19 @@ This is the first public information release for Roon AI Playlist. It contains n
 - getting-started, privacy, security, FAQ, and application-overview documents
 - screenshots and explanations for multi-zone playback, AI and Last.fm playlists, Live Radio, Spotify, TIDAL mixes and playlists, audiobook discovery, Wrapped, network triggers, remote slots, and the RoPieee proxy
 - explicit product boundary: the application complements Roon outside its GUI within the possibilities of the Roon Extension APIs and does not replace Roon
+
+## Roon AI Playlist 1.0.549
+
+The newly documented application capabilities include:
+
+- one shared `Wrapped > Tracks` action for direct Roon-zone playback or AI-playlist generation from the exact played recording
+- AI-only classification of that recording across narrow genre, actual sung language, style, instrumentation, production era, vocal character, and energy
+- a visible binding seed profile plus an independent per-suggestion audit for automatic providers
+- the exact seed first once and a finite result that remains fully editable, replaceable, queueable, saveable, and playable
+- immediate server-side zone refresh and live updates when an open action menu spans a Roon reconnect
+- a controlled, inspectable alternative to Roon Radio's hands-off continuous recommendation stream
+
+The capabilities documented for application 1.0.531 below remain part of the current application.
 
 ## Roon AI Playlist 1.0.531
 

@@ -17,7 +17,9 @@ Alle Anzeige-Clients verwenden dieselben vom App-Dienst bereitgestellten Zonen- 
 
 ### Playlist
 
-Playlisten können aus freien Musikwünschen, Tags, Last.fm-Empfehlungen oder Wrapped-Favoriten entstehen. Für KI-Wünsche stehen lokale oder API-basierte Anbieter, die geführte ChatGPT-Work-Übergabe und die vollautomatische Google Antigravity CLI zur Verfügung. Antigravity benötigt keinen API-Key und kann nach einmaliger Anmeldung aktuelle hochwertige Modelle aus Googles kostenlosem Tarif verwenden. Vor der Wiedergabe prüft die App, welche Titel tatsächlich in Roon verfügbar sind.
+Playlisten können aus freien Musikwünschen, Tags, Last.fm-Empfehlungen, Wrapped-Favoriten oder einer ganz bestimmten gehörten Aufnahme entstehen. Bei einem Wrapped-Ausgangstitel leitet der konfigurierte KI-Anbieter ein sichtbares enges Profil aus Genre, Gesangssprache, Stil, Instrumentierung, Produktionsepoche, Gesangscharakter und Energie ab; automatische Anbieter prüfen jeden Vorschlag dagegen. Für KI-Wünsche stehen lokale oder API-basierte Anbieter, die geführte ChatGPT-Work-Übergabe und die vollautomatische Google Antigravity CLI zur Verfügung. Antigravity benötigt keinen API-Key und kann nach einmaliger Anmeldung aktuelle hochwertige Modelle aus Googles kostenlosem Tarif verwenden. Vor der Wiedergabe prüft die App, welche Titel tatsächlich in Roon verfügbar sind.
+
+Roon Radio bleibt die einfachere Wahl für einen bequemen fortlaufenden Musikstrom. Der Wrapped-Ausgangstitel ist die kontrollierte Alternative: konkrete Ausgangsaufnahme, ausdrückliche Vorgaben, endliche Vorschau, unabhängige Kandidatenprüfung und ein Ergebnis, das sich vor der Wahl einer Roon-Zone bearbeiten, speichern und reproduzieren lässt.
 
 ### Player
 
@@ -39,7 +41,7 @@ Die Schnellaufnahme verwendet eine geführte Audio- und Chrome-Begleiter-Einrich
 
 ### Wrapped
 
-Wrapped zeichnet qualifizierte Hörsitzungen lokal auf und stellt Hörzeit, Titel, Interpreten, Alben, Quellen, Tageszeiten, Skips und Wiederholungen dar. Dashboard, Show, Story, Status und eine filterbare titelgenaue Historie lassen sich für verschiedene Zeiträume öffnen. Historische Titel können über Roon erneut abgespielt werden; Exporte und Reparaturwerkzeuge bearbeiten fehlende Alben und Cover.
+Wrapped zeichnet qualifizierte Hörsitzungen lokal auf und stellt Hörzeit, Titel, Interpreten, Alben, Quellen, Tageszeiten, Skips und Wiederholungen dar. Dashboard, Show, Story, Status und eine filterbare titelgenaue Historie lassen sich für verschiedene Zeiträume öffnen. Ein Klick auf eine historische Aufnahme bietet direkte Roon-Zonenwiedergabe oder eine eng profilierte KI-Playlist. Der offene Dialog übernimmt automatisch Zonen, die während einer Roon-Wiederverbindung zurückkehren; Exporte und Reparaturwerkzeuge bearbeiten fehlende Alben und Cover.
 
 ### Direkte TIDAL-Werkzeuge
 

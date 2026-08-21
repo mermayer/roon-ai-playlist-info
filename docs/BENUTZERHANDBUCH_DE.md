@@ -2,7 +2,7 @@
 
 [English version](USER_GUIDE.md) · [Zurück zur Übersicht](../README_DE.md)
 
-Dokumentationsstand: Roon AI Playlist **1.0.531**, RoonAIViewer **1.0.3**.
+Dokumentationsstand: Roon AI Playlist **1.0.549**, RoonAIViewer **1.0.3**.
 
 ## Inhaltsübersicht
 
@@ -244,6 +244,17 @@ Roon AI Playlist verarbeitet diese Wiedergabe erst, nachdem sie Roon erreicht ha
 Die freie Beschreibung darf leer bleiben, wenn die strukturierten Filter den Wunsch bereits vollständig ausdrücken. Stimmung und Energie, Jahrzehnt, Genre und Interpreten-Sprache werden mit dem aktuellen Anbieter und Modell kombiniert. Die Fußzeile nennt das erzeugende Modell und die verwendete Roon-Abgleichsstrategie.
 
 Das Ergebnis ist eine bearbeitbare Arbeitsliste und keine undurchsichtige Ein-Klick-Aktion. Einzelne Kandidaten lassen sich probeweise starten, anhängen, ersetzen oder entfernen, bevor das Gesamtergebnis an Roon übergeben wird. Providerkennzeichnung, Jahr und Energielabel helfen dabei, eine unpassende Ausgabe oder einen Ausreißer zu erkennen.
+
+### Kontrollierte Playlist aus einer Wrapped-Aufnahme erzeugen
+
+1. **Wrapped > Titel** öffnen und genau die Aufnahme auswählen, die den Charakter der Playlist bestimmen soll.
+2. Im gemeinsamen Aktionsmenü **AI-Playlist erzeugen** wählen. Die direkte Wiedergabe in einer Roon-Zone bleibt im selben Menü verfügbar.
+3. Der konfigurierte KI-Anbieter klassifiziert diese Aufnahme nach engem Genre/Subgenre, tatsächlich gesungener Sprache, charakteristischem Stil, Instrumentierung und Klangbild, Epoche/Produktionscharakter, Gesangscharakter und Energie. Last.fm wird für dieses Aufnahmeprofil nicht verwendet.
+4. Das sichtbare Ausgangsprofil prüfen. Es wird zur verbindlichen Erzeugungsregel; alte allgemeine Playlistfilter werden nicht unbemerkt in diesen Auftrag übernommen.
+5. Die Erzeugung starten. Bei einem automatischen Anbieter prüft eine zweite unabhängige KI-Bewertung jeden genauen Vorschlag und ersetzt unklare, nur oberflächlich passende, fremdsprachige oder klanglich abweichende Aufnahmen, bevor die Liste erscheint.
+6. Ergebnis prüfen, probehören, ersetzen, entfernen oder umsortieren und danach speichern, einreihen oder in einer Roon-Zone wiedergeben. Der gewählte Ausgangstitel bleibt genau einmal an erster Stelle.
+
+Hier liegt der entscheidende Vorteil gegenüber Roon Radio, wenn genaue Kontrolle gewünscht ist. Roon Radio bleibt ideal für eine bequeme fortlaufende Entdeckungswiedergabe; der Wrapped-Ablauf erzeugt dagegen schon vor dem Start eine endliche, einsehbare sowie sprach- und genregebundene Titelliste. Sie lässt sich reproduzieren und bearbeiten, statt als offener Strom mit vorher nicht sichtbaren Folgeentscheidungen zu laufen.
 
 ### Google Antigravity ohne API-Key verwenden
 
@@ -555,7 +566,7 @@ Kurze Fehlstarts werden aus Hörzeit und Top-Listen herausgehalten, können aber
 
 Die Ansicht **Tracks** legt die einzelnen Wiedergaben hinter den Zusammenfassungen offen. Jede Zeile enthält Cover, Titel, Interpret, Album, Zeitpunkt, Quelle, gegebenenfalls Sender und gewertete Hörzeit. Die Zeitraumwahl kann einen einzelnen Tag oder einen größeren Wrapped-Zeitraum anzeigen; der Quellenfilter isoliert normale Roon-Wiedergabe, Live Radio oder Spotify.
 
-Ein Klick auf eine Zeile öffnet die Zonenauswahl. Die App sucht den historischen Titel in Roon und übergibt den aufgelösten Treffer an die gewählte Zone. Die Ansicht hilft außerdem, Einträge mit korrekturbedürftigem Interpret, Album oder Cover zu finden, weil ursprüngliche Quelle und Hörzeit sichtbar bleiben.
+Ein Klick auf eine Zeile öffnet ein gemeinsames Aktionsmenü. Für direkte Wiedergabe wird eine Roon-Zone gewählt und die App löst die historische Aufnahme in Roon auf; mit **AI-Playlist erzeugen** wird genau diese Aufnahme zum verbindlichen Ausgangstitel des oben beschriebenen Ablaufs. Ist der Zonencache während einer Roon-Wiederverbindung leer, zeigt das Menü einen Ladezustand und aktualisiert sich automatisch, sobald die Zonen zurückkehren. Die Ansicht hilft außerdem, Einträge mit korrekturbedürftigem Interpret, Album oder Cover zu finden, weil ursprüngliche Quelle und Hörzeit sichtbar bleiben.
 
 ### Zeiträume
 
@@ -569,7 +580,7 @@ Ein Klick auf eine Zeile öffnet die Zonenauswahl. Die App sucht den historische
 
 ### Historische Titel erneut abspielen
 
-Ein Klick auf einen Titel oder Top-Track öffnet eine Zonenauswahl. Die App sucht den Titel in Roon und startet ihn in der gewünschten Zone. Findet Roon dabei bessere Daten, können fehlende Album- oder Coverinformationen ergänzt werden.
+Ein Klick auf einen Titel oder Top-Track öffnet die gemeinsame Aktion für **AI-Playlist erzeugen** oder direkte Wiedergabe. Für die Wiedergabe sucht die App den Titel in Roon und startet ihn in der gewünschten Zone. Findet Roon dabei bessere Daten, können fehlende Album- oder Coverinformationen ergänzt werden.
 
 ### Exporte
 

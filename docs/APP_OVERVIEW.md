@@ -17,7 +17,9 @@ All display clients use the same zone and media information supplied by the appl
 
 ### Playlist
 
-Playlists can be created from free-form music requests, tags, Last.fm recommendations, or Wrapped favourites. AI requests may use local or API-based providers, the guided ChatGPT Work hand-off, or the fully automatic Google Antigravity CLI. Antigravity needs no API key and can use current high-quality models from Google's free tier after a one-time sign-in. Before playback, the application checks which tracks are actually available in Roon.
+Playlists can be created from free-form music requests, tags, Last.fm recommendations, Wrapped favourites, or one exact played recording. For a Wrapped seed, the configured AI provider derives a visible narrow profile covering genre, sung language, style, instrumentation, production era, vocals, and energy; automatic providers audit every suggestion against it. AI requests may use local or API-based providers, the guided ChatGPT Work hand-off, or the fully automatic Google Antigravity CLI. Antigravity needs no API key and can use current high-quality models from Google's free tier after a one-time sign-in. Before playback, the application checks which tracks are actually available in Roon.
+
+Roon Radio remains the simpler choice for an effortless continuous stream. The Wrapped-seeded workflow is the controlled alternative: exact starting recording, explicit constraints, a finite preview, independent candidate checks, and a result that can be edited, saved, and reproduced before a Roon zone is selected.
 
 ### Player
 
@@ -39,7 +41,7 @@ Fast capture uses a guided audio and Chrome-companion setup, prefers a verified 
 
 ### Wrapped
 
-Wrapped records qualified listening sessions locally and presents listening time, tracks, artists, albums, sources, time of day, skips, and replays. Dashboard, Show, Story, Status, and a filterable track-level history are available for multiple date ranges. Historical tracks can be replayed through Roon; exports and repair tools address missing albums and artwork.
+Wrapped records qualified listening sessions locally and presents listening time, tracks, artists, albums, sources, time of day, skips, and replays. Dashboard, Show, Story, Status, and a filterable track-level history are available for multiple date ranges. Selecting a historical recording opens one action for direct Roon-zone playback or a tightly profiled AI playlist. The open action automatically picks up zones that return while Roon reconnects; exports and repair tools address missing albums and artwork.
 
 ### Direct TIDAL tools
 

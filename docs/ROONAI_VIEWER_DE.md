@@ -90,6 +90,7 @@ Nach erfolgreicher Prüfung öffnet der Viewer die vom Server bereitgestellte Ob
 - **Im Standardbrowser öffnen** öffnet dieselbe Serveroberfläche im normalen Browser.
 - Externe Links werden automatisch an den Windows-Standardbrowser übergeben.
 - **Verbindung einrichten** öffnet Serveradresse, Token, Zoom und Autostart-Einstellungen erneut.
+- Die vollständige Wrapped-Titelaktion ist verfügbar: direkte Wiedergabe in einer gewählten Roon-Zone oder **AI-Playlist erzeugen** aus genau der historischen Aufnahme. Verbindet sich Roon bei geöffnetem Menü neu, werden zurückkehrende Zonen automatisch ergänzt.
 
 ## Zoom und Darstellung
 

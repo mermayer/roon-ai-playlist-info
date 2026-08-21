@@ -2,6 +2,22 @@
 
 This changelog records public information and documentation releases for Roon AI Playlist. Application and RoonAIViewer versions are listed separately because this repository contains neither their source code nor installers.
 
+## [1.0.5](https://github.com/mermayer/roon-ai-playlist-info/releases/tag/v1.0.5) — 2026-08-21
+
+### Added
+
+- Complete English and German documentation for creating an AI playlist from one exact recording under `Wrapped > Tracks`.
+- Explanation of the AI-only recording profile covering narrow genre/subgenre, actual sung language, style, instrumentation and sonic palette, era/production, vocal character, and energy.
+- Documentation of the independent suggestion audit used by automatic providers, the visible editable result, and automatic Roon-zone recovery in an already open action menu.
+- A prominent, balanced comparison with Roon Radio: effortless continuous discovery versus an explicit, finite, pre-reviewed, editable, and reproducible curation workflow.
+- Privacy details for recording-profile and candidate-audit requests sent to the configured AI provider.
+
+### Changed
+
+- Updated the documented Roon AI Playlist version from 1.0.531 to 1.0.549 and the public information release to 1.0.5.
+- Expanded both READMEs, application overviews, feature comparisons, complete user guides, getting-started guides, FAQs, privacy/security notes, Viewer guides, release notes, and changelogs.
+- Clarified that Last.fm remains a separate playlist and metadata source and is not consulted for the exact Wrapped recording profile.
+
 ## [1.0.4](https://github.com/mermayer/roon-ai-playlist-info/releases/tag/v1.0.4) — 2026-08-16
 
 ### Added

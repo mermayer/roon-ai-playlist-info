@@ -39,7 +39,8 @@ The setup assistant can be opened again later from Configuration.
 7. Before the first TIDAL fast capture, open its separate setup wizard and complete the companion, audio-route, profile, and real-signal checks. A passed, version-bound readiness result is reused until a relevant component changes.
 8. Optionally arrange artist-image providers and connect external services.
 9. For free automatic AI playlists, select **Antigravity** under **Configuration > AI**, complete **Open sign-in**, run **Check CLI**, choose a model, and save.
-10. Create the first application backup.
+10. Play a representative track, open it later under **Wrapped > Tracks**, and select **Create AI playlist**. Review the exact recording profile and the Roon-matched result before choosing a zone. Use this controlled workflow when language, narrow genre, and an editable finite list matter; use Roon Radio when effortless continuous discovery is preferred.
+11. Create the first application backup.
 
 Antigravity does not require an AI API key. After setup, playlist requests and results are transferred automatically through the local CLI. Google's current free tier, model availability, and usage limits apply; the application never purchases credits.
 

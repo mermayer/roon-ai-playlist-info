@@ -8,8 +8,8 @@
 
 ## Current versions
 
-- Information and documentation release: **1.0.4**
-- Roon AI Playlist: **1.0.531**
+- Information and documentation release: **1.0.5**
+- Roon AI Playlist: **1.0.549**
 - RoonAIViewer: **1.0.3**
 
 ## What is Roon AI Playlist?
@@ -41,6 +41,16 @@ Google currently gives its free Individual/Standard tier access to modern models
 
 The generated list still passes through the application's normal Roon workflow: every suggestion is matched against the actual Roon library, unresolved tracks can be replaced, and nothing starts playing until the user accepts the result. The application never purchases credits and blocks already enabled paid Antigravity G1/AI credits by default. See Google's current [Antigravity model list](https://antigravity.google/docs/models) and [Antigravity plans and limits](https://antigravity.google/pricing).
 
+## From one exact Wrapped recording to a controlled AI playlist
+
+Selecting a played recording under **Wrapped > Tracks** now offers **Create AI playlist** alongside direct Roon-zone playback. The configured AI provider first profiles that exact recording by narrow genre and subgenre, actual sung language, distinctive style, instrumentation and sonic palette, era and production character, vocal character, and energy. Last.fm is not consulted for this recording profile. Automatic providers then audit every suggestion independently and replace tracks that only look superficially similar or deviate in language or sound.
+
+The seed recording remains first exactly once. The resulting finite list is visible before playback and can be auditioned, removed, replaced, reordered, saved, queued, or sent to a selected Roon zone. If Roon is reconnecting while the action menu is open, available zones appear automatically as soon as they return.
+
+### The advantage over Roon Radio
+
+Roon Radio remains excellent for effortless, continuous discovery. This workflow is aimed at deliberate curation: the exact seed and its constraints are visible, genre and sung language are enforced before playback, every suggestion can be reviewed, and the resulting list is reproducible and editable. It is therefore especially useful when “more like this” must mean the same narrow musical family and language rather than an open-ended recommendation stream.
+
 ## What does it add to Roon?
 
 ### Intelligent playlist creation
@@ -49,6 +59,7 @@ The generated list still passes through the application's normal Roon workflow: 
 - Choose Ollama, OpenRouter, OpenAI, Gemini, Claude, guided ChatGPT Work, or fully automatic Google Antigravity CLI generation.
 - Combine the request with genre, decade, mood, energy, and language filters.
 - Build playlists from Last.fm, Deezer, maintained tag collections, or Wrapped favourites.
+- Turn an exact played Wrapped recording into a binding, independently audited AI-playlist seed.
 - Match every suggestion against the actual Roon library before playback.
 - See successful matches, uncertain results, missing tracks, and possible replacements.
 - Play the result in a chosen Roon zone or save it as an M3U playlist.
@@ -163,6 +174,7 @@ While capture is active, other TIDAL playback starts from the application and ma
 - Explore Dashboard, Show, cover mosaic, and autoplay Story views.
 - Select year, quarter, month, rolling 30/90 days, all time, or a custom date range.
 - Start historical tracks directly in a selected Roon zone.
+- Create a tightly profiled, fully editable AI playlist from any listed recording; the same action menu automatically reloads Roon zones after a reconnect.
 - Export results as PNG, PDF, or CSV.
 - Inspect data quality and repair missing albums or covers.
 
@@ -170,7 +182,7 @@ While capture is active, other TIDAL playback starts from the application and ma
 
 #### Listening history down to the individual track
 
-The **Tracks** view is the inspectable foundation behind the visual summaries. It lists every counted play with cover, title, artist, album, timestamp, source, station where applicable, and effective listening time. The list can be limited by period and by source—Roon, live radio, or Spotify—and a historical title can be sent back to a selected Roon zone. This is also where incorrect or incomplete historical metadata becomes visible instead of disappearing inside an aggregate chart.
+The **Tracks** view is the inspectable foundation behind the visual summaries. It lists every counted play with cover, title, artist, album, timestamp, source, station where applicable, and effective listening time. The list can be limited by period and by source—Roon, live radio, or Spotify. Selecting a title opens one action menu for direct Roon-zone playback or **Create AI playlist** from that exact recording. This is also where incorrect or incomplete historical metadata becomes visible instead of disappearing inside an aggregate chart.
 
 ![Filterable Wrapped track history](assets/screenshots/tracks.png)
 
